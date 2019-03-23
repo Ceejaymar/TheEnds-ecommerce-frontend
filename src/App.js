@@ -3,7 +3,7 @@ import { HashRouter, Route } from 'react-router-dom';
 
 import firebase from './firebase';
 
-import AuthContext from './contexts/auth';
+import AuthContext from './context/auth';
 import SignUp from './containers/SignUp';
 import LogIn from './containers/LogIn';
 import LogOut from './containers/LogOut';

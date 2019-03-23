@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import firebase from '../firebase';
-import AuthContext from '../contexts/auth';
+import AuthContext from '../context/auth';
 
 class SignUp extends Component {
   state = {
