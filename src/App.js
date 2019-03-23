@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 
-import SignUp from './components/SignUp';
 import Navbar from './components/Navbar';
+import SignUp from './components/SignUp';
+import Home from './components/Home';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <>
           <Route path='/' component={ Navbar } />
           <Route path='/signup' component={ SignUp } />
+          <Route path='/' exact component={ Home } />
         </>
       </HashRouter>
     );
