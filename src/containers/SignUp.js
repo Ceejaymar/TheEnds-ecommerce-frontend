@@ -37,7 +37,7 @@ class SignUp extends Component {
   createUser = (token) => {
     axios.post('http://localhost:3000/user/', {
       fname: 'Carlos',
-      lname: "Martinez",
+      lname: 'Martinez',
       email: this.state.email,
       token: token,
       address: '212 yerr st',
@@ -45,7 +45,7 @@ class SignUp extends Component {
       state: 'NYC',
       zipcode: '11206',
       seller: true
-    })
+    });
   }
 
   render() {
@@ -66,7 +66,6 @@ class SignUp extends Component {
     );
 
     return (
-
       <AuthContext.Consumer>
         {
           user => {
