@@ -26,7 +26,7 @@ const Navbar = () => {
                 <Link to="/login">Log In</Link>
               </>
             )
-          }
+          };
         }
       }
     </AuthContext.Consumer>
