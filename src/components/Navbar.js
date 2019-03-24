@@ -10,9 +10,8 @@ const Navbar = () => {
           if (user) {
             return (
               <>
-            {console.log(user)}
                 <Link to='/'>Home</Link>
-                <br/>
+                <br />
                 <Link to='/logout'>Log out</Link>
               </>
             )
@@ -20,8 +19,10 @@ const Navbar = () => {
           else {
             return (
               <>
-                <Link to="/signup">Sign Up</Link>
+                <Link to='/'>Home</Link>
                 <br/>
+                <Link to="/signup">Sign Up</Link>
+                <br />
                 <Link to="/login">Log In</Link>
               </>
             )
