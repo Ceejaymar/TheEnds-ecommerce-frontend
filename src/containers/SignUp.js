@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import firebase from '../firebase';
 import AuthContext from '../context/auth';
+import axios from 'axios';
 
 class SignUp extends Component {
   state = {
@@ -20,14 +21,31 @@ class SignUp extends Component {
     const { email, password } = this.state;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(response => {
-        console.log('sign up response', response);
+      .then(() => {
+        firebase.auth().currentUser.getIdToken(true)
+          .then(token => {
+            this.createUser(token);
+          });
       })
       .catch(err => {
         const { message } = err;
 
         this.setState({ error: message });
       });
+  }
+
+  createUser = (token) => {
+    axios.post('http://localhost:3000/user/', {
+      fname: 'Carlos',
+      lname: "Martinez",
+      email: this.state.email,
+      token: token,
+      address: '212 yerr st',
+      city: 'Brooklyn',
+      state: 'NYC',
+      zipcode: '11206',
+      seller: true
+    })
   }
 
   render() {
@@ -48,6 +66,7 @@ class SignUp extends Component {
     );
 
     return (
+
       <AuthContext.Consumer>
         {
           user => {
