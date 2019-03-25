@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Route } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import firebase from './firebase';
 
@@ -36,10 +36,12 @@ class App extends Component {
         <AuthContext.Provider value={this.state.user}>
           <>
             <Route path='/' component={ Navbar } />
-            <Route path='/' exact component={ Home } />
-            <Route path='/signup' component={ SignUp } />
-            <Route path='/login' component={ LogIn } />
-            <Route path='/logout' component={ LogOut } />
+            <Switch>
+              <Route path='/' exact component={ Home } />
+              <Route path='/signup' component={ SignUp } />
+              <Route path='/login' component={ LogIn } />
+              <Route path='/logout' component={ LogOut } />
+            </Switch>
           </>
         </AuthContext.Provider>
       </HashRouter>
