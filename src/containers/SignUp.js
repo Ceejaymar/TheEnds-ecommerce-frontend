@@ -8,6 +8,7 @@ class SignUp extends Component {
   state = {
     email: '',
     password: '',
+    uid: '',
     error: ''
   }
 
@@ -21,11 +22,9 @@ class SignUp extends Component {
     const { email, password } = this.state;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        firebase.auth().currentUser.getIdToken(true)
-          .then(token => {
-            this.createUser(token);
-          });
+      .then(res => {
+        this.setState({ uid: res.user.uid });
+        this.createUser();
       })
       .catch(err => {
         const { message } = err;
@@ -34,12 +33,14 @@ class SignUp extends Component {
       });
   }
 
-  createUser = (token) => {
+  createUser = () => {
+    const { email, uid } = this.state;
+
     axios.post('http://localhost:3000/user/', {
       fname: 'Carlos',
       lname: 'Martinez',
-      email: this.state.email,
-      token: token,
+      email,
+      uid,
       address: '212 yerr st',
       city: 'Brooklyn',
       state: 'NYC',
@@ -49,6 +50,7 @@ class SignUp extends Component {
   }
 
   render() {
+    console.log(this.state);
     const { email, password, error } = this.state;
     const displayError = error !== '' ? <div>{error}</div> : '';
     const displayForm = (
