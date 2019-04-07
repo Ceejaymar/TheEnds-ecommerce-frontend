@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import firebase from './firebase';
-
-import AuthContext from './context/auth';
-import SignUp from './containers/SignUp';
-import LogIn from './containers/LogIn';
-import LogOut from './containers/LogOut';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
+import Routes from './routes';
 
 class App extends Component {
   state = { 
@@ -16,7 +9,6 @@ class App extends Component {
     email: '',
     uid: '',
     token: '',
-    
   }
 
   componentDidMount() {
@@ -51,19 +43,9 @@ class App extends Component {
   
   render() {
     return (
-      <HashRouter>
-        <AuthContext.Provider value={ this.state }>
-          <>
-            <Route path='/' component={ Navbar } />
-            <Switch>
-              <Route path='/' exact component={ Home } />
-              <Route path='/signup' component={ SignUp } />
-              <Route path='/login' component={ LogIn } />
-              <Route path='/logout' component={ LogOut } />
-            </Switch>
-          </>
-        </AuthContext.Provider>
-      </HashRouter>
+      <>
+        <Routes state={this.state} />
+      </>
     );
   }
 }
