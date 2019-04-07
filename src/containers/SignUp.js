@@ -70,8 +70,8 @@ class SignUp extends Component {
     return (
       <AuthContext.Consumer>
         {
-          user => {
-            if (user) {
+          state => {
+            if (state.user) {
               return <Redirect to='/' />
             }
             else {

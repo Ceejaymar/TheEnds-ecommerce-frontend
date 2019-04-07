@@ -50,8 +50,9 @@ class LogIn extends Component {
     return (
       <AuthContext.Consumer>
         {
-          user => {
-            if (user) {
+          state => {
+            console.log('user in login', state);
+            if (state.user) {
               return <Redirect to='/' />
             } 
             else {

@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <AuthContext.Consumer>
       {
-        user => {
-          if (user) {
+        state => {
+          if (state.user) {
             return (
               <>
                 <Link to='/'>Home</Link>
