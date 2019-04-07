@@ -12,13 +12,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.unsubscribe = firebase.auth().onAuthStateChanged(user => {
+    this.unsubscribe = firebase.auth().onAuthStateChanged(async user => {
       if(user) {
-        const { email, uid, ra } = user; // ra in the user object is the token
+        const { email, uid } = user;
         
-        this.setState({ user, email, uid }, () => {
-          this.getFirebaseToken()
-        });
+        await this.setState({ user, email, uid });
+        await this.getFirebaseToken();
       }
       else {
         this.setState({ user: null });
