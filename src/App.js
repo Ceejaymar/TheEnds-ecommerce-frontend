@@ -12,18 +12,37 @@ import Home from './components/Home';
 
 class App extends Component {
   state = { 
-    user: ''
+    user: '',
+    email: '',
+    uid: '',
+    token: '',
+    
   }
 
   componentDidMount() {
     this.unsubscribe = firebase.auth().onAuthStateChanged(user => {
       if(user) {
-        this.setState({ user });
+        const { email, uid, ra } = user; // ra in the user object is the token
+        
+        this.setState({ user, email, uid }, () => {
+          this.getFirebaseToken()
+        });
       }
       else {
         this.setState({ user: null });
       }
     });
+  }
+
+  getFirebaseToken = () => {
+    console.log('bruh idkkkkk');
+    firebase.auth().currentUser.getIdToken(false)
+      .then(token => {
+        this.setState({ token });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   componentWillUnmount() {
@@ -33,7 +52,7 @@ class App extends Component {
   render() {
     return (
       <HashRouter>
-        <AuthContext.Provider value={this.state.user}>
+        <AuthContext.Provider value={ this.state }>
           <>
             <Route path='/' component={ Navbar } />
             <Switch>
