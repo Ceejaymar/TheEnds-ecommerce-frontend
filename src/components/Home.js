@@ -13,7 +13,7 @@ class Home extends Component {
 
   componentDidMount() {
     if (this.context) {
-      console.log('this is the context in home', this.context);
+      // console.log('this is the context in home', this.context);
       const { email, uid, token } = this.context;
 
       this.setState({ email, uid, token });
@@ -46,7 +46,7 @@ class Home extends Component {
   }
 
   render() {
-    console.log('this is the state in HOME', this.state);
+    // console.log('this is the state in HOME', this.state);
 
     return (
       <>          
