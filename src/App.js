@@ -26,7 +26,6 @@ class App extends Component {
   }
 
   getFirebaseToken = () => {
-    console.log('bruh idkkkkk');
     firebase.auth().currentUser.getIdToken(false)
       .then(token => {
         this.setState({ token });
