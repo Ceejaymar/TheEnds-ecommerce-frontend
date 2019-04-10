@@ -13,7 +13,6 @@ class Home extends Component {
 
   componentDidMount() {
     if (this.context) {
-      // console.log('this is the context in home', this.context);
       const { email, uid, token } = this.context;
 
       this.setState({ email, uid, token });
@@ -31,7 +30,6 @@ class Home extends Component {
   }
 
   handlePrivateRoute = () => {
-    // console.log('the token is here famm', this.state.token);
     axios.get('http://localhost:3000/user/1/protected', { token: this.state.token })
       .then(data => {
         console.log(data)
@@ -46,8 +44,6 @@ class Home extends Component {
   }
 
   render() {
-    // console.log('this is the state in HOME', this.state);
-
     return (
       <>          
         <AuthContext.Consumer>
@@ -56,7 +52,6 @@ class Home extends Component {
             if (state.user) {
               return (
                 <>
-                  <div>hello</div>
                   <h2>Welcome back, { state.email }</h2>
                   <h4>Your user id is: { state.uid }</h4>
                   <button onClick={this.handlePublicRoute}>click for the public route</button>
