@@ -32,11 +32,11 @@ class Home extends Component {
   handlePrivateRoute = () => {
     axios.get('http://localhost:3000/user/1/protected', { token: this.state.token })
       .then(data => {
-        console.log(data)
+        console.log(data);
       })
       .catch((err) => {
         console.log(err);
-      })
+      });
   }
 
   handleState = (user) => {
@@ -68,7 +68,6 @@ class Home extends Component {
     </>
     );
     }
-  
 }
 
 export default Home;
