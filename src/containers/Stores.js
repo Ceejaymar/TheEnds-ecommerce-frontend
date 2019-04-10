@@ -11,13 +11,14 @@ class Stores extends Component {
   componentDidMount() {
     axios.get('http://localhost:3000/store/all')
       .then(response => {
-        const newState = { ...this.state };
+        // const newState = { ...this.state };
+        const updatedState = Object.assign({}, this.state);
 
         response.data.map(store => {
-          return newState.stores.push(store);
+          return updatedState.stores.push(store);
         })
 
-        this.setState(newState)
+        // this.setState(updatedState)
       })
       .catch(err => {
         console.log(err);
@@ -26,7 +27,7 @@ class Stores extends Component {
 
   render() {
     const { stores } = this.state;
-
+    
     if(stores.length > 0) {
       return this.state.stores.map((store, index) => (
         <StoreCard key={index} storeInfo={store} /> 
@@ -35,7 +36,7 @@ class Stores extends Component {
     else {
       return (
         <div>
-          yoo
+          Loading marketplace...
         </div>
       )
     }
