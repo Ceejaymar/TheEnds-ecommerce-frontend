@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import AuthContext from '../context/auth';
 
 class Product extends Component {
+  static contextType = AuthContext;
+
   state = {
     name: '',
     price: '',
@@ -10,24 +13,30 @@ class Product extends Component {
     url: '',
     size: '',
     quanitity: '',
-    stock: {}
+    stock: {},
+    uid: ''
   }
   componentDidMount() {
     const { id } = this.props.match.params;
+    const { uid } = this.context;
+    const url = 'http://localhost:3000'
+    console.log('this is the uid', uid)
 
-    axios.get(`http://localhost:3000/product/${ id }`)
+    axios.get(`${ url }/product/${ id }`)
       .then(response => {
-        // const newState = Object.assign({}, this.state);
         const { name, price, description, category, url, stock } = response.data;
 
-        this.setState({ name, price, description, category, url, stock });
+        this.setState({ name, price, description, category, url, stock, uid });
       })
+  }
+
+  handleAddToCart = () => {
+    console.log('yerrr');
   }
   
   render() {
-    console.log(this.state); 
     const { name, price, description, category, url, stock } = this.state;
-
+    console.log('this is the state', this.state);
     return (
       <div>
         <h3>{ name }</h3>
@@ -43,7 +52,7 @@ class Product extends Component {
           }
         </select>
         <br />
-        <button>Add to cart</button>
+        <button onClick={this.handleAddToCart}>Add to cart</button>
       </div>
     );
   }
