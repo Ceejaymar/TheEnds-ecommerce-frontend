@@ -8,10 +8,11 @@ import AuthContext from './context/auth';
 import SignUp from './containers/SignUp';
 import LogIn from './containers/LogIn';
 import LogOut from './containers/LogOut';
-import Stores from './containers/Stores';
+import marketplace from './containers/MarketPlace';
 import Store from './containers/Store';
 import Product from './containers/Product';
 import CreateProduct from './containers/CreateProduct';
+import ShoppingCart from './containers/ShoppingCart';
 
 // Components 
 import Navbar from './components/Navbar';
@@ -28,10 +29,11 @@ const Routes = ({ state }) => {
             <Route path='/signup' component={SignUp} />
             <Route path='/login' component={LogIn} />
             <Route path='/logout' component={LogOut} />
-            <Route path='/stores' component={Stores} />
+            <Route path='/marketplace' component={marketplace} />
             <Route path='/store/:id' component={Store} />
             <Route path='/product/:id' component={Product} />
             <Route path='/createproduct' component={CreateProduct} />
+            <Route path='/cart' component={ShoppingCart} />
           </Switch>
         </>
       </AuthContext.Provider>
