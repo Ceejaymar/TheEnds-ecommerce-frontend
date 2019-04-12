@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import StoreCard from '../components/StoreCard';
 
-class Stores extends Component {
+class MarketPlace extends Component {
   state = {
     stores: []
   }
@@ -11,14 +11,14 @@ class Stores extends Component {
   componentDidMount() {
     axios.get('http://localhost:3000/store/all')
       .then(response => {
-        // const newState = { ...this.state };
-        const updatedState = Object.assign({}, this.state);
+        const updatedState = { ...this.state };
+        // const updatedState = Object.assign({}, this.state);
 
         response.data.map(store => {
           return updatedState.stores.push(store);
         })
 
-        // this.setState(updatedState)
+        this.setState(updatedState)
       })
       .catch(err => {
         console.log(err);
@@ -43,4 +43,4 @@ class Stores extends Component {
   }
 }
 
-export default Stores;
+export default MarketPlace;
