@@ -25,7 +25,8 @@ class App extends Component {
     });
   }
 
-  getFirebaseToken = () => {
+  // Finish converting to async/await
+  getFirebaseToken = async () => {
     firebase.auth().currentUser.getIdToken(false)
       .then(token => {
         this.setState({ token });
