@@ -13,9 +13,15 @@ const Navbar = () => {
                 <div>The Ends</div>
                 <Link to='/'>Home</Link>
                 <br />
-                <Link to='/stores'>Marketplace</Link>
+                <Link to='/marketplace'>Marketplace</Link>
+                <p>Welcome back, { state.user.email }</p>
+                <Link to='/cart'>
+                  <i className="icon ion-md-cart"></i>
+                </Link>
                 <br />
-                <Link to='/'>Account</Link>
+                <Link to='/account'>
+                  <i className="icon ion-md-person"></i>
+                </Link>
                 <br />
                 <Link to='/logout'>Log out</Link>
                 <hr />
@@ -28,7 +34,7 @@ const Navbar = () => {
                 <div>The Ends</div>
                 <Link to='/'>Home</Link>
                 <br/>
-                <Link to='/stores'>Marketplace</Link>
+                <Link to='/marketplace'>Marketplace</Link>
                 <br/>
                 <Link to="/signup">Sign Up</Link>
                 <br />
