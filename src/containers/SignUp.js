@@ -50,7 +50,6 @@ class SignUp extends Component {
   }
 
   render() {
-    console.log(this.state);
     const { email, password, error } = this.state;
     const displayError = error !== '' ? <div>{error}</div> : '';
     const displayForm = (
