@@ -5,7 +5,8 @@ import ProductCard from '../components/ProductCard';
 
 class Store extends Component {
   state = {
-    image: "",
+    name: '',
+    header: '',
     products : []
   }
 
@@ -14,9 +15,9 @@ class Store extends Component {
 
     axios.get(`http://localhost:3000/store/${id}`)
       .then(response => {
-        const { header } = response.data.images
-        // console.log(header);
-        this.setState({ image: header })
+        const { name, images: { header } } = response.data
+        
+        this.setState({ name, header })
       })
     
     axios.get(`http://localhost:3000/store/${id}/products/`) 
@@ -35,12 +36,13 @@ class Store extends Component {
   }
 
   render() {
-    const { image, products } = this.state;
+    const { name, header, products } = this.state;
 
     if(products.length > 1) {
       return (
         <>
-          <img style={{ "width": "1000px" }} src={ image } alt="store header"/>
+          <h2>{ name }</h2>
+          <img style={{ "width": "1000px" }} src={ header } alt="store header"/>
           {
             products.map((product, index) => (
               <ProductCard productInfo={product} key={index} />
@@ -52,7 +54,8 @@ class Store extends Component {
     else {
       return (
         <>
-          <img style={{ "width": "1000px" }} src={ image } alt="store header"/>
+          <h2>{ name }</h2>
+          <img style={{ "width": "1000px" }} src={ header } alt="store header"/>
           <div>No products in this store!</div>
         </>
       )
