@@ -52,8 +52,7 @@ class Home extends Component {
             if (state.user) {
               return (
                 <>
-                  <h2>Welcome back, { state.email }</h2>
-                  <h4>Your user id is: { state.uid }</h4>
+                  <h2>Welcome to The Ends</h2>
                   <button onClick={this.handlePublicRoute}>click for the public route</button>
                   <button onClick={this.handlePrivateRoute}>click for the private route</button>
                 </>
