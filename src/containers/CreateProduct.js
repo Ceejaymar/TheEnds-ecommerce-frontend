@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import firebase from '../firebase';
+import urlLink from '../config/url';
 import './createProduct.css';
-import axios from 'axios';
 
 class CreateProduct extends Component {
   state = {
@@ -49,8 +50,8 @@ class CreateProduct extends Component {
 
   handleProductSubmit = () => {
     const { name, price, category, description, url, stock } = this.state;
-
-    axios.post('http://localhost:3000/product/', {
+    
+    axios.post(`${urlLink}/product/`, {
       store_id: 1, // This needs to be the current logged in users store id.
       name, 
       price,
@@ -68,7 +69,6 @@ class CreateProduct extends Component {
   }
 
   render() {
-    console.log('the state', this.state);
     const { url } = this.state;
     const uploadedImage = url ? <img width='200' height='100' src={url} alt='uploaded product' /> : 'no image uploaded yet';
 

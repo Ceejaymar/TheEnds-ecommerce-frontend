@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import url from '../config/url';
 import StoreCard from '../components/StoreCard';
 
 class MarketPlace extends Component {
@@ -9,7 +10,7 @@ class MarketPlace extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/store/all')
+    axios.get(`${url}/store/all`)
       .then(response => {
         const updatedState = { ...this.state };
         // const updatedState = Object.assign({}, this.state);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import AuthContext from '../context/auth';
+import url from '../config/url';
 
 class Product extends Component {
   static contextType = AuthContext;
@@ -19,10 +20,10 @@ class Product extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
     const { uid } = this.context;
-    const url = 'http://localhost:3000'
+  
     console.log('this is the uid', uid)
 
-    axios.get(`${ url }/product/${ id }`)
+    axios.get(`${url}/product/${id}`)
       .then(response => {
         const { name, price, description, category, url, stock } = response.data;
 
@@ -36,7 +37,7 @@ class Product extends Component {
   
   render() {
     const { name, price, description, category, url, stock } = this.state;
-    console.log('this is the state', this.state);
+    
     return (
       <div>
         <h3>{ name }</h3>

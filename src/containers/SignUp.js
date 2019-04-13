@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 import firebase from '../firebase';
 import AuthContext from '../context/auth';
-import axios from 'axios';
+import url from '../config/url';
 
 class SignUp extends Component {
   state = {
@@ -36,7 +37,7 @@ class SignUp extends Component {
   createUser = () => {
     const { email, uid } = this.state;
 
-    axios.post('http://localhost:3000/user/', {
+    axios.post(`${url}/user/`, {
       fname: 'Carlos',
       lname: 'Martinez',
       email,

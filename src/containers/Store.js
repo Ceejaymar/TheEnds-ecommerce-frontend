@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import url from '../config/url';
 import ProductCard from '../components/ProductCard';
 
 class Store extends Component {
@@ -13,14 +14,14 @@ class Store extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
 
-    axios.get(`http://localhost:3000/store/${id}`)
+    axios.get(`${url}/store/${id}`)
       .then(response => {
         const { name, images: { header } } = response.data
         
         this.setState({ name, header })
       })
     
-    axios.get(`http://localhost:3000/store/${id}/products/`) 
+    axios.get(`${url}/store/${id}/products/`) 
       .then(response => {
         const updatedProducts = [...this.state.products];
 

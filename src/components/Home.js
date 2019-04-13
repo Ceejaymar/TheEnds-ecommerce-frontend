@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import AuthContext from '../context/auth';
+import url from '../config/url';
 
 class Home extends Component {
   static contextType = AuthContext;
@@ -20,7 +21,7 @@ class Home extends Component {
   }
 
   handlePublicRoute = () => {
-    axios.get('http://localhost:3000/user/1')
+    axios.get(`${url}/user/1`)
       .then(data => {
         console.log(data);
       })
@@ -30,7 +31,7 @@ class Home extends Component {
   }
 
   handlePrivateRoute = () => {
-    axios.get('http://localhost:3000/user/1/protected', { token: this.state.token })
+    axios.get(`${url}/user/1/protected`, { token: this.state.token })
       .then(data => {
         console.log(data);
       })
