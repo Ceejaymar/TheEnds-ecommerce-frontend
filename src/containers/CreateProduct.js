@@ -52,7 +52,7 @@ class CreateProduct extends Component {
     const { name, price, category, description, url, stock } = this.state;
     
     axios.post(`${urlLink}/product/`, {
-      store_id: 1, // This needs to be the current logged in users store id.
+      store_id: 1, // TODO: This needs to be the current logged in user's store id.
       name, 
       price,
       category,
@@ -119,6 +119,7 @@ class CreateProduct extends Component {
         <input name='medium' type='number' onChange={this.handleStockChange} placeholder='medium' />
         <input name='large' type='number' onChange={this.handleStockChange} placeholder='large' />
         <input name='xlarge' type='number' onChange={this.handleStockChange} placeholder='xlarge' />
+        {/* // TODO: Need to add conditional for products that don't have sizes */}
         {/* <input name='' type='text'/> */}
         {/* <p>Does your product have sizes?</p> */}
         {/* <label className='switch'>
