@@ -15,6 +15,10 @@ const Navbar = () => {
                 <br />
                 <Link to='/marketplace'>Marketplace</Link>
                 <p>Welcome back, { state.user.email }</p>
+                <Link to='/createproduct'>
+                  <i className="icon ion-md-add-circle"></i>
+                </Link>
+                <br />
                 <Link to='/cart'>
                   <i className="icon ion-md-cart"></i>
                 </Link>
