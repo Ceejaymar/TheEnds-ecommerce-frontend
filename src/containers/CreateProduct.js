@@ -12,18 +12,19 @@ class CreateProduct extends Component {
     category: '',
     description: '',
     url: '',
-    stock: { 
-      small: 0, 
-      medium: 0, 
-      large: 0, 
+    stock: {
+      small: 0,
+      medium: 0,
+      large: 0,
       xlarge: 0
     }
   }
 
   handleFileInput = async (e) => {
     const uploadedImage = e.target.files[0];
+    console.log(uploadedImage);
     const storageRef = firebase.storage().ref();
-    const imageRef = storageRef.child(`/productImages/ + ${uploadedImage.name}`); 
+    const imageRef = storageRef.child(`/productImages/ + ${uploadedImage.name}`);
 
     try {
       const snapshot = await imageRef.put(uploadedImage);
@@ -42,7 +43,7 @@ class CreateProduct extends Component {
 
   handleStockChange = (e) => {
     const newState = { ...this.state };
-    
+
     newState.stock[e.target.name] = e.target.value;
 
     this.setState( newState );
@@ -50,13 +51,13 @@ class CreateProduct extends Component {
 
   handleProductSubmit = () => {
     const { name, price, category, description, url, stock } = this.state;
-    
+
     axios.post(`${urlLink}/product/`, {
       store_id: 1, // TODO: This needs to be the current logged in user's store id.
-      name, 
+      name,
       price,
       category,
-      description, 
+      description,
       url,
       stock: JSON.stringify(stock)
     })
@@ -79,22 +80,22 @@ class CreateProduct extends Component {
         { uploadedImage }
         <hr/>
         <label>Product Name</label>
-        <input 
-          type='text' 
-          name='name' 
-          placeholder='Enter Product name' 
-          onChange={this.handleChange}   
+        <input
+          type='text'
+          name='name'
+          placeholder='Enter Product name'
+          onChange={this.handleChange}
         />
         <hr/>
         <label>Product Price</label>
-        <input 
-          type='number' 
-          min='0.00' 
-          step='0.50' 
-          max='3000' 
-          name='price' 
+        <input
+          type='number'
+          min='0.00'
+          step='0.50'
+          max='3000'
+          name='price'
           placeholder='price'
-          onChange={this.handleChange} 
+          onChange={this.handleChange}
         />
         <hr/>
         <label>Category</label>
@@ -106,10 +107,10 @@ class CreateProduct extends Component {
         </select>
         <hr/>
         <label>Description</label>
-        <textarea 
-          name='description' 
-          cols='30' 
-          rows='10' 
+        <textarea
+          name='description'
+          cols='30'
+          rows='10'
           placeholder='Write product description here'
           onChange={this.handleChange}
         ></textarea>
@@ -120,13 +121,13 @@ class CreateProduct extends Component {
         <input name='large' type='number' onChange={this.handleStockChange} placeholder='large' />
         <input name='xlarge' type='number' onChange={this.handleStockChange} placeholder='xlarge' />
         {/* // TODO: Need to add conditional for products that don't have sizes */}
-        {/* <input name='' type='text'/> */}
-        {/* <p>Does your product have sizes?</p> */}
-        {/* <label className='switch'>
+        <input name='' type='text'/> */}
+        <p>Does your product have sizes?</p>
+        <label className='switch'>
           <input type='checkbox' />
           <span className='slider round'></span>
         </label>
-        <input type='number' placeholder='stock amount' /> */}
+        <input type='number' placeholder='stock amount' />
         <hr/>
         <button type='submit' onClick={this.handleProductSubmit}>create</button>
       </div>
