@@ -54,7 +54,7 @@ class LogIn extends Component {
             console.log('user in login', state);
             if (state.user) {
               return <Redirect to='/' />
-            } 
+            }
             else {
               return displayForm;
             }
@@ -65,4 +65,4 @@ class LogIn extends Component {
   }
 };
 
-export default LogIn; 
+export default LogIn;

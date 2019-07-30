@@ -23,4 +23,3 @@ CartService.saveCart = (cartItems, user, timestamp) => {
 
     return oldCarts;
 }
-

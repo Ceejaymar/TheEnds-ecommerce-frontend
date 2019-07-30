@@ -28,10 +28,10 @@ class MarketPlace extends Component {
 
   render() {
     const { stores } = this.state;
-    
+
     if(stores.length > 0) {
       return this.state.stores.map((store, index) => (
-        <StoreCard key={index} storeInfo={store} /> 
+        <StoreCard key={index} storeInfo={store} />
       ))
     }
     else {

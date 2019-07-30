@@ -17,7 +17,7 @@ class Home extends Component {
       const { email, uid, token } = this.context;
 
       this.setState({ email, uid, token });
-    } 
+    }
   }
 
   handlePublicRoute = () => {
@@ -46,7 +46,7 @@ class Home extends Component {
 
   render() {
     return (
-      <>          
+      <>
         <AuthContext.Consumer>
         {
           state => {

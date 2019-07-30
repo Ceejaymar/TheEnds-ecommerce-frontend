@@ -17,18 +17,18 @@ class Store extends Component {
     axios.get(`${url}/store/${id}`)
       .then(response => {
         const { name, images: { header } } = response.data
-        
+
         this.setState({ name, header })
       })
-    
-    axios.get(`${url}/store/${id}/products/`) 
+
+    axios.get(`${url}/store/${id}/products/`)
       .then(response => {
         const updatedProducts = [...this.state.products];
 
         response.data.map(product => {
           return updatedProducts.push(product);
         })
-      
+
         this.setState({ products: updatedProducts });
       })
       .catch(err => {

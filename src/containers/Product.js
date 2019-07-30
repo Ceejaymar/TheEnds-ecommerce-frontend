@@ -20,7 +20,7 @@ class Product extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
     const { uid } = this.context;
-  
+
     console.log('this is the uid', uid)
 
     axios.get(`${url}/product/${id}`)
@@ -34,10 +34,10 @@ class Product extends Component {
   handleAddToCart = () => {
     console.log('yerrr');
   }
-  
+
   render() {
     const { name, price, description, category, url, stock } = this.state;
-    
+
     return (
       <div>
         <h3>{ name }</h3>

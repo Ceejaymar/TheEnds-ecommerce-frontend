@@ -4,7 +4,7 @@ import firebase from './firebase';
 import Routes from './routes';
 
 class App extends Component {
-  state = { 
+  state = {
     user: '',
     email: '',
     uid: '',
@@ -15,7 +15,7 @@ class App extends Component {
     this.unsubscribe = firebase.auth().onAuthStateChanged(async user => {
       if(user) {
         const { email, uid } = user;
-        
+
         await this.setState({ user, email, uid });
         await this.getFirebaseToken();
       }
@@ -39,7 +39,7 @@ class App extends Component {
   componentWillUnmount() {
     this.unsubscribe();
   }
-  
+
   render() {
     return (
       <>
