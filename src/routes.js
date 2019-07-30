@@ -14,8 +14,9 @@ import Product from './containers/Product';
 import CreateProduct from './containers/CreateProduct';
 import ShoppingCart from './containers/ShoppingCart';
 
-// Components 
+// Components
 import Navbar from './components/Navbar';
+import Account from './containers/Account';
 import Home from './components/Home';
 
 const Routes = ({ state }) => {
@@ -26,14 +27,15 @@ const Routes = ({ state }) => {
           <Route path='/' component={Navbar} />
           <Switch>
             <Route path='/' exact component={Home} />
-            <Route path='/signup' component={SignUp} />
+            <Route path='/account' component={Account} />
+            <Route path='/cart' component={ShoppingCart} />
+            <Route path='/createproduct' component={CreateProduct} />
             <Route path='/login' component={LogIn} />
             <Route path='/logout' component={LogOut} />
             <Route path='/marketplace' component={marketplace} />
-            <Route path='/store/:id' component={Store} />
             <Route path='/product/:id' component={Product} />
-            <Route path='/createproduct' component={CreateProduct} />
-            <Route path='/cart' component={ShoppingCart} />
+            <Route path='/signup' component={SignUp} />
+            <Route path='/store/:id' component={Store} />
           </Switch>
         </>
       </AuthContext.Provider>
