@@ -10,7 +10,7 @@ class MarketPlace extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${url}/store/all`)
+    axios.get(`${url}/store/`)
       .then(response => {
         const updatedState = { ...this.state };
         // const updatedState = Object.assign({}, this.state);

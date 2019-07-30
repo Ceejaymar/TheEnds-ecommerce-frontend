@@ -121,7 +121,7 @@ class CreateProduct extends Component {
         <input name='large' type='number' onChange={this.handleStockChange} placeholder='large' />
         <input name='xlarge' type='number' onChange={this.handleStockChange} placeholder='xlarge' />
         {/* // TODO: Need to add conditional for products that don't have sizes */}
-        <input name='' type='text'/> */}
+        <input name='' type='text'/>
         <p>Does your product have sizes?</p>
         <label className='switch'>
           <input type='checkbox' />
