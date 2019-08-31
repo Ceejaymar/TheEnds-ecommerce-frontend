@@ -54,7 +54,6 @@ const Navbar = ({ classes }) => {
                     <Link className={classes.link} to="/login">Log In</Link>
                   </div>
                 </div>
-                {/* <hr /> */}
               </div>
             )
           };
