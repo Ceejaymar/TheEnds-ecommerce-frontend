@@ -6,7 +6,6 @@ import AuthContext from '../context/auth';
 
 import styles from '../styles/NavbarStyles';
 
-
 const Navbar = ({ classes }) => {
   return (
     <AuthContext.Consumer>
