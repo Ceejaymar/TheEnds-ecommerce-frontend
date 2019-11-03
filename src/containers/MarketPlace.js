@@ -1,46 +1,40 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import url from '../config/url';
 import StoreCard from '../components/StoreCard';
 
-class MarketPlace extends Component {
-  state = {
-    stores: []
-  }
+const MarketPlace = () => {
+  const [stores, setStores] = useState([]);
 
-  componentDidMount() {
+  useEffect(() => {
     axios.get(`${url}/store/`)
       .then(response => {
-        const updatedState = { ...this.state };
+        const updatedStores = [ ...stores ];
         // const updatedState = Object.assign({}, this.state);
 
-        response.data.map(store => {
-          return updatedState.stores.push(store);
-        })
+        response.data.map(store => (
+          updatedStores.push(store)
+        ))
 
-        this.setState(updatedState)
+        setStores(updatedStores);
       })
       .catch(err => {
         console.log(err);
       });
+  }, [])
+
+  if (stores.length > 0) {
+    return stores.map((store, index) => (
+      <StoreCard key={index} storeInfo={store} />
+    ))
   }
-
-  render() {
-    const { stores } = this.state;
-
-    if(stores.length > 0) {
-      return this.state.stores.map((store, index) => (
-        <StoreCard key={index} storeInfo={store} />
-      ))
-    }
-    else {
-      return (
-        <div>
-          Loading marketplace...
-        </div>
-      )
-    }
+  else {
+    return (
+      <div>
+        Loading marketplace...
+      </div>
+    )
   }
 }
 
