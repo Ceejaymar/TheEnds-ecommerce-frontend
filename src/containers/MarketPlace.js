@@ -11,30 +11,29 @@ const MarketPlace = () => {
     axios.get(`${url}/store/`)
       .then(response => {
         const updatedStores = [ ...stores ];
-        // const updatedState = Object.assign({}, this.state);
 
         response.data.map(store => (
           updatedStores.push(store)
-        ))
+        ));
 
         setStores(updatedStores);
       })
       .catch(err => {
         console.log(err);
       });
-  }, [])
+  }, []);
 
   if (stores.length > 0) {
     return stores.map((store, index) => (
       <StoreCard key={index} storeInfo={store} />
-    ))
+    ));
   }
   else {
     return (
       <div>
         Loading marketplace...
       </div>
-    )
+    );
   }
 }
 
