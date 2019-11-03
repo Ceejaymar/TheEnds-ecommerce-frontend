@@ -1,66 +1,61 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import url from '../config/url';
 import ProductCard from '../components/ProductCard';
 
-class Store extends Component {
-  state = {
-    name: '',
-    header: '',
-    products : []
-  }
+const Store = (props) => {
+  const [name, setName] = useState('');
+  const [header, setHeader] = useState('');
+  const [products, setProducts] = useState([]);
 
-  componentDidMount() {
-    const { id } = this.props.match.params;
+  useEffect(() => {
+    const { id } = props.match.params;
 
     axios.get(`${url}/store/${id}`)
       .then(response => {
-        const { name, images: { header } } = response.data
+        const { name, images: { header } } = response.data;
 
-        this.setState({ name, header })
+        setName(name);
+        setHeader(header);
       })
 
     axios.get(`${url}/store/${id}/products/`)
       .then(response => {
-        const updatedProducts = [...this.state.products];
+        const updatedProducts = [...products];
 
-        response.data.map(product => {
-          return updatedProducts.push(product);
-        })
+        response.data.map(product => (
+          updatedProducts.push(product)
+        ));
 
-        this.setState({ products: updatedProducts });
+        setProducts(updatedProducts);
       })
       .catch(err => {
         console.log(err);
       });
+  }, []);
+
+  if(products.length > 1) {
+    return (
+      <>
+        <h2>{ name }</h2>
+        <img style={{ "width": "1000px" }} src={ header } alt="store header"/>
+        {
+          products.map((product, index) => (
+            <ProductCard productInfo={product} key={index} />
+          ))
+        }
+      </>
+    )
   }
-
-  render() {
-    const { name, header, products } = this.state;
-
-    if(products.length > 1) {
-      return (
-        <>
-          <h2>{ name }</h2>
-          <img style={{ "width": "1000px" }} src={ header } alt="store header"/>
-          {
-            products.map((product, index) => (
-              <ProductCard productInfo={product} key={index} />
-            ))
-          }
-        </>
-      )
-    }
-    else {
-      return (
-        <>
-          <h2>{ name }</h2>
-          <img style={{ "width": "1000px" }} src={ header } alt="store header"/>
-          <div>No products in this store!</div>
-        </>
-      )
-    }
+  else {
+    return (
+      <>
+        <h2>{ name }</h2>
+        <img style={{ "width": "1000px" }} src={ header } alt="store header"/>
+        <div>No products in this store!</div>
+      </>
+    )
   }
 }
 
