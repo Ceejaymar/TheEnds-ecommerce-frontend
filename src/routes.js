@@ -18,6 +18,7 @@ import ShoppingCart from './containers/ShoppingCart';
 import Navbar from './components/Navbar';
 import Account from './containers/Account';
 import Home from './components/Home';
+import LandingPage from './components/LandingPage';
 
 const Routes = ({ state }) => {
   return (
@@ -36,6 +37,7 @@ const Routes = ({ state }) => {
             <Route path='/product/:id' component={Product} />
             <Route path='/signup' component={SignUp} />
             <Route path='/store/:id' component={Store} />
+            <Route path='/landing' component={LandingPage} /> {/* Change to homepage */}
           </Switch>
         </>
       </AuthContext.Provider>
