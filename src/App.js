@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import firebase from './firebase';
 import Routes from './routes';
 
+import './css/style.css';
+
 class App extends Component {
   state = {
     user: '',

@@ -15,8 +15,8 @@ const Navbar = ({ classes }) => {
             return (
               <div className={classes.nav}>
                 <div className={classes.brand}>The Ends</div>
-                <div classname={classes.menu}>
-                  <div classname={classes.navLinks}>
+                <div className={classes.menu}>
+                  <div className={classes.navLinks}>
                     <Link className={classes.link} to='/'>Home</Link>
                     <Link className={classes.link} to='/marketplace'>Marketplace</Link>
                     <Link className={classes.link} to='/about'>About</Link>
