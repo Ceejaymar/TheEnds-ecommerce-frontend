@@ -4,7 +4,7 @@ import 'firebase/storage';
 import apiKey from './config/config';
 
 const config = {
-  apiKey,
+  apiKey: process.env.API_KEY || apiKey,
   authDomain: "theends.firebaseapp.com",
   databaseURL: "https://theends.firebaseio.com",
   projectId: "theends",
