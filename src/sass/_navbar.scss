@@ -1,0 +1,23 @@
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+
+    &__brand {
+
+    }
+
+    &__menu {
+      display: flex;
+      justify-content: space-between;
+      // width: 40%;
+    }
+
+    &__links {
+
+    }
+
+    &__link {
+      margin: 0 10px;
+    }
+  }

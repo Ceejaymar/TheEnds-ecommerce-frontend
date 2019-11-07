@@ -38,6 +38,7 @@ const Routes = ({ state }) => {
             <Route path='/signup' component={SignUp} />
             <Route path='/store/:id' component={Store} />
             <Route path='/landing' component={LandingPage} /> {/* Change to homepage */}
+            <Route render={() => 'Wrong route fam'} />
           </Switch>
         </>
       </AuthContext.Provider>
