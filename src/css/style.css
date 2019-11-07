@@ -10,23 +10,23 @@
 html {
   box-sizing: border-box; }
 
-.home {
+.Home {
   height: 80vh;
   width: 100vw;
   color: #ffffff; }
-  .home__hero {
+  .Home__hero {
     height: 100%;
     width: 100%;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://firebasestorage.googleapis.com/v0/b/theends.appspot.com/o/storeImages%2FlandingPage%2Fdaniel-odame-DFRRyOzX8nI-unsplash.jpg?alt=media&token=d106fb11-e998-423d-ba12-82440f749202");
     background-size: cover;
     background-position: center; }
 
-.nav {
+.Nav {
   display: flex;
   justify-content: space-between;
   padding: 0 40px; }
-  .nav__menu {
+  .Nav__menu {
     display: flex;
     justify-content: space-between; }
-  .nav__link {
+  .Nav__link {
     margin: 0 10px; }
