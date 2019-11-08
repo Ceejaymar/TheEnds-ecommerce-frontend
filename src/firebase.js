@@ -1,10 +1,12 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/storage';
-import apiKey from './config/config';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const config = {
-  apiKey: process.env.API_KEY || apiKey,
+  apiKey: process.env.API_KEY || process.env.REACT_APP_FIREBASE_KEY,
   authDomain: "theends.firebaseapp.com",
   databaseURL: "https://theends.firebaseio.com",
   projectId: "theends",
