@@ -5,6 +5,5 @@ deploy:
   provider: firebase
   token:
     secure: $FIREBASE_TOKEN
-  project: "theends"
   on: master
   strategy: git
