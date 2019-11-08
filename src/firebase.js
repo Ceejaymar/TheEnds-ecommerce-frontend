@@ -5,6 +5,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+console.log('travis api key', process.env.API_KEY);
+
 const config = {
   apiKey: process.env.API_KEY || process.env.REACT_APP_FIREBASE_KEY,
   authDomain: "theends.firebaseapp.com",
