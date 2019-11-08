@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+console.log('process envvv',  proces.env);
 console.log('travis api key', process.env.API_KEY);
 
 const config = {
