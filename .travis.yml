@@ -6,9 +6,5 @@ install:
   - npm install
 script:
   - CI=false npm run build
-deploy:
-  provider: firebase
-  token:
-    secure: $FIREBASE_TOKEN
-  project: "theends"
-  local_dir: build
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
