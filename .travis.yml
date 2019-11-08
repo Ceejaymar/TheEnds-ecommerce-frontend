@@ -1,14 +1,13 @@
 language: node_js
 node_js:
-  - "12.12.0"
-env:
-  global
-    - SECRET='imtired'
-    - API_KEY=$API_KEY
+- 12.12.0
 install:
-  - npm install
-  - npm install -g firebase-tools
+- npm install
+- npm install -g firebase-tools
 script:
-  - CI=false npm run build
+- CI=false npm run build
 after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
+- firebase deploy --token $FIREBASE_TOKEN
+env:
+  global:
+    secure: YhNYYQGMgo2iEa+y68RBgCQ1x+ZNcyiNTRnwXFC93wDiMTAXjKcOcAv0bMxidnVOCTJ5cQXA/1FJvsev0Yc4fOTutYWkUiJxXoZyS/1qPW4tsN8Bo5ZGsWzcVLzvDUQ8JrOxtXKuzXf8i67M75Ot8qpG4RTESUd8ifVyaZx24xlWcaMGx7mTjWSwrQFkzH5nFsekqRGizit9VoDTQUzKJ7vegPHhSi5tr69aF6d9n8v0hCZZHiuWyJM2yxLDCveUx0HmBIf6kgn35jyUsOS1z5k7UvAVTk0mvAGY9eCe0O0QAvCMXE3U/pHu5S1M+W+EKhfVAUmbRXDvy+s2Z7BQCpxkNSPvygXqDx19/1s9VzZo9pno7t5VGHwwvVFYRLf0ic0I6qoYDHAzLt21PEdBhvTe8T2czmBzQQifDqudFR8wTvC3EjF1PD6ueXhrq/J0TBWhxxSDnD8lBn2ACBjq1f+NCPu3Y2K5bxrXJj/c3oJUxuje2kSRRgzEL22z2e9U9A6EinB0TkMBIyyqmLY8vnaMhBlsTqik9TP3gPMU73sDwH3Cn+eU8A4gPEgljVt40eI0W/5VMK7TsHgZDJ44IUe0jVcDFTVqjcpR+rhqNoJZMYQx2Q7u/BlgDDTHnoweC2SX44YG/ADTJLxlgN3wwwZh9+MJ4/f0Oya/96OGaR8=
