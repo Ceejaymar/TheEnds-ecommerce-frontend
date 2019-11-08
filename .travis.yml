@@ -8,7 +8,3 @@ script:
   - npm run build
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN
-env:
-  matrix:
-    - REACT_APP_YOWTF="WHYISTHISONEWORKING"
-    - REACT_APP_API_KEYYO=$API_KEYYO
