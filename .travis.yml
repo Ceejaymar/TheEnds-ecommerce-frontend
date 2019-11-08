@@ -3,7 +3,7 @@ node_js:
   - "12.12.0"
 warnings_are_errors: false
 env:
-  - API_KEY: $API_KEY
+  - API_KEY=$API_KEY
 install:
   - npm install
   - npm install -g firebase-tools
