@@ -36,7 +36,7 @@ class Product extends Component {
   }
 
   render() {
-    const { name, price, description, category, url, stock } = this.state;
+    const { name, price, description, url } = this.state;
 
     return (
       <div>
