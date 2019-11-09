@@ -8,7 +8,7 @@ const StoreCard = ({ storeInfo}) => {
     <Link to={`/store/${id}`}>
       <div style={{ "width": "50%" }}>
         <h2>{ name }</h2>
-        <img style={{ "width": "50%" }} src={card} alt="store pictures"/>
+        <img style={{ "width": "50%" }} src={card} alt="store"/>
       </div>
     </Link>
   );
