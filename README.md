@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Ceejaymar/TheEnds-ecommerce-frontend.svg?branch=master)](https://travis-ci.org/Ceejaymar/TheEnds-ecommerce-frontend)
+[![Build Status](https://travis-ci.org/Ceejaymar/TheEnds-ecommerce-frontend.svg?branch=master)](https://travis-ci.org/Ceejaymar/TheEnds-ecommerce-frontend) [![Build Status](https://david-dm.org/Ceejaymar/TheEnds-ecommerce-frontend.svg?branch=master)](https://david-dm.org/Ceejaymar/TheEnds-ecommerce-frontend.svg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
