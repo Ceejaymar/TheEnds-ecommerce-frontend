@@ -60,7 +60,7 @@ class Home extends Component {
               )
             }
             else {
-              return <h1>Please log in yoooooerrrrrr!</h1>
+              return <h1>Please log in!</h1>
             }
           }
         }
