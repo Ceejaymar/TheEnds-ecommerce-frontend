@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 import { toast } from 'react-toastify';
 import dotenv from 'dotenv';
+import axios from 'axios';
 import url from '../config/url';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -46,8 +46,18 @@ class CardCheckout extends Component {
           billingAddress
           shippingAddress
           amount={35 * 100} // to convert to cents
-          name='yerrr'
-        />
+          name='The Ends Collection'
+          email='martinezcj2@gmail.com'
+          description="purchasing goods" // the pop-in header subtitle
+          image="https://www.spoonity.com/wp-content/uploads/2017/04/stripe.png"
+          // panelLabel="Give Money"
+          // ComponentClass="div" //surround custom button in this
+        >
+          {/* Add customized button here */}
+          {/* <button>
+            Purchase
+          </button> */}
+        </StripeCheckout>
       </div>
     );
   }

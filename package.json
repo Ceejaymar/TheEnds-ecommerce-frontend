@@ -26,6 +26,7 @@
     "react-start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coveralls": "react-scripts test --coverage --coverageReporters=text-lcov | coveralls",
     "eject": "react-scripts eject",
     "watch:sass": "node-sass src/sass/main.scss src/css/style.css -w",
     "start": "npm-run-all --parallel react-start watch:sass",
@@ -41,5 +42,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "coveralls": "^3.0.7"
+  }
 }
