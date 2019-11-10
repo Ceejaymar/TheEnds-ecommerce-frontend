@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 import { toast } from 'react-toastify';
+import dotenv from 'dotenv';
 import url from '../config/url';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+dotenv.config();
 toast.configure();
 
 class CardCheckout extends Component {
@@ -39,7 +41,7 @@ class CardCheckout extends Component {
     return (
       <div>
         <StripeCheckout
-          stripeKey="pk_test_YVhkdt3OtSyXAIpMbCHsEOra"
+          stripeKey={process.env.REACT_APP_STRIPE_PUBLISH_KEY}
           token={this.handleToken}
           billingAddress
           shippingAddress
