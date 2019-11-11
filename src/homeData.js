@@ -1,5 +1,5 @@
 const homeData = {
-  featured : [
+  featured: [
     {
       id: 1,
       name: 'Solid Black',

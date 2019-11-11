@@ -32,7 +32,7 @@ class CreateProduct extends Component {
 
       this.setState({ url });
     }
-    catch(err) {
+    catch (err) {
       console.log(err);
     }
   }
@@ -46,7 +46,7 @@ class CreateProduct extends Component {
 
     newState.stock[e.target.name] = e.target.value;
 
-    this.setState( newState );
+    this.setState(newState);
   }
 
   handleProductSubmit = () => {
@@ -61,12 +61,12 @@ class CreateProduct extends Component {
       url,
       stock: JSON.stringify(stock)
     })
-    .then(response => {
-      console.log(response);
-    })
-    .catch(err => {
-      console.log(err);
-    });
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   render() {
@@ -77,8 +77,8 @@ class CreateProduct extends Component {
       <div className='create-product'>
         <label>Upload Image</label>
         <input type='file' accept='image/*' onChange={this.handleFileInput} />
-        { uploadedImage }
-        <hr/>
+        {uploadedImage}
+        <hr />
         <label>Product Name</label>
         <input
           type='text'
@@ -86,7 +86,7 @@ class CreateProduct extends Component {
           placeholder='Enter Product name'
           onChange={this.handleChange}
         />
-        <hr/>
+        <hr />
         <label>Product Price</label>
         <input
           type='number'
@@ -97,7 +97,7 @@ class CreateProduct extends Component {
           placeholder='price'
           onChange={this.handleChange}
         />
-        <hr/>
+        <hr />
         <label>Category</label>
         <select name='category' onChange={this.handleChange}>
           <option value='' selected disabled hidden>Choose here</option>
@@ -105,7 +105,7 @@ class CreateProduct extends Component {
           <option value='bottoms'>Bottoms</option>
           <option value='Accessories'>Accessories</option>
         </select>
-        <hr/>
+        <hr />
         <label>Description</label>
         <textarea
           name='description'
@@ -114,21 +114,21 @@ class CreateProduct extends Component {
           placeholder='Write product description here'
           onChange={this.handleChange}
         ></textarea>
-        <hr/>
+        <hr />
         <label>Stock</label>
         <input name='small' type='number' onChange={this.handleStockChange} placeholder='small' />
         <input name='medium' type='number' onChange={this.handleStockChange} placeholder='medium' />
         <input name='large' type='number' onChange={this.handleStockChange} placeholder='large' />
         <input name='xlarge' type='number' onChange={this.handleStockChange} placeholder='xlarge' />
         {/* // TODO: Need to add conditional for products that don't have sizes */}
-        <input name='' type='text'/>
+        <input name='' type='text' />
         <p>Does your product have sizes?</p>
         <label className='switch'>
           <input type='checkbox' />
           <span className='slider round'></span>
         </label>
         <input type='number' placeholder='stock amount' />
-        <hr/>
+        <hr />
         <button type='submit' onClick={this.handleProductSubmit}>create</button>
       </div>
     );

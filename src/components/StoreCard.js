@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const StoreCard = ({ storeInfo }) => {
   const { id, name, images: { card } } = storeInfo;
-  console.log(storeInfo);
 
   return (
     <Link to={`/store/${id}`} style={{ width: '15%' }}>

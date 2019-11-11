@@ -1,8 +1,8 @@
 const CartService = {};
 
 CartService.init = () => {
-  if(localStorage.getItem('cart') === null) {
-    localStorage.setItem('cart',  JSON.stringify([]));
+  if (localStorage.getItem('cart') === null) {
+    localStorage.setItem('cart', JSON.stringify([]));
   }
 }
 
@@ -14,12 +14,12 @@ CartService.getCart = () => {
 }
 
 CartService.saveCart = (cartItems, user, timestamp) => {
-    const newCart = { cartItems, timestamp };
-    const oldCarts = CartService.getItems();
+  const newCart = { cartItems, timestamp };
+  const oldCarts = CartService.getItems();
 
-    // oldCarts.unshift(newCart);
+  // oldCarts.unshift(newCart);
 
-    localStorage.setItem('cart', JSON.stringify(oldCarts));
+  localStorage.setItem('cart', JSON.stringify(oldCarts));
 
-    return oldCarts;
+  return oldCarts;
 }

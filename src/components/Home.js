@@ -48,26 +48,26 @@ class Home extends Component {
     return (
       <>
         <AuthContext.Consumer>
-        {
-          state => {
-            if (state.user) {
-              return (
-                <>
-                  <h2>Welcome to The Ends</h2>
-                  <button onClick={this.handlePublicRoute}>click for the public route</button>
-                  <button onClick={this.handlePrivateRoute}>click for the private route</button>
-                </>
-              )
-            }
-            else {
-              return <h1>Please log in!</h1>
+          {
+            state => {
+              if (state.user) {
+                return (
+                  <>
+                    <h2>Welcome to The Ends</h2>
+                    <button onClick={this.handlePublicRoute}>click for the public route</button>
+                    <button onClick={this.handlePrivateRoute}>click for the private route</button>
+                  </>
+                )
+              }
+              else {
+                return <h1>Please log in!</h1>
+              }
             }
           }
-        }
-      </AuthContext.Consumer>
-    </>
+        </AuthContext.Consumer>
+      </>
     );
-    }
+  }
 }
 
 export default Home;

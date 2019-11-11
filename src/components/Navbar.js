@@ -19,7 +19,7 @@ const Navbar = () => {
                     <Link className="Nav__link" to='/about'>About</Link>
                   </div>
                   <div>
-                    <p>Welcome back, { state.user.email }</p>
+                    <p>Welcome back, {state.user.email}</p>
                     <Link className="Nav__link" to='/createproduct'>
                       <i className="icon ion-md-add-circle"></i>
                     </Link>

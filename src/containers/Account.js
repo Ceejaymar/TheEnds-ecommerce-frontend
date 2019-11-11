@@ -12,22 +12,22 @@ class Account extends Component {
   render() {
     return (
       <AuthContext.Consumer>
-      {
-        state => {
-          if (state.user) {
-            return (
-              <div>
-                welcome {`${state.email}`}
-              </div>
-            )
-          }
-          else {
-            return (
-              <Redirect to='/' />
-            )
+        {
+          state => {
+            if (state.user) {
+              return (
+                <div>
+                  welcome {`${state.email}`}
+                </div>
+              )
+            }
+            else {
+              return (
+                <Redirect to='/' />
+              )
+            }
           }
         }
-      }
       </AuthContext.Consumer>
     );
   }

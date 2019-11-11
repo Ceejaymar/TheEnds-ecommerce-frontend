@@ -17,6 +17,7 @@ class Product extends Component {
     stock: {},
     uid: ''
   }
+
   componentDidMount() {
     const { id } = this.props.match.params;
     const { uid } = this.context;
@@ -40,15 +41,15 @@ class Product extends Component {
 
     return (
       <div>
-        <h3>{ name }</h3>
-        <img style={{ width: "400px" }} src={ url } alt="product" />
-        <p>desc: { description }</p>
-        <p>price: { price }</p>
+        <h3>{name}</h3>
+        <img style={{ width: "400px" }} src={url} alt="product" />
+        <p>desc: {description}</p>
+        <p>price: {price}</p>
         <label>quantity</label>
         <select name="quantity" id="">
           {
-            [1,2,3,4,5,6,7,8,9,10].map((option, index) => {
-              return <option key={index}>{ option }</option>
+            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((option, index) => {
+              return <option key={index}>{option}</option>
             })
           }
         </select>

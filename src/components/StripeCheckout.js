@@ -24,7 +24,7 @@ class CardCheckout extends Component {
     });
     console.log(response);
 
-    if(response.data.status === 'success') {
+    if (response.data.status === 'success') {
       toast('Success! Check emails for details', {
         type: 'success'
       });
@@ -50,8 +50,8 @@ class CardCheckout extends Component {
           email='martinezcj2@gmail.com'
           description="purchasing goods" // the pop-in header subtitle
           image="https://www.spoonity.com/wp-content/uploads/2017/04/stripe.png"
-          // panelLabel="Give Money"
-          // ComponentClass="div" //surround custom button in this
+        // panelLabel="Give Money"
+        // ComponentClass="div" //surround custom button in this
         >
           {/* Add customized button here */}
           {/* <button>

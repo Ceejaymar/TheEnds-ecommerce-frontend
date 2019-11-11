@@ -15,7 +15,7 @@ const LandingPage = () => {
           {
             homeData.featured.map(store => (
               <div className="Home__store" key={store.id}>
-                <img src={store.img} alt="" className="Home__store-img"/>
+                <img src={store.img} alt="" className="Home__store-img" />
                 <div className="Home__store-content">
                   <h3 className="Home__store-title">{store.name}</h3>
                   <p>{store.description}</p>
