@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import axios from 'axios';
 
 import url from '../config/url';
 import StoreCard from '../components/StoreCard';
 
-class MarketPlace extends Component {
+class MarketPlace extends PureComponent {
   state = {
     stores: []
   }
@@ -28,18 +28,20 @@ class MarketPlace extends Component {
   render() {
     const { stores } = this.state;
 
-    if (stores.length > 0) {
-      return stores.map((store, index) => (
-        <StoreCard key={index} storeInfo={store} />
-      ));
-    }
-    else {
-      return (
-        <div>
-          Loading marketplace...
-        </div>
-      );
-    }
+    return (
+      <div className="Marketplace">
+        {stores.length > 0 ? (
+          stores.map((store) => (
+            <StoreCard key={store.id} storeInfo={store} />
+          ))
+        ) : (
+            <div>
+              Loading marketplace...
+            </div>
+          )
+        }
+      </div>
+    )
   }
 }
 
