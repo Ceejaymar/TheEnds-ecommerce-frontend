@@ -3,34 +3,42 @@ import { Redirect } from 'react-router-dom';
 import AuthContext from '../context/auth';
 
 class Account extends Component {
-  static contextType = AuthContext;
   // static defaultProps = this.context;
-  state = {
-    user: this.context.email
+  constructor(props) {
+    super(props);
+
+    const { email } = this.context;
+
+    this.state = {
+      email,
+    };
   }
 
   render() {
+    const { email } = this.state;
+
     return (
       <AuthContext.Consumer>
         {
-          state => {
+          (state) => {
             if (state.user) {
               return (
                 <div>
-                  welcome {`${state.email}`}
+                  welcome
+                  {`${email}`}
                 </div>
-              )
+              );
             }
-            else {
-              return (
-                <Redirect to='/' />
-              )
-            }
+            return (
+              <Redirect to="/" />
+            );
           }
         }
       </AuthContext.Consumer>
     );
   }
 }
+
+Account.contextType = AuthContext;
 
 export default Account;

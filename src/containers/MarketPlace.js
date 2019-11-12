@@ -6,21 +6,21 @@ import StoreCard from '../components/StoreCard';
 
 class MarketPlace extends PureComponent {
   state = {
-    stores: []
+    stores: [],
   }
 
   componentDidMount() {
     axios.get(`${url}/store/`)
-      .then(response => {
+      .then((response) => {
         const updatedState = { ...this.state };
 
-        response.data.map(store => (
+        response.data.map((store) => (
           updatedState.stores.push(store)
         ));
 
-        this.setState(updatedState)
+        this.setState(updatedState);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -35,13 +35,12 @@ class MarketPlace extends PureComponent {
             <StoreCard key={store.id} storeInfo={store} />
           ))
         ) : (
-            <div>
-              Loading marketplace...
-            </div>
-          )
-        }
+          <div>
+            Loading marketplace...
+          </div>
+        )}
       </div>
-    )
+    );
   }
 }
 

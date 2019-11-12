@@ -11,7 +11,6 @@ dotenv.config();
 toast.configure();
 
 class CardCheckout extends Component {
-
   handleToken = async (token, address) => {
     console.log(token, address);
 
@@ -19,21 +18,19 @@ class CardCheckout extends Component {
       token,
       product: {
         name: 'shirt',
-        price: '56'
-      }
+        price: '56',
+      },
     });
     console.log(response);
 
     if (response.data.status === 'success') {
       toast('Success! Check emails for details', {
-        type: 'success'
+        type: 'success',
       });
-    }
-    else {
+    } else {
       toast('Oh no! Something went wrong.', {
-        type: 'error'
+        type: 'error',
       });
-
     }
   }
 
@@ -46,8 +43,8 @@ class CardCheckout extends Component {
           billingAddress
           shippingAddress
           amount={35 * 100} // to convert to cents
-          name='The Ends Collection'
-          email='martinezcj2@gmail.com'
+          name="The Ends Collection"
+          email="martinezcj2@gmail.com"
           description="purchasing goods" // the pop-in header subtitle
           image="https://www.spoonity.com/wp-content/uploads/2017/04/stripe.png"
         // panelLabel="Give Money"

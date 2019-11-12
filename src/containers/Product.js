@@ -15,21 +15,21 @@ class Product extends Component {
     size: '',
     quanitity: '',
     stock: {},
-    uid: ''
+    uid: '',
   }
 
   componentDidMount() {
     const { id } = this.props.match.params;
     const { uid } = this.context;
 
-    console.log('this is the uid', uid)
+    console.log('this is the uid', uid);
 
     axios.get(`${url}/product/${id}`)
-      .then(response => {
+      .then((response) => {
         const { name, price, description, category, url, stock } = response.data;
 
         this.setState({ name, price, description, category, url, stock, uid });
-      })
+      });
   }
 
   handleAddToCart = () => {
@@ -42,15 +42,21 @@ class Product extends Component {
     return (
       <div>
         <h3>{name}</h3>
-        <img style={{ width: "400px" }} src={url} alt="product" />
-        <p>desc: {description}</p>
-        <p>price: {price}</p>
+        <img style={{ width: '400px' }} src={url} alt="product" />
+        <p>
+          desc:
+          {description}
+        </p>
+        <p>
+          price:
+          {price}
+        </p>
         <label>quantity</label>
         <select name="quantity" id="">
           {
-            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((option, index) => {
-              return <option key={index}>{option}</option>
-            })
+            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((option) => (
+              <option key={option}>{option}</option>
+            ))
           }
         </select>
         <br />

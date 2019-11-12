@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CardCheckout from '../components/StripeCheckout';
+import CardCheckout from '../components/CardCheckout';
 
 class ShoppingCart extends Component {
   render() {

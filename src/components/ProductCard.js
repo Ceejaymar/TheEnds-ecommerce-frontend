@@ -8,7 +8,7 @@ const ProductCard = ({ productInfo }) => {
     <div>
       <Link to={`/product/${id}`}>
         <h3>{name}</h3>
-        <img style={{ "width": "200px" }} src={url} alt="product" />
+        <img style={{ width: '200px' }} src={url} alt="product" />
         <p>{price}</p>
       </Link>
     </div>

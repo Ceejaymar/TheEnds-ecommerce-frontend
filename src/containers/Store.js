@@ -8,59 +8,58 @@ class Store extends Component {
   state = {
     name: '',
     header: '',
-    products: []
+    products: [],
   }
 
   componentDidMount() {
     const { id } = this.props.match.params;
 
     axios.get(`${url}/store/${id}`)
-      .then(response => {
+      .then((response) => {
         const { name, images: { header } } = response.data;
 
-        this.setState({ name, header })
-      })
+        this.setState({ name, header });
+      });
 
     axios.get(`${url}/store/${id}/products/`)
-      .then(response => {
+      .then((response) => {
         const updatedProducts = [...this.state.products];
 
-        response.data.map(product => (
+        response.data.map((product) => (
           updatedProducts.push(product)
         ));
 
-        this.setState({ products: updatedProducts });
+        // eslint-disable-next-line no-unused-vars
+        this.setState((prevState) => ({ products: updatedProducts }));
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
 
   render() {
     const { name, header, products } = this.state;
-
+    console.log(products);
     if (products.length > 1) {
       return (
         <>
           <h2>{name}</h2>
-          <img style={{ "width": "1000px" }} src={header} alt="store header" />
+          <img style={{ width: '1000px' }} src={header} alt="store header" />
           {
-            products.map((product, index) => (
-              <ProductCard productInfo={product} key={index} />
+            products.map((product) => (
+              <ProductCard productInfo={product} key={product.id} />
             ))
           }
         </>
-      )
+      );
     }
-    else {
-      return (
-        <>
-          <h2>{name}</h2>
-          <img style={{ "width": "1000px" }} src={header} alt="store header" />
-          <div>No products in this store!</div>
-        </>
-      )
-    }
+    return (
+      <>
+        <h2>{name}</h2>
+        <img style={{ width: '1000px' }} src={header} alt="store header" />
+        <div>No products in this store!</div>
+      </>
+    );
   }
 }
 

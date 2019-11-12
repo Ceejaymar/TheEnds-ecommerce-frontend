@@ -7,7 +7,7 @@ class LogIn extends Component {
   state = {
     email: '',
     password: '',
-    error: ''
+    error: '',
   }
 
   handleChange = (e) => {
@@ -20,10 +20,10 @@ class LogIn extends Component {
     const { email, password } = this.state;
 
     firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(response => {
+      .then((response) => {
         console.log('sign up response', response);
       })
-      .catch(err => {
+      .catch((err) => {
         const { message } = err;
 
         this.setState({ error: message });
@@ -38,31 +38,29 @@ class LogIn extends Component {
         <hr />
         <h2>Log In</h2>
         <form>
-          <input type='email' name='email' value={email} onChange={this.handleChange} placeholder='email' />
-          <input type='password' name='password' value={password} onChange={this.handleChange} placeholder='password' />
+          <input type="email" name="email" value={email} onChange={this.handleChange} placeholder="email" />
+          <input type="password" name="password" value={password} onChange={this.handleChange} placeholder="password" />
           <button onClick={this.handleSubmit}>log in</button>
         </form>
         {displayError}
         <hr />
       </div>
-    )
+    );
 
     return (
       <AuthContext.Consumer>
         {
-          state => {
+          (state) => {
             console.log('user in login', state);
             if (state.user) {
-              return <Redirect to='/' />
+              return <Redirect to="/" />;
             }
-            else {
-              return displayForm;
-            }
+            return displayForm;
           }
         }
       </AuthContext.Consumer>
     );
   }
-};
+}
 
 export default LogIn;

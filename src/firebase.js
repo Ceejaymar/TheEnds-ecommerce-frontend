@@ -7,11 +7,11 @@ dotenv.config();
 
 const config = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
-  authDomain: "theends.firebaseapp.com",
-  databaseURL: "https://theends.firebaseio.com",
-  projectId: "theends",
-  storageBucket: "theends.appspot.com",
-  messagingSenderId: "178375851777"
+  authDomain: 'theends.firebaseapp.com',
+  databaseURL: 'https://theends.firebaseio.com',
+  projectId: 'theends',
+  storageBucket: 'theends.appspot.com',
+  messagingSenderId: '178375851777',
 };
 
 firebase.initializeApp(config);

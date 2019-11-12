@@ -10,7 +10,7 @@ class SignUp extends Component {
     email: '',
     password: '',
     uid: '',
-    error: ''
+    error: '',
   }
 
   handleChange = (e) => {
@@ -23,11 +23,11 @@ class SignUp extends Component {
     const { email, password } = this.state;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(res => {
+      .then((res) => {
         this.setState({ uid: res.user.uid });
         this.createUser();
       })
-      .catch(err => {
+      .catch((err) => {
         const { message } = err;
 
         this.setState({ error: message });
@@ -46,7 +46,7 @@ class SignUp extends Component {
       city: 'Brooklyn',
       state: 'NYC',
       zipcode: '11206',
-      seller: true
+      seller: true,
     });
   }
 
@@ -58,8 +58,8 @@ class SignUp extends Component {
         <hr />
         <h2>Sign Up</h2>
         <form>
-          <input type='email' name='email' value={email} onChange={this.handleChange} placeholder='email' />
-          <input type='password' name='password' value={password} onChange={this.handleChange} placeholder='password' />
+          <input type="email" name="email" value={email} onChange={this.handleChange} placeholder="email" />
+          <input type="password" name="password" value={password} onChange={this.handleChange} placeholder="password" />
           <button onClick={this.handleSubmit}>sign up</button>
         </form>
         {displayError}
@@ -70,13 +70,11 @@ class SignUp extends Component {
     return (
       <AuthContext.Consumer>
         {
-          state => {
+          (state) => {
             if (state.user) {
-              return <Redirect to='/' />
+              return <Redirect to="/" />;
             }
-            else {
-              return displayForm;
-            }
+            return displayForm;
           }
         }
       </AuthContext.Consumer>

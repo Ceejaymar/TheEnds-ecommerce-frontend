@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from "axios";
+import axios from 'axios';
 import AuthContext from '../context/auth';
 import url from '../config/url';
 
@@ -9,7 +9,7 @@ class Home extends Component {
   state = {
     email: '',
     uid: '',
-    token: ''
+    token: '',
   }
 
   componentDidMount() {
@@ -27,12 +27,12 @@ class Home extends Component {
       })
       .catch(err => {
         console.log(err);
-      })
+      });
   }
 
   handlePrivateRoute = () => {
     axios.get(`${url}/user/1/protected`, { token: this.state.token })
-      .then(data => {
+      .then((data) => {
         console.log(data);
       })
       .catch((err) => {
@@ -49,7 +49,7 @@ class Home extends Component {
       <>
         <AuthContext.Consumer>
           {
-            state => {
+            (state) => {
               if (state.user) {
                 return (
                   <>
@@ -57,11 +57,9 @@ class Home extends Component {
                     <button onClick={this.handlePublicRoute}>click for the public route</button>
                     <button onClick={this.handlePrivateRoute}>click for the private route</button>
                   </>
-                )
+                );
               }
-              else {
-                return <h1>Please log in!</h1>
-              }
+              return <h1>Please log in!</h1>;
             }
           }
         </AuthContext.Consumer>
