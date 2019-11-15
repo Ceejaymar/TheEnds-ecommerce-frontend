@@ -5,6 +5,7 @@ install:
   - npm install
   - npm install -g firebase-tools
 script:
+  - npm run compress:css
   - npm run build
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN
