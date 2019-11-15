@@ -30,15 +30,13 @@ class App extends Component {
     this.unsubscribe();
   }
 
-  // TODO: Finish converting to async/await
   getFirebaseToken = async () => {
-    firebase.auth().currentUser.getIdToken(false)
-      .then((token) => {
-        this.setState({ token });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      const token = await firebase.auth().currentUser.getIdToken(false);
+      await this.setState({ token });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {

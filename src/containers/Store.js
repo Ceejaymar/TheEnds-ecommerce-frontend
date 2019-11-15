@@ -11,30 +11,24 @@ class Store extends Component {
     products: [],
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { id } = this.props.match.params;
+    const updatedProducts = [...this.state.products];
 
-    axios.get(`${url}/store/${id}`)
-      .then((response) => {
-        const { name, images: { header } } = response.data;
+    try {
+      const response = await axios.get(`${url}/store/${id}`);
+      const { name, images: { header } } = response.data;
+      await this.setState({ name, header });
 
-        this.setState({ name, header });
-      });
-
-    axios.get(`${url}/store/${id}/products/`)
-      .then((response) => {
-        const updatedProducts = [...this.state.products];
-
-        response.data.map((product) => (
-          updatedProducts.push(product)
-        ));
-
-        // eslint-disable-next-line no-unused-vars
-        this.setState((prevState) => ({ products: updatedProducts }));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      const response2 = await axios.get(`${url}/store/${id}/products/`);
+      await response2.data.map((product) => (
+        updatedProducts.push(product)
+      ));
+      // eslint-disable-next-line no-unused-vars
+      await this.setState((prevState) => ({ products: updatedProducts }));
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {

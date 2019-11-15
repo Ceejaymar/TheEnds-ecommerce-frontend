@@ -9,20 +9,16 @@ class MarketPlace extends PureComponent {
     stores: [],
   }
 
-  componentDidMount() {
-    axios.get(`${url}/store/`)
-      .then((response) => {
-        const updatedState = { ...this.state };
+  async componentDidMount() {
+    try {
+      const updatedState = { ...this.state };
+      const response = await axios.get(`${url}/store/`);
 
-        response.data.map((store) => (
-          updatedState.stores.push(store)
-        ));
-
-        this.setState(updatedState);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      await response.data.map((store) => updatedState.stores.push(store));
+      await this.setState(updatedState);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   render() {

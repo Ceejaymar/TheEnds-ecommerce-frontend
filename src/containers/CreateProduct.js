@@ -30,7 +30,7 @@ class CreateProduct extends Component {
       const snapshot = await imageRef.put(uploadedImage);
       const url = await snapshot.ref.getDownloadURL();
 
-      this.setState({ url });
+      await this.setState({ url });
     }
     catch (err) {
       console.log(err);

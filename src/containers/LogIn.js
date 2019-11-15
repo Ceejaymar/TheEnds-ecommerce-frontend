@@ -14,20 +14,16 @@ class LogIn extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
     const { email, password } = this.state;
-
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((response) => {
-        console.log('sign up response', response);
-      })
-      .catch((err) => {
-        const { message } = err;
-
-        this.setState({ error: message });
-      });
+    try {
+      const response = await firebase.auth().signInWithEmailAndPassword(email, password);
+      await console.log('sign up response', response);
+    } catch (error) {
+      this.setState({ error: error.message });
+    }
   }
 
   render() {
