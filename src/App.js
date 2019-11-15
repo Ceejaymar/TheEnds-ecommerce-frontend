@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import firebase from './firebase';
 import Routes from './routes';
 
-import './css/style.css';
+import './sass/main.scss';
 
 class App extends Component {
   state = {
