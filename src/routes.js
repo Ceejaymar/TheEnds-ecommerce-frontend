@@ -45,5 +45,4 @@ const Routes = ({ state }) => (
   </HashRouter>
 );
 
-
 export default Routes;

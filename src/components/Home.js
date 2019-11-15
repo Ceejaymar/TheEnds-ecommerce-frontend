@@ -22,10 +22,10 @@ class Home extends Component {
 
   handlePublicRoute = () => {
     axios.get(`${url}/user/1`)
-      .then(data => {
+      .then((data) => {
         console.log(data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
