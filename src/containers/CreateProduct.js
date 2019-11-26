@@ -6,22 +6,27 @@ import urlLink from '../config/url';
 import './createProduct.css';
 
 class CreateProduct extends Component {
-  state = {
-    name: '',
-    price: 0,
-    category: '',
-    description: '',
-    url: '',
-    stock: {
-      small: 0,
-      medium: 0,
-      large: 0,
-      xlarge: 0,
-    },
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: '',
+      price: 0,
+      category: '',
+      description: '',
+      url: '',
+      stock: {
+        small: 0,
+        medium: 0,
+        large: 0,
+        xlarge: 0,
+      },
+    };
   }
 
   handleFileInput = async (e) => {
     const uploadedImage = e.target.files[0];
+    // eslint-disable-next-line no-console
     console.log(uploadedImage);
     const storageRef = firebase.storage().ref();
     const imageRef = storageRef.child(`/productImages/ + ${uploadedImage.name}`);
@@ -31,8 +36,8 @@ class CreateProduct extends Component {
       const url = await snapshot.ref.getDownloadURL();
 
       await this.setState({ url });
-    }
-    catch (err) {
+    } catch (err) {
+      // eslint-disable-next-line no-console
       console.log(err);
     }
   }
@@ -62,9 +67,11 @@ class CreateProduct extends Component {
       stock: JSON.stringify(stock),
     })
       .then((response) => {
+        // eslint-disable-next-line no-console
         console.log(response);
       })
       .catch((err) => {
+        // eslint-disable-next-line no-console
         console.log(err);
       });
   }
@@ -75,56 +82,76 @@ class CreateProduct extends Component {
 
     return (
       <div className="create-product">
-        <label>Upload Image</label>
-        <input type="file" accept="image/*" onChange={this.handleFileInput} />
+        <label htmlFor="file">
+          Upload Image
+          <input
+            id="file"
+            type="file"
+            accept="image/*"
+            onChange={this.handleFileInput}
+          />
+        </label>
         {uploadedImage}
         <hr />
-        <label>Product Name</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter Product name"
-          onChange={this.handleChange}
-        />
+        <label htmlFor="name">
+          Product Name
+          <input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Enter Product name"
+            onChange={this.handleChange}
+          />
+        </label>
         <hr />
-        <label>Product Price</label>
-        <input
-          type="number"
-          min="0.00"
-          step="0.50"
-          max="3000"
-          name="price"
-          placeholder="price"
-          onChange={this.handleChange}
-        />
+        <label htmlFor="price">
+          Product Price
+          <input
+            id="price"
+            type="number"
+            min="0.00"
+            step="0.50"
+            max="3000"
+            name="price"
+            placeholder="price"
+            onChange={this.handleChange}
+          />
+        </label>
         <hr />
-        <label>Category</label>
-        <select name="category" onChange={this.handleChange}>
-          <option value="" selected disabled hidden>Choose here</option>
-          <option value="tops">Tops</option>
-          <option value="bottoms">Bottoms</option>
-          <option value="Accessories">Accessories</option>
-        </select>
+        <label htmlFor="category">
+          Category
+          <select name="category" onChange={this.handleChange}>
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="tops">Tops</option>
+            <option value="bottoms">Bottoms</option>
+            <option value="Accessories">Accessories</option>
+          </select>
+        </label>
         <hr />
-        <label>Description</label>
-        <textarea
-          name="description"
-          cols="30"
-          rows="10"
-          placeholder="Write product description here"
-          onChange={this.handleChange}
-        />
+        <label htmlFor="desc">
+          Description
+          <textarea
+            id="desc"
+            name="description"
+            cols="30"
+            rows="10"
+            placeholder="Write product description here"
+            onChange={this.handleChange}
+          />
+        </label>
         <hr />
-        <label>Stock</label>
-        <input name="small" type="number" onChange={this.handleStockChange} placeholder="small" />
-        <input name="medium" type="number" onChange={this.handleStockChange} placeholder="medium" />
-        <input name="large" type="number" onChange={this.handleStockChange} placeholder="large" />
-        <input name="xlarge" type="number" onChange={this.handleStockChange} placeholder="xlarge" />
+        <label>
+          Stock
+          <input name="small" type="number" onChange={this.handleStockChange} placeholder="small" />
+          <input name="medium" type="number" onChange={this.handleStockChange} placeholder="medium" />
+          <input name="large" type="number" onChange={this.handleStockChange} placeholder="large" />
+          <input name="xlarge" type="number" onChange={this.handleStockChange} placeholder="xlarge" />
+        </label>
         {/* // TODO: Need to add conditional for products that don't have sizes */}
         <input name="" type="text" />
         <p>Does your product have sizes?</p>
-        <label className="switch">
-          <input type="checkbox" />
+        <label className="switch" htmlFor="sizes">
+          <input id="sizes" type="checkbox" />
           <span className="slider round" />
         </label>
         <input type="number" placeholder="stock amount" />

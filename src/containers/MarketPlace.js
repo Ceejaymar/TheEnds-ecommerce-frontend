@@ -5,8 +5,12 @@ import url from '../config/url';
 import StoreCard from '../components/StoreCard';
 
 class MarketPlace extends PureComponent {
-  state = {
-    stores: [],
+  constructor() {
+    super();
+
+    this.state = {
+      stores: [],
+    };
   }
 
   async componentDidMount() {
@@ -17,6 +21,7 @@ class MarketPlace extends PureComponent {
       await response.data.map((store) => updatedState.stores.push(store));
       await this.setState(updatedState);
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.log(err);
     }
   }

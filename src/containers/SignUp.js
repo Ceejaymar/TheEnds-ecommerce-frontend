@@ -6,11 +6,15 @@ import AuthContext from '../context/auth';
 import url from '../config/url';
 
 class SignUp extends Component {
-  state = {
-    email: '',
-    password: '',
-    uid: '',
-    error: '',
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: '',
+      password: '',
+      uid: '',
+      error: '',
+    };
   }
 
   handleChange = (e) => {
@@ -60,7 +64,7 @@ class SignUp extends Component {
         <form>
           <input type="email" name="email" value={email} onChange={this.handleChange} placeholder="email" />
           <input type="password" name="password" value={password} onChange={this.handleChange} placeholder="password" />
-          <button onClick={this.handleSubmit}>sign up</button>
+          <button type="button" onClick={this.handleSubmit}>sign up</button>
         </form>
         {displayError}
         <hr />

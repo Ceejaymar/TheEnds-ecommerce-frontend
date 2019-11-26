@@ -3,9 +3,11 @@ import firebase from '../firebase';
 
 class LogOut extends Component {
   componentDidMount() {
+    const { history } = this.props;
+
     firebase.auth().signOut()
       .then(() => {
-        this.props.history.push('/');
+        history.push('/');
       });
   }
 

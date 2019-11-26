@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import AuthContext from '../context/auth';
-import url from '../config/url';
+// import url from '../config/url';
+
 
 class Home extends Component {
-  static contextType = AuthContext;
+  constructor() {
+    super();
 
-  state = {
-    email: '',
-    uid: '',
-    token: '',
+    this.state = {
+      email: '',
+      uid: '',
+      token: '',
+    };
   }
+
 
   componentDidMount() {
     if (this.context) {
@@ -20,29 +24,31 @@ class Home extends Component {
     }
   }
 
-  handlePublicRoute = () => {
-    axios.get(`${url}/user/1`)
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+  // ! to test public and private routes
+  // handlePublicRoute = () => {
+  //   axios.get(`${url}/user/1`)
+  //     .then((data) => {
+  //       console.log(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
 
-  handlePrivateRoute = () => {
-    axios.get(`${url}/user/1/protected`, { token: this.state.token })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+  // handlePrivateRoute = () => {
+  //   axios.get(`${url}/user/1/protected`, { token: this.state.token })
+  //     .then((data) => {
+  //       console.log(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
 
   handleState = (user) => {
     this.setState({ email: user.email });
   }
+
 
   render() {
     return (
@@ -54,8 +60,8 @@ class Home extends Component {
                 return (
                   <>
                     <h2>Welcome to The Ends</h2>
-                    <button onClick={this.handlePublicRoute}>click for the public route</button>
-                    <button onClick={this.handlePrivateRoute}>click for the private route</button>
+                    <button type="button" onClick={this.handlePublicRoute}>click for the public route</button>
+                    <button type="button" onClick={this.handlePrivateRoute}>click for the private route</button>
                   </>
                 );
               }
@@ -67,5 +73,7 @@ class Home extends Component {
     );
   }
 }
+
+Home.contextType = AuthContext;
 
 export default Home;

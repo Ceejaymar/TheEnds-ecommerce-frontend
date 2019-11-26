@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const ProductCard = ({ productInfo }) => {
   const { name, url, price, id } = productInfo;
@@ -13,6 +14,13 @@ const ProductCard = ({ productInfo }) => {
       </Link>
     </div>
   );
+};
+
+ProductCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default ProductCard;

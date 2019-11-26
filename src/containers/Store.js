@@ -5,11 +5,16 @@ import url from '../config/url';
 import ProductCard from '../components/ProductCard';
 
 class Store extends Component {
-  state = {
-    name: '',
-    header: '',
-    products: [],
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: '',
+      header: '',
+      products: [],
+    };
   }
+
 
   async componentDidMount() {
     const { id } = this.props.match.params;
@@ -18,22 +23,23 @@ class Store extends Component {
     try {
       const response = await axios.get(`${url}/store/${id}`);
       const { name, images: { header } } = response.data;
-      await this.setState({ name, header });
+      this.setState({ name, header });
 
       const response2 = await axios.get(`${url}/store/${id}/products/`);
       await response2.data.map((product) => (
         updatedProducts.push(product)
       ));
       // eslint-disable-next-line no-unused-vars
-      await this.setState((prevState) => ({ products: updatedProducts }));
+      this.setState((prevState) => ({ products: updatedProducts }));
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     }
   }
 
   render() {
     const { name, header, products } = this.state;
-    console.log(products);
+
     if (products.length > 1) {
       return (
         <>

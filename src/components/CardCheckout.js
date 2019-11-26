@@ -12,6 +12,7 @@ toast.configure();
 
 class CardCheckout extends Component {
   handleToken = async (token, address) => {
+    // eslint-disable-next-line no-console
     console.log(token, address);
 
     const response = await axios.post(`${url}/checkout/`, {
@@ -21,6 +22,7 @@ class CardCheckout extends Component {
         price: '56',
       },
     });
+    // eslint-disable-next-line no-console
     console.log(response);
 
     if (response.data.status === 'success') {

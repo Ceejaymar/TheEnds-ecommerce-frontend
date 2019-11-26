@@ -4,24 +4,27 @@ import AuthContext from '../context/auth';
 import url from '../config/url';
 
 class Product extends Component {
-  static contextType = AuthContext;
+  constructor(props) {
+    super(props);
 
-  state = {
-    name: '',
-    price: '',
-    description: '',
-    category: '',
-    url: '',
-    size: '',
-    quanitity: '',
-    stock: {},
-    uid: '',
+    this.state = {
+      name: '',
+      price: '',
+      description: '',
+      category: '',
+      url: '',
+      size: '',
+      quanitity: '',
+      stock: {},
+      uid: '',
+    };
   }
 
   componentDidMount() {
     const { id } = this.props.match.params;
     const { uid } = this.context;
 
+    // eslint-disable-next-line no-console
     console.log('this is the uid', uid);
 
     axios.get(`${url}/product/${id}`)
@@ -51,7 +54,7 @@ class Product extends Component {
           price:
           {price}
         </p>
-        <label>quantity</label>
+        {/* <label>quantity</label> */}
         <select name="quantity" id="">
           {
             [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((option) => (
@@ -60,10 +63,12 @@ class Product extends Component {
           }
         </select>
         <br />
-        <button onClick={this.handleAddToCart}>Add to cart</button>
+        <button type="button" onClick={this.handleAddToCart}>Add to cart</button>
       </div>
     );
   }
 }
+
+Product.contextType = AuthContext;
 
 export default Product;
