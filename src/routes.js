@@ -2,7 +2,8 @@ import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 // Context
-import AuthContext from './context/auth';
+// import AuthContext from './context/auth';
+import { AuthProvider } from './context/auth';
 
 // Containers
 import SignUp from './containers/SignUp';
@@ -20,9 +21,9 @@ import Account from './containers/Account';
 import Home from './components/Home';
 import LandingPage from './components/LandingPage';
 
-const Routes = ({ state }) => (
+const Routes = () => (
   <HashRouter>
-    <AuthContext.Provider value={state}>
+    <AuthProvider>
       <>
         <Route path="/" component={Navbar} />
         <Switch>
@@ -41,7 +42,7 @@ const Routes = ({ state }) => (
           <Route render={() => 'Wrong route fam'} />
         </Switch>
       </>
-    </AuthContext.Provider>
+    </AuthProvider>
   </HashRouter>
 );
 

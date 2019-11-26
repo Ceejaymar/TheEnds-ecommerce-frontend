@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import AuthContext from '../context/auth';
+import { AuthContext } from '../context/auth';
 
 class Account extends Component {
-  // static defaultProps = this.context;
   constructor(props) {
     super(props);
 

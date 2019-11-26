@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import AuthContext from '../context/auth';
+import { AuthContext } from '../context/auth';
 
 const Navbar = () => (
   <AuthContext.Consumer>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import AuthContext from '../context/auth';
+import { AuthContext } from '../context/auth';
 import url from '../config/url';
 
 class Product extends Component {

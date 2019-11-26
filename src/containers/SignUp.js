@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import firebase from '../firebase';
-import AuthContext from '../context/auth';
+import { AuthContext } from '../context/auth';
 import url from '../config/url';
 
 class SignUp extends Component {
