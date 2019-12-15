@@ -17,6 +17,7 @@ const ProductCard = ({ productInfo }) => {
 };
 
 ProductCard.propTypes = {
+  // productInfo: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
