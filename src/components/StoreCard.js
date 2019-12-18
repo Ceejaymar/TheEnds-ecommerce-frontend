@@ -5,11 +5,11 @@ const StoreCard = ({ storeInfo }) => {
   const { id, name, images: { card } } = storeInfo;
 
   return (
-    <Link to={`/store/${id}`} style={{ width: '15%' }}>
-      <div>
-        <img style={{ width: '100%' }} src={card} alt="store" />
-        <h2>{name}</h2>
+    <Link to={`/store/${id}`} className="Store-card">
+      <div className="Store-card__content">
+        <img className="Store-card__img" src={card} alt="store" />
       </div>
+      <h2 className="Store-card__name">{name}</h2>
     </Link>
   );
 };

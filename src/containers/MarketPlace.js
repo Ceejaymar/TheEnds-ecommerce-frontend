@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
 import url from '../config/url';
 import StoreCard from '../components/StoreCard';
 
-class MarketPlace extends PureComponent {
+class MarketPlace extends Component {
   constructor() {
     super();
 
@@ -19,7 +19,7 @@ class MarketPlace extends PureComponent {
       const response = await axios.get(`${url}/store/`);
 
       await response.data.map((store) => updatedState.stores.push(store));
-      await this.setState(updatedState);
+      this.setState(updatedState);
     } catch (err) {
       // eslint-disable-next-line no-console
       console.log(err);

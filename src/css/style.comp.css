@@ -1,3 +1,6 @@
+.About {
+  height: 95vh; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -12,14 +15,45 @@ html {
 
 .Home {
   height: 80vh;
-  width: 100vw;
-  color: #ffffff; }
+  width: 100vw; }
   .Home__hero {
     height: 100%;
     width: 100%;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://firebasestorage.googleapis.com/v0/b/theends.appspot.com/o/storeImages%2FlandingPage%2Fdaniel-odame-DFRRyOzX8nI-unsplash.jpg?alt=media&token=d106fb11-e998-423d-ba12-82440f749202");
     background-size: cover;
-    background-position: center; }
+    background-position: center;
+    color: #ffffff; }
+  .Home__featured-stores {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .Home__featured-title {
+    font-size: 2.5rem;
+    margin: 2rem 0; }
+  .Home__stores-container {
+    width: 1024px; }
+  .Home__store {
+    display: flex; }
+    .Home__store:nth-child(even) {
+      flex-direction: row-reverse; }
+    .Home__store-img {
+      width: 50%; }
+    .Home__store-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 2rem;
+      padding: 2rem; }
+    .Home__store-button {
+      padding: .5rem 2rem;
+      font-size: 2rem;
+      border-radius: 15px; }
+
+.Marketplace {
+  display: flex;
+  justify-content: space-around; }
 
 .Nav {
   display: flex;
@@ -30,3 +64,8 @@ html {
     justify-content: space-between; }
   .Nav__link {
     margin: 0 10px; }
+
+.Store-card {
+  width: 15%; }
+  .Store-card__img {
+    width: 100%; }

@@ -1,10 +1,13 @@
   .Nav {
     display: flex;
     justify-content: space-between;
-    padding: 0 40px;
+    align-items: center;
+    padding: 5px 100px;
+    // height: 40px;
 
     &__brand {
-
+      font-size: 1.9rem;
+      font-family: 'Caveat', cursive;
     }
 
     &__menu {
@@ -19,5 +22,6 @@
 
     &__link {
       margin: 0 10px;
+      font-size: 1.1rem;
     }
   }

@@ -14,14 +14,10 @@ const Navbar = () => (
               <div className="Nav__menu">
                 <div className="Nav__links">
                   <Link className="Nav__link" to="/">Home</Link>
-                  <Link className="Nav__link" to="/marketplace">Marketplace</Link>
                   <Link className="Nav__link" to="/about">About</Link>
+                  <Link className="Nav__link" to="/marketplace">Marketplace</Link>
                 </div>
                 <div>
-                  <p>
-                    Welcome back,
-                    {state.user.email}
-                  </p>
                   <Link className="Nav__link" to="/createproduct">
                     <i className="icon ion-md-add-circle" />
                   </Link>
@@ -43,8 +39,8 @@ const Navbar = () => (
             <div className="Nav__menu">
               <div className="Nav__links">
                 <Link className="Nav__link" to="/">Home</Link>
-                <Link className="Nav__link" to="/marketplace">Marketplace</Link>
                 <Link className="Nav__link" to="/about">About</Link>
+                <Link className="Nav__link" to="/marketplace">Marketplace</Link>
               </div>
               <div>
                 <Link className="Nav__link" to="/signup">Sign Up</Link>

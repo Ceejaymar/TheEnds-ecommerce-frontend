@@ -1,3 +1,6 @@
+.About {
+  height: 95vh; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -9,6 +12,9 @@
 
 html {
   box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', sans-serif; }
 
 .Home {
   height: 80vh;
@@ -55,9 +61,31 @@ html {
 .Nav {
   display: flex;
   justify-content: space-between;
-  padding: 0 40px; }
+  align-items: center;
+  padding: 5px 100px; }
+  .Nav__brand {
+    font-size: 1.9rem;
+    font-family: 'Caveat', cursive; }
   .Nav__menu {
     display: flex;
     justify-content: space-between; }
   .Nav__link {
-    margin: 0 10px; }
+    margin: 0 10px;
+    font-size: 1.1rem; }
+
+.Store-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .Store-card__content {
+    position: relative;
+    height: 435px;
+    width: 325px;
+    overflow: hidden; }
+  .Store-card__img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }

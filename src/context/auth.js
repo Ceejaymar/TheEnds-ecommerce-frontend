@@ -20,7 +20,7 @@ class AuthProvider extends Component {
       if (user) {
         const { email, uid } = user;
 
-        await this.setState({ user, email, uid });
+        this.setState({ user, email, uid });
         await this.getFirebaseToken();
       } else {
         this.setState({ user: null });
@@ -35,7 +35,7 @@ class AuthProvider extends Component {
   getFirebaseToken = async () => {
     try {
       const token = await firebase.auth().currentUser.getIdToken(false);
-      await this.setState({ token });
+      this.setState({ token });
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
