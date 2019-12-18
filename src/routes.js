@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 
 // Context
 import { AuthProvider } from './context/auth';
