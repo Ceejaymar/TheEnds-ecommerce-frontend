@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import homeData from '../homeData';
 
 const LandingPage = () => (
@@ -13,20 +13,21 @@ const LandingPage = () => (
       <div className="Home__stores-container">
         {
           homeData.featured.map((store) => (
-            <div className="Home__store" key={store.id}>
+            <Link to={`/store/${store.id}`} className="Home__store" key={store.id}>
               <img src={store.img} alt="" className="Home__store-img" />
               <div className="Home__store-content">
                 <h3 className="Home__store-title">{store.name}</h3>
-                <p>{store.description}</p>
+                <p className="Home__store-desc">{store.description}</p>
                 <button
                   type="submit"
                   className="Home__store-button"
                 >
                   Shop
+                  {' '}
                   {store.name}
                 </button>
               </div>
-            </div>
+            </Link>
           ))
         }
       </div>

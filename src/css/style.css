@@ -31,24 +31,32 @@ body {
     flex-direction: column;
     align-items: center; }
   .Home__featured-title {
-    font-size: 2.5rem;
-    margin: 2rem 0; }
+    font-size: 2rem;
+    margin: 2rem 0;
+    color: #333333; }
   .Home__stores-container {
     width: 1024px; }
   .Home__store {
-    display: flex; }
+    display: flex;
+    text-decoration: none;
+    color: black; }
+    .Home__store-title {
+      font-family: 'Caveat', cursive;
+      font-size: 3rem; }
     .Home__store:nth-child(even) {
       flex-direction: row-reverse; }
     .Home__store-img {
       width: 50%; }
     .Home__store-content {
-      width: 100%;
+      width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
       font-size: 2rem;
       padding: 2rem; }
+    .Home__store-desc {
+      text-align: center; }
     .Home__store-button {
       padding: .5rem 2rem;
       font-size: 2rem;
@@ -56,7 +64,8 @@ body {
 
 .Marketplace {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  padding: 0 100px; }
 
 .Nav {
   display: flex;
@@ -71,17 +80,21 @@ body {
     justify-content: space-between; }
   .Nav__link {
     margin: 0 10px;
-    font-size: 1.1rem; }
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: black; }
 
 .Store-card {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  text-decoration: none; }
   .Store-card__content {
     position: relative;
-    height: 435px;
+    height: 430px;
     width: 325px;
-    overflow: hidden; }
+    overflow: hidden;
+    border-radius: 5px; }
   .Store-card__img {
     position: absolute;
     width: 100%;
@@ -89,3 +102,5 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
+  .Store-card__name {
+    color: black; }

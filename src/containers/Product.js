@@ -14,7 +14,7 @@ class Product extends Component {
       category: '',
       url: '',
       size: '',
-      quanitity: '',
+      quantity: 1,
       stock: {},
       uid: '',
     };
@@ -35,33 +35,50 @@ class Product extends Component {
       });
   }
 
+  quantityHandler = (delta) => {
+    const { quantity } = this.state;
+
+    if (quantity === 1 && delta === -1) {
+      return;
+    }
+
+    this.setState((st) => ({
+      quantity: st.quantity + delta,
+    }));
+  }
+
   handleAddToCart = () => {
     console.log('yerrr');
   }
 
   render() {
-    const { name, price, description, url } = this.state;
+    const { name, price, description, quantity, url } = this.state;
 
     return (
-      <div>
-        <h3>{name}</h3>
+      <div className="Product">
         <img style={{ width: '400px' }} src={url} alt="product" />
-        <p>
-          desc:
-          {description}
-        </p>
-        <p>
-          price:
-          {price}
-        </p>
-        {/* <label>quantity</label> */}
-        <select name="quantity" id="">
-          {
-            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((option) => (
-              <option key={option}>{option}</option>
-            ))
-          }
-        </select>
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <p>{price}</p>
+        <div className="Product__quantity-cont">
+          <button
+            onClick={() => this.quantityHandler(-1)}
+            type="button"
+            className="Product__decrease"
+            disabled={quantity === 1}
+          >
+            <i className="icon ion-md-remove" />
+          </button>
+          { quantity }
+          {/* TODO: disable increase button when quanity is stock quantity */}
+          <button
+            onClick={() => this.quantityHandler(1)}
+            type="button"
+            className="Product__increase"
+          >
+            <i className="icon ion-md-add" />
+          </button>
+        </div>
         <br />
         <button type="button" onClick={this.handleAddToCart}>Add to cart</button>
       </div>

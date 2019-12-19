@@ -26,8 +26,9 @@
   }
 
   &__featured-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 2rem 0;
+    color: hsl(0, 0, 20);
   }
 
   &__stores-container {
@@ -36,6 +37,13 @@
 
   &__store {
     display: flex;
+    text-decoration: none;
+    color: black;
+
+    &-title {
+      font-family: 'Caveat', cursive;
+      font-size: 3rem;
+    }
 
     &:nth-child(even) {
       flex-direction: row-reverse;
@@ -46,13 +54,17 @@
     }
 
     &-content {
-      width: 100%;
+      width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
       font-size: 2rem;
       padding: 2rem;
+    }
+
+    &-desc {
+      text-align: center;
     }
 
     &-button {
