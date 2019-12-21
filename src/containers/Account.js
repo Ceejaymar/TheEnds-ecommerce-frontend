@@ -6,10 +6,10 @@ class Account extends Component {
   constructor(props) {
     super(props);
 
-    const { email } = this.context;
+    // const { email } = this.context;
 
     this.state = {
-      email,
+      email: '',
     };
   }
 
@@ -24,7 +24,8 @@ class Account extends Component {
               return (
                 <div>
                   welcome
-                  {`${email}`}
+                  {' '}
+                  {`${state.user.email}`}
                 </div>
               );
             }

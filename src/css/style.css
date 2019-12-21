@@ -65,6 +65,7 @@ body {
 .Marketplace {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   padding: 0 100px; }
 
 .Nav {
@@ -88,7 +89,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none; }
+  text-decoration: none;
+  margin-bottom: 40px; }
   .Store-card__content {
     position: relative;
     height: 430px;
