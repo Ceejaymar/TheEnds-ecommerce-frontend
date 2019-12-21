@@ -14,7 +14,7 @@ class Account extends Component {
   }
 
   render() {
-    const { email } = this.state;
+    // const { email } = this.state;
 
     return (
       <AuthContext.Consumer>
