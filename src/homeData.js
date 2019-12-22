@@ -13,8 +13,8 @@ const homeData = {
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nesciunt ea aliquam natus delectus asperiores error animi voluptates expedita. Animi possimus veniam velit quos doloremque ea tenetur sapiente eveniet rerum',
     },
     {
-      id: 3,
-      name: 'EssentialT',
+      id: 6,
+      name: 'Mon',
       img: 'https://images.unsplash.com/photo-1496449583099-4fd0730a699b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nesciunt ea aliquam natus delectus asperiores error animi voluptates expedita. Animi possimus veniam velit quos doloremque ea tenetur sapiente eveniet rerum',
     },
