@@ -39,3 +39,30 @@ body {
   // background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('../assets/crafting.jpg');
   // background-size: cover;
 }
+
+.Page {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+}
+
+.fade-appear,
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 400ms linear 200ms;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 200ms linear;
+}

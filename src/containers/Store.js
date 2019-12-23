@@ -42,7 +42,7 @@ class Store extends Component {
 
     if (products.length > 1) {
       return (
-        <>
+        <div className="Page">
           <h2>{name}</h2>
           <img style={{ width: '1000px' }} src={header} alt="store header" />
           {
@@ -50,15 +50,15 @@ class Store extends Component {
               <ProductCard productInfo={product} key={product.id} />
             ))
           }
-        </>
+        </div>
       );
     }
     return (
-      <>
+      <div className="Page">
         <h2>{name}</h2>
         <img style={{ width: '1000px' }} src={header} alt="store header" />
         <div>No products in this store!</div>
-      </>
+      </div>
     );
   }
 }

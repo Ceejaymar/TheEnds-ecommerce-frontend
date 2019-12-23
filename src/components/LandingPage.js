@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import homeData from '../homeData';
 
 const LandingPage = () => (
-  <div className="Home">
+  <div className="Home Page">
     <div className="Home__hero">
       <h1 className="Home__heading">The Ends</h1>
       <h2 className="Home__sub-heading">Threads that make you feel where you belong</h2>

@@ -30,7 +30,7 @@ class MarketPlace extends Component {
     const { stores } = this.state;
 
     return (
-      <div className="Marketplace">
+      <div className="Marketplace Page">
         {stores.length > 0 ? (
           stores.map((store) => (
             <StoreCard key={store.id} storeInfo={store} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 // Context
 import { AuthProvider } from './context/auth';
@@ -26,20 +27,31 @@ const Routes = withRouter(({ location }) => (
       {
         location.pathname !== '/login' && location.pathname !== '/signup' && <Navbar />
       }
-      <Switch>
-        <Route path="/" exact component={LandingPage} />
-        <Route path="/about" component={About} />
-        <Route path="/account" component={Account} />
-        <Route path="/cart" component={ShoppingCart} />
-        <Route path="/createproduct" component={CreateProduct} />
-        <Route path="/login" component={LogIn} />
-        <Route path="/logout" component={LogOut} />
-        <Route path="/marketplace" component={Marketplace} />
-        <Route path="/product/:id" component={Product} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/store/:id" component={Store} />
-        <Route render={() => 'Wrong route fam'} />
-      </Switch>
+      <Route render={() => (
+        <TransitionGroup>
+          <CSSTransition
+            key={location.key}
+            timeout={400}
+            classNames="fade"
+          >
+            <Switch location={location}>
+              <Route path="/" exact component={LandingPage} />
+              <Route path="/about" component={About} />
+              <Route path="/account" component={Account} />
+              <Route path="/cart" component={ShoppingCart} />
+              <Route path="/createproduct" component={CreateProduct} />
+              <Route path="/login" component={LogIn} />
+              <Route path="/logout" component={LogOut} />
+              <Route path="/marketplace" component={Marketplace} />
+              <Route path="/product/:id" component={Product} />
+              <Route path="/signup" component={SignUp} />
+              <Route path="/store/:id" component={Store} />
+              <Route render={() => 'Wrong route fam'} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+      )}
+      />
     </>
   </AuthProvider>
 ));

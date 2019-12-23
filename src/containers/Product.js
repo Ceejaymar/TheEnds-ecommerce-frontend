@@ -55,7 +55,7 @@ class Product extends Component {
     const { name, price, description, quantity, url } = this.state;
 
     return (
-      <div className="Product">
+      <div className="Product Page">
         <img style={{ width: '400px' }} src={url} alt="product" />
         <h3>{name}</h3>
         <p>{description}</p>
