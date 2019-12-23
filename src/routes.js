@@ -31,7 +31,7 @@ const Routes = withRouter(({ location }) => (
         <TransitionGroup>
           <CSSTransition
             key={location.key}
-            timeout={400}
+            timeout={600}
             classNames="fade"
           >
             <Switch location={location}>

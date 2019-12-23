@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 
 import url from '../config/url';
@@ -31,6 +32,9 @@ class MarketPlace extends Component {
 
     return (
       <div className="Marketplace Page">
+        <Helmet>
+          <title>Marketplace</title>
+        </Helmet>
         {stores.length > 0 ? (
           stores.map((store) => (
             <StoreCard key={store.id} storeInfo={store} />

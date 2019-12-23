@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { AuthContext } from '../context/auth';
 import url from '../config/url';
@@ -12,7 +13,7 @@ class Product extends Component {
       price: '',
       description: '',
       category: '',
-      url: '',
+      imageUrl: '',
       size: '',
       quantity: 1,
       stock: {},
@@ -22,16 +23,16 @@ class Product extends Component {
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    const { uid } = this.context;
+    // const { uid } = this.context;
 
     // eslint-disable-next-line no-console
-    console.log('this is the uid', uid);
+    // console.log('this is the uid', uid);
 
     axios.get(`${url}/product/${id}`)
       .then((response) => {
-        const { name, price, description, category, url, stock } = response.data;
+        const { name, price, description, category, url: imageUrl, stock } = response.data;
 
-        this.setState({ name, price, description, category, url, stock, uid });
+        this.setState({ name, price, description, category, imageUrl, stock });
       });
   }
 
@@ -52,12 +53,16 @@ class Product extends Component {
   }
 
   render() {
-    const { name, price, description, quantity, url } = this.state;
+    const { name, price, description, quantity, category, imageUrl } = this.state;
 
     return (
       <div className="Product Page">
-        <img style={{ width: '400px' }} src={url} alt="product" />
+        <Helmet>
+          <title>{ name }</title>
+        </Helmet>
+        <img style={{ width: '400px' }} src={imageUrl} alt="product" />
         <h3>{name}</h3>
+        <h3>{category}</h3>
         <p>{description}</p>
         <p>{price}</p>
         <div className="Product__quantity-cont">

@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import homeData from '../homeData';
 
 const LandingPage = () => (
   <div className="Home Page">
+    <Helmet>
+      <title>The Ends</title>
+    </Helmet>
     <div className="Home__hero">
       <h1 className="Home__heading">The Ends</h1>
       <h2 className="Home__sub-heading">Threads that make you feel where you belong</h2>

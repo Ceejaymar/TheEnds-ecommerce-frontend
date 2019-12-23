@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 
 import url from '../config/url';
@@ -43,6 +44,9 @@ class Store extends Component {
     if (products.length > 1) {
       return (
         <div className="Page">
+          <Helmet>
+            <title>{ name }</title>
+          </Helmet>
           <h2>{name}</h2>
           <img style={{ width: '1000px' }} src={header} alt="store header" />
           {
