@@ -18,7 +18,7 @@ class Product extends Component {
       size: '',
       quantity: 1,
       stock: {},
-      uid: '',
+      // uid: '',
     };
   }
 

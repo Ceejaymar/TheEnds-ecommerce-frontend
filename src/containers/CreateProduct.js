@@ -140,12 +140,12 @@ class CreateProduct extends Component {
           />
         </label>
         <hr />
-        <label>
+        <label htmlFor="stock">
           Stock
-          <input name="small" type="number" onChange={this.handleStockChange} placeholder="small" />
-          <input name="medium" type="number" onChange={this.handleStockChange} placeholder="medium" />
-          <input name="large" type="number" onChange={this.handleStockChange} placeholder="large" />
-          <input name="xlarge" type="number" onChange={this.handleStockChange} placeholder="xlarge" />
+          <input id="stock" name="small" type="number" onChange={this.handleStockChange} placeholder="small" />
+          <input id="stock" name="medium" type="number" onChange={this.handleStockChange} placeholder="medium" />
+          <input id="stock" name="large" type="number" onChange={this.handleStockChange} placeholder="large" />
+          <input id="stock" name="xlarge" type="number" onChange={this.handleStockChange} placeholder="xlarge" />
         </label>
         {/* // TODO: Need to add conditional for products that don't have sizes */}
         <input name="" type="text" />

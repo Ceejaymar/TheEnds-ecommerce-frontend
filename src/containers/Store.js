@@ -18,8 +18,9 @@ class Store extends Component {
   }
 
   async componentDidMount() {
-    const { id } = this.props.match.params;
-    const updatedProducts = [...this.state.products];
+    const { products } = this.state;
+    const updatedProducts = [...products];
+    const { match: { params: { id } } } = this.props;
 
     try {
       const response = await axios.get(`${url}/store/${id}`);

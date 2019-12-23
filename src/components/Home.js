@@ -9,18 +9,18 @@ class Home extends Component {
     super();
 
     this.state = {
-      email: '',
-      uid: '',
-      token: '',
+      // email: '',
+      // uid: '',
+      // token: '',
     };
   }
 
 
   componentDidMount() {
     if (this.context) {
-      const { email, uid, token } = this.context;
+      // const { email, uid, token } = this.context;
 
-      this.setState({ email, uid, token });
+      // this.setState({ email, uid, token });
     }
   }
 
@@ -45,9 +45,9 @@ class Home extends Component {
   //     });
   // }
 
-  handleState = (user) => {
-    this.setState({ email: user.email });
-  }
+  // handleState = (user) => {
+  //   this.setState({ email: user.email });
+  // }
 
 
   render() {
