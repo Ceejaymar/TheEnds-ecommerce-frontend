@@ -17,11 +17,12 @@ const ProductCard = ({ productInfo }) => {
 };
 
 ProductCard.propTypes = {
-  // productInfo: PropTypes.object.isRequired,
-  name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  productInfo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default ProductCard;

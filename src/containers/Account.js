@@ -9,7 +9,7 @@ class Account extends Component {
     // const { email } = this.context;
 
     this.state = {
-      email: '',
+      // email: '',
     };
   }
 

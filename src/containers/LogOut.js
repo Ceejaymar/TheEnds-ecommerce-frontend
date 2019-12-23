@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import firebase from '../firebase';
 
 class LogOut extends Component {
@@ -19,5 +20,11 @@ class LogOut extends Component {
     );
   }
 }
+
+LogOut.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default LogOut;
