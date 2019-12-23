@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import url from '../config/url';
 import ProductCard from '../components/ProductCard';
@@ -15,7 +16,6 @@ class Store extends Component {
       products: [],
     };
   }
-
 
   async componentDidMount() {
     const { id } = this.props.match.params;
@@ -45,7 +45,7 @@ class Store extends Component {
       return (
         <div className="Page">
           <Helmet>
-            <title>{ name }</title>
+            <title>{name}</title>
           </Helmet>
           <h2>{name}</h2>
           <img style={{ width: '1000px' }} src={header} alt="store header" />
@@ -66,5 +66,13 @@ class Store extends Component {
     );
   }
 }
+
+Store.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+  }).isRequired,
+};
 
 export default Store;

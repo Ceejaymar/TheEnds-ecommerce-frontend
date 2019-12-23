@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import { AuthContext } from '../context/auth';
 import url from '../config/url';
 
@@ -22,7 +23,7 @@ class Product extends Component {
   }
 
   componentDidMount() {
-    const { id } = this.props.match.params;
+    const { match: { params: { id } } } = this.props;
     // const { uid } = this.context;
 
     // eslint-disable-next-line no-console
@@ -92,5 +93,13 @@ class Product extends Component {
 }
 
 Product.contextType = AuthContext;
+
+Product.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+  }).isRequired,
+};
 
 export default Product;
