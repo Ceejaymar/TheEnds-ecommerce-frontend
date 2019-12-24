@@ -18,10 +18,10 @@ const ProductCard = ({ productInfo }) => {
 
 ProductCard.propTypes = {
   productInfo: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
+    name: PropTypes.string,
+    url: PropTypes.string,
+    price: PropTypes.string,
+    id: PropTypes.string,
   }).isRequired,
 };
 

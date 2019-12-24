@@ -20,7 +20,7 @@ StoreCard.propTypes = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     images: PropTypes.shape({
-      card: PropTypes.string.isRequired,
+      card: PropTypes.string,
     }).isRequired,
   }).isRequired,
 };
