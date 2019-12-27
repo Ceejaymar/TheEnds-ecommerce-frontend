@@ -1,52 +1,47 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 
 import url from '../config/url';
 import StoreCard from '../components/StoreCard';
 
-class MarketPlace extends Component {
-  constructor() {
-    super();
+function MarketPlace() {
+  const [stores, setStores] = useState([]);
 
-    this.state = {
-      stores: [],
-    };
-  }
-
-  async componentDidMount() {
+  useEffect(() => {
     try {
-      const updatedState = { ...this.state };
-      const response = await axios.get(`${url}/store/`);
+      const updatedStores = [...stores];
 
-      await response.data.map((store) => updatedState.stores.push(store));
-      this.setState(updatedState);
+      // eslint-disable-next-line no-inner-declarations
+      async function fetchMyAPI() {
+        const response = await axios.get(`${url}/store/`);
+        response.data.map((store) => updatedStores.push(store));
+      }
+
+      fetchMyAPI();
+      setStores(updatedStores);
     } catch (err) {
       // eslint-disable-next-line no-console
       console.log(err);
     }
-  }
+  }, []);
 
-  render() {
-    const { stores } = this.state;
-
-    return (
-      <div className="Marketplace Page">
-        <Helmet>
-          <title>Marketplace</title>
-        </Helmet>
-        {stores.length > 0 ? (
-          stores.map((store) => (
-            <StoreCard key={store.id} storeInfo={store} />
-          ))
-        ) : (
-          <div>
-            Loading marketplace...
-          </div>
-        )}
-      </div>
-    );
-  }
+  return (
+    <div className="Marketplace Page">
+      <Helmet>
+        <title>Marketplace</title>
+      </Helmet>
+      {stores.length > 0 ? (
+        stores.map((store) => (
+          <StoreCard key={store.id} storeInfo={store} />
+        ))
+      ) : (
+        <div>
+          Loading marketplace...
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default MarketPlace;
