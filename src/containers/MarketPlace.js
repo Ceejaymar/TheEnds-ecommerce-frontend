@@ -2,28 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 
-import url from '../config/url';
 import StoreCard from '../components/StoreCard';
+import url from '../config/url';
 
 function MarketPlace() {
   const [stores, setStores] = useState([]);
 
-  useEffect(() => {
+  async function fetchMarketplace() {
     try {
       const updatedStores = [...stores];
-
       // eslint-disable-next-line no-inner-declarations
-      async function fetchMyAPI() {
-        const response = await axios.get(`${url}/store/`);
-        response.data.map((store) => updatedStores.push(store));
-      }
+      const response = await axios.get(`${url}/store/`);
+      response.data.map((store) => updatedStores.push(store));
 
-      fetchMyAPI();
       setStores(updatedStores);
     } catch (err) {
       // eslint-disable-next-line no-console
       console.log(err);
     }
+  }
+
+  useEffect(() => {
+    fetchMarketplace();
   }, []);
 
   return (

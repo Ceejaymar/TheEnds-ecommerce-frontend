@@ -1,89 +1,83 @@
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import firebase from '../firebase';
 import { AuthContext } from '../context/auth';
 import url from '../config/url';
+import useInputStateHook from '../hooks/useInputStateHook';
 
-class SignUp extends Component {
-  constructor(props) {
-    super(props);
+function SignUp() {
+  const [email, setEmail] = useInputStateHook('');
+  const [password, setPassword] = useInputStateHook('');
+  const [fname, setFname] = useInputStateHook('');
+  const [lname, setLname] = useInputStateHook('');
+  const [address, setAddress] = useInputStateHook('');
+  const [city, setCity] = useInputStateHook('');
+  const [state, setState] = useInputStateHook('');
+  const [zipcode, setZipcode] = useInputStateHook('');
+  const [error, setError] = useState('');
+  const [uid, setUid] = useState('');
 
-    this.state = {
-      email: '',
-      password: '',
-      uid: '',
-      error: '',
-    };
-  }
-
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-
-    const { email, password } = this.state;
-
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((res) => {
-        this.setState({ uid: res.user.uid });
-        this.createUser();
-      })
-      .catch((err) => {
-        const { message } = err;
-
-        this.setState({ error: message });
-      });
-  }
-
-  createUser = () => {
-    const { email, uid } = this.state;
-
+  function createUser() {
     axios.post(`${url}/user/`, {
-      fname: 'Carlos',
-      lname: 'Martinez',
+      fname,
+      lname,
       email,
       uid,
-      address: '212 yerr st',
-      city: 'Brooklyn',
-      state: 'NYC',
-      zipcode: '11206',
+      address,
+      city,
+      state,
+      zipcode,
       seller: true,
     });
   }
 
-  render() {
-    const { email, password, error } = this.state;
-    const displayError = error !== '' ? <div>{error}</div> : '';
-    const displayForm = (
-      <div>
-        <hr />
-        <h2>Sign Up</h2>
-        <form>
-          <input type="email" name="email" value={email} onChange={this.handleChange} placeholder="email" />
-          <input type="password" name="password" value={password} onChange={this.handleChange} placeholder="password" />
-          <button type="button" onClick={this.handleSubmit}>sign up</button>
-        </form>
-        {displayError}
-        <hr />
-      </div>
-    );
+  function handleSubmit(e) {
+    e.preventDefault();
 
-    return (
-      <AuthContext.Consumer>
-        {
-          (state) => {
-            if (state.user) {
-              return <Redirect to="/" />;
-            }
-            return displayForm;
-          }
-        }
-      </AuthContext.Consumer>
-    );
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((res) => {
+        setUid(res.user.uid);
+        createUser();
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
   }
+
+  const displayError = error !== '' ? <div>{error}</div> : '';
+  const displayForm = (
+    <div>
+      <hr />
+      <h2>Sign Up</h2>
+      <form>
+        <input type="email" name="email" value={email} onChange={setEmail} placeholder="email" />
+        <input type="password" name="password" value={password} onChange={setPassword} placeholder="password" />
+        <input type="text" name="fname" value={fname} onChange={setFname} placeholder="first name" />
+        <input type="text" name="lname" value={lname} onChange={setLname} placeholder="last name" />
+        <input type="text" name="address" value={address} onChange={setAddress} placeholder="street" />
+        <input type="text" name="city" value={city} onChange={setCity} placeholder="city" />
+        <input type="text" name="state" value={state} onChange={setState} placeholder="state" />
+        <input type="text" name="zipcode" value={zipcode} onChange={setZipcode} placeholder="zipcode" />
+        <button type="button" onClick={handleSubmit}>sign up</button>
+      </form>
+      {displayError}
+      <hr />
+    </div>
+  );
+
+  return (
+    <AuthContext.Consumer>
+      {
+        (state) => {
+          if (state.user) {
+            return <Redirect to="/" />;
+          }
+          return displayForm;
+        }
+      }
+    </AuthContext.Consumer>
+  );
 }
 
 export default SignUp;
