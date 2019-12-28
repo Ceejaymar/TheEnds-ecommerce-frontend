@@ -36,6 +36,9 @@ function LogIn() {
     </div>
   );
 
+  console.log('user', email)
+  console.log('password', password)
+
   return (
     <AuthContext.Consumer>
       {
