@@ -1,29 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 // import { AuthContext } from '../context/auth';
+import { CartContext } from '../context/cart';
 import url from '../config/url';
 
 function Product({ match }) {
   // const { uid } = useContext(AuthContext);
+  const { addToCart } = useContext(CartContext);
   const [productInfo, setProductInfo] = useState({});
   const [quantity, setQuantity] = useState(1);
+  const { name, url: imageUrl, category, description, price } = productInfo;
+  const { params: { id } } = match;
 
   useEffect(() => {
-    const { params: { id } } = match;
-
     axios.get(`${url}/product/${id}`)
       .then((response) => {
         setProductInfo(response.data);
       });
-  }, [match]);
-
-  function handleAddToCart() {
-    console.log('yerrr');
-  }
-
-  const { name, url: imageUrl, category, description, price } = productInfo;
+  }, [id]);
 
   return (
     <div className="Product Page">
@@ -55,7 +51,7 @@ function Product({ match }) {
         </button>
       </div>
       <br />
-      <button type="button" onClick={handleAddToCart}>Add to cart</button>
+      <button type="button" onClick={() => addToCart(productInfo)}>Add to cart</button>
     </div>
   );
 }

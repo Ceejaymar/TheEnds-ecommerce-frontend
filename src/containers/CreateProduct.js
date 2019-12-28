@@ -6,22 +6,21 @@ import urlLink from '../config/url';
 import useInputStateHook from '../hooks/useInputStateHook';
 import './createProduct.css';
 
+const initialStock = {
+  small: 0,
+  medium: 0,
+  large: 0,
+  xlarge: 0,
+};
+
 function CreateProduct() {
-  const initialStock = {
-    small: 0,
-    medium: 0,
-    large: 0,
-    xlarge: 0,
-  };
-
-  const categories = ['tops', 'bottoms', 'swimwear', 'accessories', 'plants'];
-
   const [name, setName] = useInputStateHook('');
   const [price, setPrice] = useInputStateHook('');
   const [description, setDescription] = useInputStateHook('');
   const [category, setCategory] = useState('');
   const [stock, setStock] = useState(initialStock);
   const [url, setUrl] = useState('');
+  const categories = ['tops', 'bottoms', 'swimwear', 'accessories', 'plants'];
 
   async function handleFileInput(e) {
     const uploadedImage = e.target.files[0];
@@ -39,7 +38,7 @@ function CreateProduct() {
     }
   }
 
-  async function handleStockChange(e) {
+  function handleStockChange(e) {
     const newStock = { ...stock };
 
     newStock[e.target.name] = e.target.value;

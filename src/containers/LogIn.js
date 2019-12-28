@@ -36,15 +36,10 @@ function LogIn() {
     </div>
   );
 
-  console.log('user', email)
-  console.log('password', password)
-
   return (
     <AuthContext.Consumer>
       {
         (state) => {
-          // eslint-disable-next-line no-console
-          console.log('user in login', state);
           if (state.user) {
             return <Redirect to="/" />;
           }

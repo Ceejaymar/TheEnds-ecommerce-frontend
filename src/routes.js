@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 // Context
 import { AuthProvider } from './context/auth';
+import { CartProvider } from './context/cart';
 
 // Containers
 import SignUp from './containers/SignUp';
@@ -23,36 +24,38 @@ import LandingPage from './components/LandingPage';
 
 const Routes = withRouter(({ location }) => (
   <AuthProvider>
-    <>
-      {
-        location.pathname !== '/login' && location.pathname !== '/signup' && <Navbar />
-      }
-      <Route render={() => (
-        <TransitionGroup>
-          <CSSTransition
-            key={location.key}
-            timeout={600}
-            classNames="fade"
-          >
-            <Switch location={location}>
-              <Route path="/" exact component={LandingPage} />
-              <Route path="/about" component={About} />
-              <Route path="/account" component={Account} />
-              <Route path="/cart" component={ShoppingCart} />
-              <Route path="/createproduct" component={CreateProduct} />
-              <Route path="/login" component={LogIn} />
-              <Route path="/logout" component={LogOut} />
-              <Route path="/marketplace" component={Marketplace} />
-              <Route path="/product/:id" component={Product} />
-              <Route path="/signup" component={SignUp} />
-              <Route path="/store/:id" component={Store} />
-              <Route render={() => 'Wrong route fam'} />
-            </Switch>
-          </CSSTransition>
-        </TransitionGroup>
-      )}
-      />
-    </>
+    <CartProvider>
+      <>
+        {
+          location.pathname !== '/login' && location.pathname !== '/signup' && <Navbar />
+        }
+        <Route render={() => (
+          <TransitionGroup>
+            <CSSTransition
+              key={location.key}
+              timeout={600}
+              classNames="fade"
+            >
+              <Switch location={location}>
+                <Route path="/" exact component={LandingPage} />
+                <Route path="/about" component={About} />
+                <Route path="/account" component={Account} />
+                <Route path="/cart" component={ShoppingCart} />
+                <Route path="/createproduct" component={CreateProduct} />
+                <Route path="/login" component={LogIn} />
+                <Route path="/logout" component={LogOut} />
+                <Route path="/marketplace" component={Marketplace} />
+                <Route path="/product/:id" component={Product} />
+                <Route path="/signup" component={SignUp} />
+                <Route path="/store/:id" component={Store} />
+                <Route render={() => 'Wrong route fam'} />
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        )}
+        />
+      </>
+    </CartProvider>
   </AuthProvider>
 ));
 
