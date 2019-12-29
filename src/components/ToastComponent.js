@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 const styles = {
   height: '200px',
-
 };
 
 const ToastComponent = ({ product, quantity }) => {
+  const { name, price, url } = product;
   return (
     <div style={styles}>
       <h3>
@@ -17,10 +17,9 @@ const ToastComponent = ({ product, quantity }) => {
         item(s) to bag!
       </h3>
       <hr />
-      <img src={product.url} alt={product.name} style={{ height: '100px'}} />
-      {product.name}
-      {product.price}
-      {product.quantity}
+      <img src={url} alt={name} style={{ height: '100px' }} />
+      {name}
+      {price}
       <hr />
       {/* <p>subtotal: </p> */}
       <button type="button">Checkout</button>
@@ -28,5 +27,13 @@ const ToastComponent = ({ product, quantity }) => {
   );
 };
 
+ToastComponent.propTypes = {
+  product: PropTypes.shape({
+    name: PropTypes.string,
+    price: PropTypes.string,
+    url: PropTypes.string,
+  }).isRequired,
+  quantity: PropTypes.number.isRequired,
+};
 
 export default ToastComponent;

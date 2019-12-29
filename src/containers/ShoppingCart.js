@@ -9,8 +9,8 @@ const ShoppingCart = () => {
   return (
     <div>
       This is the shopping cart.
-      {cart.map((item) => (
-        <CartItem key={item.id} />
+      {cart.map((product) => (
+        <CartItem key={item.id} product={product} />
       ))}
       <CardCheckout />
     </div>
