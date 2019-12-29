@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
 import { AuthContext } from '../context/auth';
 import { CartContext } from '../context/cart';
 
@@ -38,6 +37,7 @@ function Navbar() {
               </div>
             );
           }
+
           return (
             <div className="Nav">
               <div className="Nav__brand">The Ends</div>
@@ -57,7 +57,7 @@ function Navbar() {
         }
       }
     </AuthContext.Consumer>
-  )
-};
+  );
+}
 
 export default Navbar;

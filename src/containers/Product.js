@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 // import { AuthContext } from '../context/auth';
 import { CartContext } from '../context/cart';
 import url from '../config/url';
+
 
 function Product({ match }) {
   // const { uid } = useContext(AuthContext);
@@ -20,6 +21,11 @@ function Product({ match }) {
         setProductInfo(response.data);
       });
   }, [id]);
+
+  // function addToCartHandler() {
+  //   addToCart(productInfo);
+  //   toast('Wow so easy !');
+  // }
 
   return (
     <div className="Product Page">
@@ -51,7 +57,7 @@ function Product({ match }) {
         </button>
       </div>
       <br />
-      <button type="button" onClick={() => addToCart(productInfo)}>Add to cart</button>
+      <button type="button" onClick={() => addToCart(productInfo, quantity)}>Add to cart</button>
     </div>
   );
 }
