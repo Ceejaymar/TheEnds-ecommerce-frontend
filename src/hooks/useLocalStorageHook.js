@@ -7,6 +7,7 @@ function useLocalStorage(key, defaultValue) {
     try {
       value = JSON.parse(window.localStorage.getItem(key) || String(defaultValue));
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
       value = defaultValue;
     }

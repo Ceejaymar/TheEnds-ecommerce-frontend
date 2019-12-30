@@ -11,6 +11,7 @@ const initialStock = {
   medium: 0,
   large: 0,
   xlarge: 0,
+  oneSize: 0,
 };
 
 function CreateProduct() {
@@ -41,13 +42,13 @@ function CreateProduct() {
   function handleStockChange(e) {
     const newStock = { ...stock };
 
-    newStock[e.target.name] = e.target.value;
+    newStock[e.target.name] = Number(e.target.value);
     setStock(newStock);
   }
 
   async function handleProductSubmit() {
     try {
-      const response = await axios.post(`${urlLink}/product/`, {
+      await axios.post(`${urlLink}/product/`, {
         store_id: 1, // TODO: This needs to be the current logged in user's store id.
         name,
         price,
@@ -56,9 +57,6 @@ function CreateProduct() {
         url,
         stock: JSON.stringify(stock),
       });
-
-      // eslint-disable-next-line no-console
-      console.log(response);
     } catch (err) {
       // eslint-disable-next-line no-console
       console.log(err);
@@ -66,6 +64,8 @@ function CreateProduct() {
   }
 
   const uploadedImage = url ? <img width="200" height="100" src={url} alt="uploaded product" /> : 'no image uploaded yet';
+
+  console.log(stock);
 
   return (
     <div className="create-product">
@@ -107,7 +107,14 @@ function CreateProduct() {
       <hr />
       <label htmlFor="category">
         Category
-        <select name="category" defaultValue="default" onChange={(e) => setCategory(e.target.value)}>
+        <select
+          name="category"
+          defaultValue="default"
+          onChange={(e) => {
+            setStock(initialStock);
+            setCategory(e.target.value);
+          }}
+        >
           <option value="default" disabled>Choose category</option>
           {categories.map((item) => <option key={item} value={item}>{item}</option>)}
         </select>
@@ -125,12 +132,19 @@ function CreateProduct() {
         />
       </label>
       <hr />
-      <label htmlFor="stock">
-        Stock
-        {Object.keys(stock).map((size) => <input id="stock" key={size} name={size} type="number" onChange={handleStockChange} placeholder={size} />)}
-      </label>
-      {/* // TODO: Need to add conditional for products that don't have sizes */}
-      <input type="number" placeholder="stock amount" />
+      { category === 'tops'
+        || category === 'bottoms'
+        || category === 'swimwear' ? (
+          <label htmlFor="stock">
+            Stock
+            {Object.keys(stock).map((size) => <input id="stock" key={size} name={size} type="number" onChange={handleStockChange} placeholder={size} />)}
+          </label>
+        ) : (
+          <label htmlFor="stock">
+            Stock
+            <input id="stock" name="oneSize" type="number" onChange={handleStockChange} placeholder="stock amount" />
+          </label>
+        )}
       <hr />
       <button type="submit" onClick={handleProductSubmit}>Add product to store</button>
     </div>

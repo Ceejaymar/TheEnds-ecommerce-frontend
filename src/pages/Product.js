@@ -16,16 +16,13 @@ function Product({ match }) {
   const { params: { id } } = match;
 
   useEffect(() => {
-    axios.get(`${url}/product/${id}`)
-      .then((response) => {
-        setProductInfo(response.data);
-      });
-  }, [id]);
+    async function fetchProduct() {
+      const response = await axios.get(`${url}/product/${id}`);
+      setProductInfo(response.data);
+    }
 
-  // function addToCartHandler() {
-  //   addToCart(productInfo);
-  //   toast('Wow so easy !');
-  // }
+    fetchProduct();
+  }, [id]);
 
   return (
     <div className="Product Page">
@@ -37,6 +34,16 @@ function Product({ match }) {
       <h3>{category}</h3>
       <p>{description}</p>
       <p>{price}</p>
+      {
+        Object.keys(productInfo).length ? (
+          Object.keys(productInfo.stock).map((size) => (
+            <label htmlFor="size" key={size}>
+              {size}
+              <input id="size" type="radio" />
+            </label>
+          ))
+        ) : ''
+      }
       <div className="Product__quantity-cont">
         <button
           onClick={() => setQuantity((st) => st - 1)}
