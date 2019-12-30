@@ -10,7 +10,7 @@ const ShoppingCart = () => {
     <div>
       This is the shopping cart.
       {cart.map((product) => (
-        <CartItem key={item.id} product={product} />
+        <CartItem key={product.id} product={product} />
       ))}
       <CardCheckout />
     </div>

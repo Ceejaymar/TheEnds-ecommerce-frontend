@@ -4,7 +4,7 @@ import { AuthContext } from '../context/auth';
 import { CartContext } from '../context/cart';
 
 function Navbar() {
-  const { cart } = useContext(CartContext);
+  const { cart, cartQuantity } = useContext(CartContext);
 
   return (
     <AuthContext.Consumer>
@@ -26,7 +26,7 @@ function Navbar() {
                     </Link>
                     <Link className="Nav__link" to="/cart">
                       <i className="icon ion-md-cart" />
-                      {cart.length ? cart.length : '' }
+                      {cartQuantity }
                     </Link>
                     <Link className="Nav__link" to="/account">
                       <i className="icon ion-md-person" />

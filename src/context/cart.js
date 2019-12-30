@@ -14,26 +14,37 @@ const Zoom = cssTransition({
   appendPosition: false,
 });
 
+function countCart(cart) {
+  return cart.reduce((previousVal, currentVal) => (previousVal + currentVal.quantity), 0);
+}
+
 function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
-  console.log('cart', cart);
+  const [cartQuantity, setCartQuantity] = useState(0);
 
-  function addToCart(product, quantity) {
+  async function addToCart(product, quantity) {
+    const updatedCart = [...cart];
     const newProduct = { ...product, quantity };
 
-    setCart([...cart, newProduct]);
-    toast(<ToastComponent product={product} quantity={quantity} />);
-  }
+    for (let i = 0; i <= updatedCart.length; i += 1) {
+      if (updatedCart.length === 0) {
+        updatedCart.push(newProduct);
+        break;
+      } else if (updatedCart[i].id === newProduct.id) {
+        updatedCart[i].quantity += newProduct.quantity;
+        break;
+      }
+      updatedCart.push(newProduct);
+    }
 
-  function countItems() {
-    // return cart.reduce((item) => )
-
-
+    setCart(updatedCart);
+    setCartQuantity(countCart(updatedCart));
+    toast(<ToastComponent product={product} quantity={newProduct.quantity} />);
   }
 
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
-      <ToastContainer autoClose={5000} transition={Zoom} hideProgressBar />
+    <CartContext.Provider value={{ cart, cartQuantity, addToCart }}>
+      <ToastContainer autoClose={3000} transition={Zoom} hideProgressBar />
       {children}
     </CartContext.Provider>
   );
