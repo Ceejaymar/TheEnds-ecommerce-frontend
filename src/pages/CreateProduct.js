@@ -65,8 +65,6 @@ function CreateProduct() {
 
   const uploadedImage = url ? <img width="200" height="100" src={url} alt="uploaded product" /> : 'no image uploaded yet';
 
-  console.log(stock);
-
   return (
     <div className="create-product">
       <label htmlFor="file">
