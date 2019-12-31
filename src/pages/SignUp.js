@@ -6,7 +6,7 @@ import { AuthContext } from '../context/auth';
 import url from '../config/url';
 import useInputStateHook from '../hooks/useInputStateHook';
 
-function SignUp() {
+const SignUp = () => {
   const [email, setEmail] = useInputStateHook('');
   const [password, setPassword] = useInputStateHook('');
   const [fname, setFname] = useInputStateHook('');
@@ -18,7 +18,7 @@ function SignUp() {
   const [error, setError] = useState('');
   const [uid, setUid] = useState('');
 
-  function createUser() {
+  const createUser = () => {
     axios.post(`${url}/user/`, {
       fname,
       lname,
@@ -30,20 +30,20 @@ function SignUp() {
       zipcode,
       seller: true,
     });
-  }
+  };
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((res) => {
-        setUid(res.user.uid);
-        createUser();
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
-  }
+    try {
+      const response = await firebase.auth().createUserWithEmailAndPassword(email, password);
+
+      setUid(response.user.uid);
+      createUser();
+    } catch (err) {
+      setError(err.message);
+    }
+  };
 
   const displayError = error !== '' ? <div>{error}</div> : '';
   const displayForm = (
@@ -78,6 +78,6 @@ function SignUp() {
       }
     </AuthContext.Consumer>
   );
-}
+};
 
 export default SignUp;

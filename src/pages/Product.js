@@ -6,7 +6,6 @@ import axios from 'axios';
 import { CartContext } from '../context/cart';
 import url from '../config/url';
 
-
 function Product({ match }) {
   // const { uid } = useContext(AuthContext);
   const { addToCart } = useContext(CartContext);
