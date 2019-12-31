@@ -1,25 +1,23 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import firebase from '../firebase';
 
-class LogOut extends Component {
-  componentDidMount() {
-    const { history } = this.props;
+const LogOut = ({ history }) => {
+  useEffect(() => {
+    async function signOut() {
+      await firebase.auth().signOut();
+      await history.push('/');
+    }
 
-    firebase.auth().signOut()
-      .then(() => {
-        history.push('/');
-      });
-  }
+    signOut();
+  }, [history]);
 
-  render() {
-    return (
-      <div>
-        logging out fam!
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      logging out fam!
+    </div>
+  );
+};
 
 LogOut.propTypes = {
   history: PropTypes.shape({

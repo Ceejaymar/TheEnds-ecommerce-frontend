@@ -9,8 +9,8 @@ function Navbar() {
   return (
     <AuthContext.Consumer>
       {
-        (state) => {
-          if (state.user) {
+        (user) => {
+          if (user.userUid) {
             return (
               <div className="Nav">
                 <div className="Nav__brand">The Ends</div>

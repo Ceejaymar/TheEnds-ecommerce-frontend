@@ -39,8 +39,8 @@ function LogIn() {
   return (
     <AuthContext.Consumer>
       {
-        (state) => {
-          if (state.user) {
+        (user) => {
+          if (user.userUid) {
             return <Redirect to="/" />;
           }
           return displayForm;
