@@ -20,19 +20,21 @@ function Navbar() {
                     <Link className="Nav__link" to="/about">About</Link>
                     <Link className="Nav__link" to="/marketplace">Marketplace</Link>
                   </div>
-                  <div>
+                  <div className=" Nav__icons">
                     <Link className="Nav__link" to="/createproduct">
-                      <i className="icon ion-md-add-circle" />
+                      <i className="icon ion-md-add-circle Nav__icon" />
                     </Link>
-                    <Link className="Nav__link" to="/cart">
-                      <i className="icon ion-md-basket" />
-                      {cartQuantity }
+                    <Link className="Nav__link Nav__cart" to="/cart">
+                      <i className="icon ion-md-basket Nav__icon" />
+                      {
+                        cartQuantity !== 0 ? <span className="Nav__quantity">{cartQuantity}</span> : ''
+                      }
                     </Link>
                     <Link className="Nav__link" to="/account">
-                      <i className="icon ion-md-person" />
+                      <i className="icon ion-md-person Nav__icon" />
                     </Link>
-                    <Link className="Nav__link" to="/logout">Log out</Link>
                   </div>
+                  <Link className="Nav__link" to="/logout">Log out</Link>
                 </div>
               </div>
             );

@@ -13,7 +13,7 @@ function SignUp() {
   const [lname, setLname] = useInputStateHook('');
   const [address, setAddress] = useInputStateHook('');
   const [city, setCity] = useInputStateHook('');
-  const [state, setState] = useInputStateHook('');
+  const [stateLoc, setStateLoc] = useInputStateHook('');
   const [zipcode, setZipcode] = useInputStateHook('');
   const [error, setError] = useState('');
   const [uid, setUid] = useState('');
@@ -26,7 +26,7 @@ function SignUp() {
       uid,
       address,
       city,
-      state,
+      state: stateLoc,
       zipcode,
       seller: true,
     });
@@ -57,7 +57,7 @@ function SignUp() {
         <input type="text" name="lname" value={lname} onChange={setLname} placeholder="last name" />
         <input type="text" name="address" value={address} onChange={setAddress} placeholder="street" />
         <input type="text" name="city" value={city} onChange={setCity} placeholder="city" />
-        <input type="text" name="state" value={state} onChange={setState} placeholder="state" />
+        <input type="text" name="state" value={stateLoc} onChange={setStateLoc} placeholder="state" />
         <input type="text" name="zipcode" value={zipcode} onChange={setZipcode} placeholder="zipcode" />
         <button type="button" onClick={handleSubmit}>sign up</button>
       </form>

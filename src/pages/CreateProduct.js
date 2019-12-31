@@ -95,10 +95,10 @@ function CreateProduct() {
           id="price"
           type="number"
           min="0.00"
-          step="0.50"
+          step="5.00"
           max="3000"
           name="price"
-          placeholder="price"
+          placeholder="0.00"
           onChange={setPrice}
         />
       </label>

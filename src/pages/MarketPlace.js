@@ -4,10 +4,10 @@ import axios from 'axios';
 import StoreCard from '../components/StoreCard';
 import url from '../config/url';
 
-function MarketPlace() {
+const MarketPlace = () => {
   const [stores, setStores] = useState([]);
 
-  async function fetchMarketplace() {
+  const fetchMarketplace = async () => {
     try {
       const updatedStores = [...stores];
       // eslint-disable-next-line no-inner-declarations
@@ -19,7 +19,7 @@ function MarketPlace() {
       // eslint-disable-next-line no-console
       console.log(err);
     }
-  }
+  };
 
   useEffect(() => {
     fetchMarketplace();
@@ -41,6 +41,6 @@ function MarketPlace() {
       )}
     </div>
   );
-}
+};
 
 export default MarketPlace;
