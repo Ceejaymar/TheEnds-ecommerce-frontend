@@ -7,21 +7,18 @@ import url from '../config/url';
 const MarketPlace = () => {
   const [stores, setStores] = useState([]);
 
-  const fetchMarketplace = async () => {
-    try {
-      const updatedStores = [...stores];
-      // eslint-disable-next-line no-inner-declarations
-      const response = await axios.get(`${url}/store/`);
-      response.data.map((store) => updatedStores.push(store));
-
-      setStores(updatedStores);
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.log(err);
-    }
-  };
-
   useEffect(() => {
+    async function fetchMarketplace() {
+      try {
+        const response = await axios.get(`${url}/store/`);
+
+        setStores(response.data);
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.log(err);
+      }
+    }
+
     fetchMarketplace();
   }, []);
 
