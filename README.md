@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Ceejaymar/TheEnds-ecommerce-frontend.svg?branch=master)](https://travis-ci.org/Ceejaymar/TheEnds-ecommerce-frontend) [![Build Status](https://david-dm.org/Ceejaymar/TheEnds-ecommerce-frontend.svg?branch=master)](https://david-dm.org/Ceejaymar/TheEnds-ecommerce-frontend.svg)
+[![Build Status](https://travis-ci.org/Ceejaymar/TheEnds-ecommerce-frontend.svg?branch=master)](https://travis-ci.org/Ceejaymar/TheEnds-ecommerce-frontend) [![Build Status](https://david-dm.org/Ceejaymar/TheEnds-ecommerce-frontend.svg?branch=master)](https://david-dm.org/Ceejaymar/TheEnds-ecommerce-frontend.svg) [![DeepScan grade](https://deepscan.io/api/teams/6084/projects/8598/branches/106494/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=6084&pid=8598&bid=106494)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

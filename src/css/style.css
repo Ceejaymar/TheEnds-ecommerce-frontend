@@ -79,12 +79,28 @@ body {
     font-family: 'Caveat', cursive; }
   .Nav__menu {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: center; }
   .Nav__link {
     margin: 0 10px;
     font-size: 1.1rem;
     text-decoration: none;
     color: black; }
+  .Nav__cart {
+    position: relative; }
+  .Nav__quantity {
+    font-size: .6rem;
+    position: absolute;
+    top: -1;
+    right: -1;
+    background-color: red;
+    color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    text-align: center; }
+  .Nav__icon {
+    font-size: 1.8rem; }
 
 .Page {
   position: absolute;

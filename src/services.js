@@ -17,7 +17,7 @@ CartService.saveCart = (cartItems, user, timestamp) => {
   const newCart = { cartItems, timestamp };
   const oldCarts = CartService.getItems();
 
-  // oldCarts.unshift(newCart);
+  oldCarts.unshift(newCart);
 
   localStorage.setItem('cart', JSON.stringify(oldCarts));
 

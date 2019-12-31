@@ -13,6 +13,7 @@
     &__menu {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       // width: 40%;
     }
 
@@ -25,5 +26,27 @@
       font-size: 1.1rem;
       text-decoration: none;
       color: black;
+      // position: relative;
+    }
+
+    &__cart {
+      position: relative;
+    }
+
+    &__quantity {
+      font-size: .6rem;
+      position: absolute;
+      top: -1;
+      right: -1;
+      background-color: red;
+      color: white;
+      width: 15px;
+      height: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    &__icon {
+      font-size: 1.8rem;
     }
   }

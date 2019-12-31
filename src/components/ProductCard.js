@@ -21,7 +21,7 @@ ProductCard.propTypes = {
     name: PropTypes.string,
     url: PropTypes.string,
     price: PropTypes.string,
-    id: PropTypes.string,
+    id: PropTypes.number,
   }).isRequired,
 };
 
