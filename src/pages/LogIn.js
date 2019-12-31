@@ -4,12 +4,12 @@ import firebase from '../firebase';
 import { AuthContext } from '../context/auth';
 import useInputStateHook from '../hooks/useInputStateHook';
 
-function LogIn() {
+const LogIn = () => {
   const [email, setEmail] = useInputStateHook('');
   const [password, setPassword] = useInputStateHook('');
   const [error, setError] = useState('');
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -19,22 +19,7 @@ function LogIn() {
     } catch (err) {
       setError(err.message);
     }
-  }
-
-  const displayError = error !== '' ? <div>{error}</div> : '';
-  const displayForm = (
-    <div>
-      <hr />
-      <h2>Log In</h2>
-      <form>
-        <input type="email" name="email" value={email} onChange={setEmail} placeholder="email" />
-        <input type="password" name="password" value={password} onChange={setPassword} placeholder="password" />
-        <button type="button" onClick={handleSubmit}>log in</button>
-      </form>
-      {displayError}
-      <hr />
-    </div>
-  );
+  };
 
   return (
     <AuthContext.Consumer>
@@ -43,11 +28,23 @@ function LogIn() {
           if (user.userUid) {
             return <Redirect to="/" />;
           }
-          return displayForm;
+          return (
+            <div>
+              <hr />
+              <h2>Log In</h2>
+              <form>
+                <input type="email" name="email" value={email} onChange={setEmail} placeholder="email" />
+                <input type="password" name="password" value={password} onChange={setPassword} placeholder="password" />
+                <button type="button" onClick={handleSubmit}>log in</button>
+              </form>
+              {error !== '' ? <div>{error}</div> : ''}
+              <hr />
+            </div>
+          );
         }
       }
     </AuthContext.Consumer>
   );
-}
+};
 
 export default LogIn;
