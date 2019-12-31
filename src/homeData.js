@@ -18,12 +18,6 @@ const homeData = {
       img: 'https://images.unsplash.com/photo-1496449583099-4fd0730a699b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nesciunt ea aliquam natus delectus asperiores error animi voluptates expedita. Animi possimus veniam velit quos doloremque ea tenetur sapiente eveniet rerum',
     },
-    // {
-    //   id: 4,
-    //   name: 'Thousand Sunny',
-    //   img: 'https://images.unsplash.com/photo-1520810336800-28d1a1d41906?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=935&q=80',
-    //   description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nesciunt ea aliquam natus delectus asperiores error animi voluptates expedita. Animi possimus veniam velit quos doloremque ea tenetur sapiente eveniet rerum',
-    // }
   ],
 };
 
