@@ -29,6 +29,13 @@
         "ImportDeclaration": "never",
         "ExportDeclaration": { "multiline": true, "minProperties": 4 }
     }],
-    "arrow-parens": ["error", "always"]
+    "arrow-parens": ["error", "always"],
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "labelComponents": ["CustomLabel"],
+      "labelAttributes": ["inputLabel"],
+      "controlComponents": ["CustomInput"],
+      "assert": "either",
+      "depth": 3
+    }]
   }
 }

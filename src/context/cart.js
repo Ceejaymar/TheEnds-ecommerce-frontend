@@ -26,19 +26,14 @@ function CartProvider({ children }) {
     const updatedCart = [...cart];
     const newProduct = { ...product, quantity };
 
-    try {
-      if (updatedCart.length && updatedCart.some((item) => item.id === newProduct.id)) {
-        for (let i = 0; i < updatedCart.length; i += 1) {
-          if (updatedCart[i].id === newProduct.id) {
-            updatedCart[i].quantity += newProduct.quantity;
-          }
+    if (updatedCart.length && updatedCart.some((item) => item.id === newProduct.id)) {
+      for (let i = 0; i < updatedCart.length; i += 1) {
+        if (updatedCart[i].id === newProduct.id) {
+          updatedCart[i].quantity += newProduct.quantity;
         }
-      } else {
-        updatedCart.push(newProduct);
       }
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.log(err);
+    } else {
+      updatedCart.push(newProduct);
     }
 
     setCart(updatedCart);
