@@ -1,5 +1,6 @@
 .About {
-  height: 95vh; }
+  height: 95vh;
+  background-size: cover; }
 
 * {
   margin: 0;
