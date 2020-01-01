@@ -13,9 +13,7 @@ const LogIn = () => {
     e.preventDefault();
 
     try {
-      const response = await firebase.auth().signInWithEmailAndPassword(email, password);
-      // eslint-disable-next-line no-console
-      console.log('sign up response', response);
+      await firebase.auth().signInWithEmailAndPassword(email, password);
     } catch (err) {
       setError(err.message);
     }

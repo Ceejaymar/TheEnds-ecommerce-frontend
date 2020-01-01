@@ -26,15 +26,19 @@ function CartProvider({ children }) {
     const updatedCart = [...cart];
     const newProduct = { ...product, quantity };
 
-    for (let i = 0; i <= updatedCart.length; i += 1) {
-      if (updatedCart.length === 0) {
+    try {
+      if (updatedCart.length && updatedCart.some((item) => item.id === newProduct.id)) {
+        for (let i = 0; i < updatedCart.length; i += 1) {
+          if (updatedCart[i].id === newProduct.id) {
+            updatedCart[i].quantity += newProduct.quantity;
+          }
+        }
+      } else {
         updatedCart.push(newProduct);
-        break;
-      } else if (updatedCart[i].id === newProduct.id) {
-        updatedCart[i].quantity += newProduct.quantity;
-        break;
       }
-      updatedCart.push(newProduct);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.log(err);
     }
 
     setCart(updatedCart);
@@ -44,7 +48,7 @@ function CartProvider({ children }) {
 
   return (
     <CartContext.Provider value={{ cart, cartQuantity, addToCart }}>
-      <ToastContainer autoClose={3000} transition={Zoom} hideProgressBar />
+      <ToastContainer autoClose={3000} transition={Zoom} hideProgressBar style={{ marginTop: '50px' }} />
       {children}
     </CartContext.Provider>
   );
