@@ -58,7 +58,7 @@ function Product({ match }) {
         ) : ''
       }
       {
-        Object.keys(productInfo).length && productInfo.stock[size] < 5 && (
+        Object.keys(productInfo).length > 0 && productInfo.stock[size] < 5 && (
           <p>
             Only
             {' '}
