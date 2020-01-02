@@ -27,7 +27,7 @@ const LogIn = () => {
             return <Redirect to="/" />;
           }
           return (
-            <div>
+            <div className="Login">
               <hr />
               <h2>Log In</h2>
               <form>

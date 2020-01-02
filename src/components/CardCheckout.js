@@ -5,8 +5,6 @@ import dotenv from 'dotenv';
 import axios from 'axios';
 import url from '../config/url';
 
-import 'react-toastify/dist/ReactToastify.css';
-
 dotenv.config();
 toast.configure();
 
