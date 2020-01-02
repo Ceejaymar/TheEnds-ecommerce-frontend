@@ -26,7 +26,9 @@ function CartProvider({ children }) {
     const updatedCart = [...cart];
     const newProduct = { ...product, quantity, size };
 
-    if (updatedCart.length && updatedCart.some((item) => item.id === newProduct.id && item.size === newProduct.size)) {
+    if (updatedCart.length
+        && updatedCart.some((item) => item.id === newProduct.id
+        && item.size === newProduct.size)) {
       for (let i = 0; i < updatedCart.length; i += 1) {
         if (updatedCart[i].id === newProduct.id && updatedCart[i].size === newProduct.size) {
           updatedCart[i].quantity += newProduct.quantity;

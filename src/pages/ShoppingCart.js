@@ -13,8 +13,6 @@ const ShoppingCart = () => {
     setTotal(sum);
   }, [cart]);
 
-  console.log('total', total);
-
   return (
     <div>
       This is the shopping cart.

@@ -41,7 +41,7 @@ function Product({ match }) {
       <p>{description}</p>
       <p>{price}</p>
       {
-        Object.keys(productInfo).length ? (
+        Object.keys(productInfo).length > 0 ? (
           Object.keys(productInfo.stock).map((sz) => (
             <label htmlFor="size" key={sz} style={{ display: hide ? 'none' : 'inline' }}>
               {sz}
