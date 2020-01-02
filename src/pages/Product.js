@@ -11,6 +11,8 @@ function Product({ match }) {
   const { addToCart } = useContext(CartContext);
   const [productInfo, setProductInfo] = useState({});
   const [quantity, setQuantity] = useState(1);
+  const [size, setSize] = useState('');
+  const [hide, setHide] = useState(false);
   const { name, url: imageUrl, category, description, price } = productInfo;
   const { params: { id } } = match;
 
@@ -18,6 +20,11 @@ function Product({ match }) {
     async function fetchProduct() {
       const response = await axios.get(`${url}/product/${id}`);
       setProductInfo(response.data);
+
+      if (response.data.stock.os) {
+        setSize('os');
+        setHide(true);
+      }
     }
 
     fetchProduct();
@@ -34,15 +41,34 @@ function Product({ match }) {
       <p>{description}</p>
       <p>{price}</p>
       {
-        Object.keys(productInfo).length ? (
-          Object.keys(productInfo.stock).map((size) => (
-            <label htmlFor="size" key={size}>
-              {size}
-              <input id="size" type="radio" />
+        Object.keys(productInfo).length > 0 ? (
+          Object.keys(productInfo.stock).map((sz) => (
+            <label htmlFor="size" key={sz} style={{ display: hide ? 'none' : 'inline' }}>
+              {sz}
+              <input
+                name="size"
+                id="size"
+                value={sz}
+                type="radio"
+                onClick={(e) => setSize(e.target.value)}
+                disabled={!Number(productInfo.stock[sz])}
+              />
             </label>
           ))
         ) : ''
       }
+      {
+        Object.keys(productInfo).length > 0 && productInfo.stock[size] < 5 && (
+          <p>
+            Only
+            {' '}
+            {productInfo.stock[size]}
+            {' '}
+            left!
+          </p>
+        )
+      }
+
       <div className="Product__quantity-cont">
         <button
           onClick={() => setQuantity((st) => st - 1)}
@@ -63,7 +89,13 @@ function Product({ match }) {
         </button>
       </div>
       <br />
-      <button type="button" onClick={() => addToCart(productInfo, quantity)}>Add to cart</button>
+      <button
+        type="button"
+        disabled={!size}
+        onClick={() => addToCart(productInfo, quantity, size)}
+      >
+        Add to cart
+      </button>
     </div>
   );
 }

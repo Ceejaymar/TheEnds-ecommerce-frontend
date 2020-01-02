@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CartItem = ({ product }) => {
-  const { name, price, quantity, url, storeId } = product;
+  const { name, price, quantity, size, url, storeId } = product;
   return (
     <div>
       cart item
       {name}
       <hr />
       {price}
+      <hr />
+      {size}
       <hr />
       {quantity}
       <hr />
@@ -24,6 +26,7 @@ CartItem.propTypes = {
     name: PropTypes.string,
     price: PropTypes.string,
     quantity: PropTypes.number,
+    size: PropTypes.string,
     url: PropTypes.string,
     storeId: PropTypes.number,
   }).isRequired,

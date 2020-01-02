@@ -22,13 +22,15 @@ function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(0);
 
-  async function addToCart(product, quantity) {
+  async function addToCart(product, quantity, size) {
     const updatedCart = [...cart];
-    const newProduct = { ...product, quantity };
+    const newProduct = { ...product, quantity, size };
 
-    if (updatedCart.length && updatedCart.some((item) => item.id === newProduct.id)) {
+    if (updatedCart.length
+        && updatedCart.some((item) => item.id === newProduct.id
+        && item.size === newProduct.size)) {
       for (let i = 0; i < updatedCart.length; i += 1) {
-        if (updatedCart[i].id === newProduct.id) {
+        if (updatedCart[i].id === newProduct.id && updatedCart[i].size === newProduct.size) {
           updatedCart[i].quantity += newProduct.quantity;
         }
       }
