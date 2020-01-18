@@ -1,6 +1,14 @@
 .Marketplace {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 0 100px;
+  height: 1000px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
+
+  &__content {
+    grid-column: content-start / content-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-gap: 2rem;
+    padding: 2rem;
+  }
 }

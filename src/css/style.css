@@ -1,6 +1,14 @@
 .About {
-  height: 95vh;
-  background-size: cover; }
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; }
+  .About__side {
+    width: 100%;
+    height: calc(100vh - 50px); }
+  .About__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; }
 
 * {
   margin: 0;
@@ -112,10 +120,16 @@ body {
     grid-column: full-start / full-end; }
 
 .Marketplace {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 0 100px; }
+  height: 1000px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end]; }
+  .Marketplace__content {
+    grid-column: content-start / content-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-gap: 2rem;
+    padding: 2rem; }
 
 .Nav {
   display: grid;
@@ -176,23 +190,11 @@ body {
   transition: opacity 200ms linear; }
 
 .Store-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  margin-bottom: 40px; }
-  .Store-card__content {
-    position: relative;
-    height: 430px;
-    width: 325px;
-    overflow: hidden;
-    border-radius: 5px; }
+  width: 100%; }
   .Store-card__img {
-    position: absolute;
     width: 100%;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover; }
   .Store-card__name {
     color: black; }

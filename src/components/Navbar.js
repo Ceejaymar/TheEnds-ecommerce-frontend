@@ -27,9 +27,9 @@ function Navbar() {
                       cartQuantity !== 0 ? <span className="Nav__quantity">{cartQuantity}</span> : ''
                     }
                   </Link>
-                  <Link className="Nav__link" to="/account">
+                  {/* <Link className="Nav__link" to="/account">
                     <i className="icon ion-md-person Nav__icon" />
-                  </Link>
+                  </Link> */}
                   <Link className="Nav__link" to="/logout">Log out</Link>
                 </div>
               </div>
