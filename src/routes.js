@@ -9,7 +9,7 @@ import { CartProvider } from './context/cart';
 // Pages
 import About from './pages/About';
 import Account from './pages/Account';
-import LandingPage from './pages/LandingPage';
+import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import LogOut from './pages/LogOut';
@@ -19,7 +19,6 @@ import Product from './pages/Product';
 import CreateProduct from './pages/CreateProduct';
 import ShoppingCart from './pages/ShoppingCart';
 
-import Home from './pages/Home';
 
 // Components
 import Navbar from './components/Navbar';

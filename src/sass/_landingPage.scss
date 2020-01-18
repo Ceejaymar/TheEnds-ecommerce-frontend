@@ -1,79 +1,3 @@
-// .Home {
-
-//   &__hero {
-//     height: 80vh;
-//     width: 100%;
-//     background-image: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('https://firebasestorage.googleapis.com/v0/b/theends.appspot.com/o/storeImages%2FlandingPage%2Fdaniel-odame-DFRRyOzX8nI-unsplash.jpg?alt=media&token=d106fb11-e998-423d-ba12-82440f749202');
-//     background-size: cover;
-//     background-position: center;
-//     color: $c-white;
-//   }
-
-//   &__heading {
-
-//   }
-
-//   &__sub-heading {
-
-//   }
-
-//   &__featured-stores {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//   }
-
-//   &__featured-title {
-//     font-size: 2rem;
-//     margin: 2rem 0;
-//     color: hsl(0, 0, 20);
-//   }
-
-//   &__stores-container {
-//     width: 1024px;
-//   }
-
-//   &__store {
-//     display: flex;
-//     text-decoration: none;
-//     color: black;
-
-//     &-title {
-//       font-family: 'Caveat', cursive;
-//       font-size: 3rem;
-//     }
-
-//     &:nth-child(even) {
-//       flex-direction: row-reverse;
-//     }
-
-//     &-img {
-//       width: 50%;
-//     }
-
-//     &-content {
-//       width: 50%;
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: space-around;
-//       align-items: center;
-//       font-size: 2rem;
-//       padding: 2rem;
-//     }
-
-//     &-desc {
-//       text-align: center;
-//     }
-
-//     &-button {
-//       padding: .5rem 2rem;
-//       font-size: 2rem;
-//       border-radius: 15px;
-//       cursor: pointer;
-//     }
-//   }
-// }
-
 .Home {
   display: grid;
 
@@ -112,7 +36,7 @@
   &__store {
     height: 100%;
     width: 100%;
-    transition: .5s;
+    transition: .3s;
 
     &--1 {
       grid-row: 3 / 11;

@@ -1,52 +1,47 @@
   .Nav {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: [full-start] 1fr [content-start] repeat(8, 10rem) [content-end] 1fr [full-end];
+    grid-template-rows: 50px;
     align-items: center;
-    padding: 5px 100px;
-    height: 50px;
 
     &__brand {
       font-size: 1.9rem;
       font-family: 'Caveat', cursive;
+      grid-column: content-start / span 2;
     }
 
     &__menu {
+      grid-column: 7 / content-end;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      // width: 40%;
-    }
-
-    &__links {
-
+      justify-content: space-around;
     }
 
     &__link {
-      margin: 0 10px;
       font-size: 1.1rem;
       text-decoration: none;
       color: black;
-      // position: relative;
+      text-align: center;
+      display: flex;
+      align-items: center;
     }
 
     &__cart {
-      position: relative;
+      display: grid;
+      grid-template-columns: min-content 1px;
     }
 
     &__quantity {
-      font-size: .6rem;
-      position: absolute;
-      top: -1;
-      right: -1;
+      font-size: .7rem;
       background-color: red;
       color: white;
       width: 15px;
       height: 15px;
       border-radius: 10px;
       text-align: center;
+      align-self: start;
     }
 
     &__icon {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
     }
   }

@@ -42,7 +42,7 @@ body {
   .Home__store {
     height: 100%;
     width: 100%;
-    transition: .5s; }
+    transition: .3s; }
     .Home__store--1 {
       grid-row: 3 / 11;
       grid-column: 5 / 9;
@@ -81,38 +81,39 @@ body {
   padding: 0 100px; }
 
 .Nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 100px;
-  height: 50px; }
+  display: grid;
+  grid-template-columns: [full-start] 1fr [content-start] repeat(8, 10rem) [content-end] 1fr [full-end];
+  grid-template-rows: 50px;
+  align-items: center; }
   .Nav__brand {
     font-size: 1.9rem;
-    font-family: 'Caveat', cursive; }
+    font-family: 'Caveat', cursive;
+    grid-column: content-start / span 2; }
   .Nav__menu {
+    grid-column: 7 / content-end;
     display: flex;
-    justify-content: space-between;
-    align-items: center; }
+    justify-content: space-around; }
   .Nav__link {
-    margin: 0 10px;
     font-size: 1.1rem;
     text-decoration: none;
-    color: black; }
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center; }
   .Nav__cart {
-    position: relative; }
+    display: grid;
+    grid-template-columns: min-content 1px; }
   .Nav__quantity {
-    font-size: .6rem;
-    position: absolute;
-    top: -1;
-    right: -1;
+    font-size: .7rem;
     background-color: red;
     color: white;
     width: 15px;
     height: 15px;
     border-radius: 10px;
-    text-align: center; }
+    text-align: center;
+    align-self: start; }
   .Nav__icon {
-    font-size: 1.8rem; }
+    font-size: 1.7rem; }
 
 .Page {
   position: absolute;
