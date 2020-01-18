@@ -1,5 +1,25 @@
 const homeData = {
-  featured: [
+  offers: [
+    {
+      id: 1,
+      offer: 'High quality materials',
+      description: 'Quality materials and the finest of fabrics',
+      icon: 'shirt',
+    },
+    {
+      id: 2,
+      offer: 'Fast delivery',
+      description: 'The Ends partners with the most reliable delivery services',
+      icon: 'airplane',
+    },
+    {
+      id: 3,
+      offer: 'Best customer service',
+      description: 'The best people to take care of the best customers',
+      icon: 'people',
+    },
+  ],
+  stores: [
     {
       id: 1,
       name: 'Solid Black',
