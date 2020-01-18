@@ -18,51 +18,61 @@ body {
   font-family: 'Open Sans', sans-serif; }
 
 .Home {
-  height: 80vh;
-  width: 100vw; }
+  display: grid;
+  grid-template-columns: [full-start] 1fr [content-start] repeat(8, 10rem) [content-end] 1fr [full-end];
+  grid-template-rows: 75vh  50vh 80vh 50vh 90vh 3rem; }
   .Home__hero {
-    height: 100%;
-    width: 100%;
+    background-color: aquamarine;
+    grid-column: full-start / full-end;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://firebasestorage.googleapis.com/v0/b/theends.appspot.com/o/storeImages%2FlandingPage%2Fdaniel-odame-DFRRyOzX8nI-unsplash.jpg?alt=media&token=d106fb11-e998-423d-ba12-82440f749202");
     background-size: cover;
     background-position: center;
     color: #ffffff; }
+  .Home__about {
+    background-color: bisque;
+    grid-column: content-start / content-end; }
   .Home__featured-stores {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
+    grid-column: content-start / content-end;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(13, 1fr); }
   .Home__featured-title {
-    font-size: 2rem;
-    margin: 2rem 0;
-    color: #333333; }
-  .Home__stores-container {
-    width: 1024px; }
+    grid-column: 6 / 11;
+    justify-self: center; }
   .Home__store {
-    display: flex;
-    text-decoration: none;
-    color: black; }
-    .Home__store-title {
-      font-family: 'Caveat', cursive;
-      font-size: 3rem; }
-    .Home__store:nth-child(even) {
-      flex-direction: row-reverse; }
-    .Home__store-img {
-      width: 50%; }
-    .Home__store-content {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      font-size: 2rem;
-      padding: 2rem; }
-    .Home__store-desc {
-      text-align: center; }
-    .Home__store-button {
-      padding: .5rem 2rem;
-      font-size: 2rem;
-      border-radius: 15px;
-      cursor: pointer; }
+    height: 100%;
+    width: 100%;
+    transition: .5s; }
+    .Home__store--1 {
+      grid-row: 3 / 11;
+      grid-column: 5 / 9;
+      z-index: 10; }
+    .Home__store--2 {
+      grid-row: 5 / 13;
+      grid-column: 2 / 6; }
+    .Home__store--4 {
+      grid-row: 2 / 10;
+      grid-column: 11 / 15; }
+    .Home__store--6 {
+      grid-row: 4 / 12;
+      grid-column: 8 / 12; }
+    .Home__store:hover {
+      z-index: 20;
+      transform: scale(1.1); }
+  .Home__store-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 4px; }
+  .Home__featured-products {
+    background-color: palevioletred;
+    grid-column: content-start / content-end; }
+  .Home__gallery {
+    background-color: rebeccapurple;
+    grid-column: full-start / full-end; }
+  .Home__footer {
+    background-color: darkslategrey;
+    grid-column: full-start / full-end; }
 
 .Marketplace {
   display: flex;
@@ -74,7 +84,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 100px; }
+  padding: 5px 100px;
+  height: 50px; }
   .Nav__brand {
     font-size: 1.9rem;
     font-family: 'Caveat', cursive; }

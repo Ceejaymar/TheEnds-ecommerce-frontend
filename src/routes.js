@@ -19,6 +19,8 @@ import Product from './pages/Product';
 import CreateProduct from './pages/CreateProduct';
 import ShoppingCart from './pages/ShoppingCart';
 
+import Home from './pages/Home';
+
 // Components
 import Navbar from './components/Navbar';
 
@@ -37,7 +39,7 @@ const Routes = withRouter(({ location }) => (
               classNames="fade"
             >
               <Switch location={location}>
-                <Route path="/" exact component={LandingPage} />
+                <Route path="/" exact component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/account" component={Account} />
                 <Route path="/cart" component={ShoppingCart} />
