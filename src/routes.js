@@ -9,7 +9,7 @@ import { CartProvider } from './context/cart';
 // Pages
 import About from './pages/About';
 import Account from './pages/Account';
-import LandingPage from './pages/LandingPage';
+import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import LogOut from './pages/LogOut';
@@ -18,6 +18,7 @@ import Store from './pages/Store';
 import Product from './pages/Product';
 import CreateProduct from './pages/CreateProduct';
 import ShoppingCart from './pages/ShoppingCart';
+
 
 // Components
 import Navbar from './components/Navbar';
@@ -37,7 +38,7 @@ const Routes = withRouter(({ location }) => (
               classNames="fade"
             >
               <Switch location={location}>
-                <Route path="/" exact component={LandingPage} />
+                <Route path="/" exact component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/account" component={Account} />
                 <Route path="/cart" component={ShoppingCart} />

@@ -27,15 +27,17 @@ const MarketPlace = () => {
       <Helmet>
         <title>Marketplace</title>
       </Helmet>
-      {stores.length > 0 ? (
-        stores.map((store) => (
-          <StoreCard key={store.id} storeInfo={store} />
-        ))
-      ) : (
-        <div>
-          Loading marketplace...
-        </div>
-      )}
+      <div className="Marketplace__content">
+        {stores.length > 0 ? (
+          stores.map((store) => (
+            <StoreCard key={store.id} storeInfo={store} />
+          ))
+        ) : (
+          <div>
+            Loading marketplace...
+          </div>
+        )}
+      </div>
     </div>
   );
 };

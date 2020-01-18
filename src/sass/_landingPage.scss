@@ -1,77 +1,142 @@
 .Home {
-  height: 80vh;
-  width: 100vw;
+  display: grid;
+
+  grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
+
+  grid-template-rows: 75vh  min-content 80vh;
 
   &__hero {
-    height: 100%;
-    width: 100%;
+    grid-column: full-start / full-end;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('https://firebasestorage.googleapis.com/v0/b/theends.appspot.com/o/storeImages%2FlandingPage%2Fdaniel-odame-DFRRyOzX8nI-unsplash.jpg?alt=media&token=d106fb11-e998-423d-ba12-82440f749202');
     background-size: cover;
     background-position: center;
     color: $c-white;
   }
 
-  &__heading {
-
+  &__offers {
+    grid-column: content-start / content-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2.5rem;
+    padding: 3.5rem;
   }
 
-  &__sub-heading {
+  &__offer-content {
+    background-color: #f7f7f7;
+    display: grid;
+    grid-gap: 1.5rem;
+    justify-items: center;
+    align-content: start;
+    padding: 2.5rem 2.5rem;
+    border-radius: 4px;
+  }
 
+  &__icon {
+    font-size: 4rem;
+    position: relative;
+  }
+
+  &__icon-circle {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    &--1 {
+      color: mediumseagreen;
+      background-color: rgba(60, 179, 114, 0.375);
+    }
+
+    &--2 {
+      color: rgb(179, 60, 94);
+      background-color: rgba(179, 60, 94, 0.375);
+    }
+
+    &--3 {
+      color: rgb(179, 159, 60);
+      background-color: rgba(179, 159, 60, 0.395);
+    }
+  }
+
+  &__offer {
+    font-size: 1.5rem;
+  }
+
+  &__offer-desc {
+    color: #a1a1a1;
+    font-size: 1.3rem;
+    font-weight: 300;
   }
 
   &__featured-stores {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-column: content-start / content-end;
+    display: grid;
+
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    padding-top: 3rem;
   }
 
   &__featured-title {
-    font-size: 2rem;
-    margin: 2rem 0;
-    color: hsl(0, 0, 20);
-  }
-
-  &__stores-container {
-    width: 1024px;
+    grid-column: 6 / 11;
+    justify-self: center;
   }
 
   &__store {
-    display: flex;
-    text-decoration: none;
-    color: black;
+    height: 100%;
+    width: 100%;
+    transition: .3s;
 
-    &-title {
-      font-family: 'Caveat', cursive;
-      font-size: 3rem;
+    &--1 {
+      grid-row: 3 / 11;
+      grid-column: 5 / 9;
+      z-index: 10;
     }
 
-    &:nth-child(even) {
-      flex-direction: row-reverse;
+    &--2 {
+      grid-row: 5 / 13;
+      grid-column: 2 / 6;
+      // z-index: 15;
     }
 
-    &-img {
-      width: 50%;
+    &--4 {
+      grid-row: 2 / 10;
+      grid-column: 11 / 15;
     }
 
-    &-content {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      font-size: 2rem;
-      padding: 2rem;
+    &--6 {
+      grid-row: 4 / 12;
+      grid-column: 8 / 12;
     }
 
-    &-desc {
-      text-align: center;
+    &:hover {
+      z-index: 20;
+      transform: scale(1.1);
     }
+  }
 
-    &-button {
-      padding: .5rem 2rem;
-      font-size: 2rem;
-      border-radius: 15px;
-      cursor: pointer;
-    }
+  &__store-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+  }
+
+  &__featured-products {
+    background-color: palevioletred;
+    grid-column: content-start / content-end;
+  }
+
+  &__gallery {
+    background-color: rebeccapurple;
+    grid-column: full-start / full-end;
+  }
+
+  &__footer {
+    background-color: darkslategrey;
+    grid-column: full-start / full-end;
   }
 }

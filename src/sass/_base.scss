@@ -4,6 +4,9 @@ $c-white: #ffffff;
 // $c-primary: #2c99ed;
 // $c-primary-light: #58abe9;
 
+$font-primary: 'Open Sans', sans-serif;
+$font-secondary: 'Caveat', cursive;
+
 $screen-large: 62.50em;   // 1000px
 $screen-medium: 56.25em;  // 900px
 $screen-small: 37.5em;    // 600px
@@ -34,8 +37,4 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  // height: 100vh;
-  // font-family: 'Roboto', sans-serif;
-  // background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('../assets/crafting.jpg');
-  // background-size: cover;
 }

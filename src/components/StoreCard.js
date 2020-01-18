@@ -3,14 +3,11 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const StoreCard = ({ storeInfo }) => {
-  const { id, name, images: { card } } = storeInfo;
+  const { id, images: { card } } = storeInfo;
 
   return (
     <Link to={`/store/${id}`} className="Store-card">
-      <div className="Store-card__content">
-        <img className="Store-card__img" src={card} alt="store" />
-      </div>
-      <h2 className="Store-card__name">{name}</h2>
+      <img className="Store-card__img" src={card} alt="store" />
     </Link>
   );
 };
