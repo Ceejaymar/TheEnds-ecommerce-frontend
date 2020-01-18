@@ -15,7 +15,7 @@ const LandingPage = () => (
     <section className="Home__offers">
       {
         homeData.offers.map((offer) => (
-          <div className="Home__offer-content">
+          <div key={offer.id} className="Home__offer-content">
             <div className={`Home__icon-circle Home__icon-circle--${offer.id}`}>
               <i className={`icon ion-md-${offer.icon} Home__icon`} />
             </div>

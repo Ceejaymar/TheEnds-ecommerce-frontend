@@ -24,9 +24,9 @@ const MarketPlace = () => {
 
   return (
     <div className="Marketplace Page">
-      {/* <Helmet>
+      <Helmet>
         <title>Marketplace</title>
-      </Helmet> */}
+      </Helmet>
       <div className="Marketplace__content">
         {stores.length > 0 ? (
           stores.map((store) => (

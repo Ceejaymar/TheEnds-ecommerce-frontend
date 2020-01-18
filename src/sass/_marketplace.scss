@@ -8,7 +8,8 @@
     grid-column: content-start / content-end;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-    grid-gap: 2rem;
+    grid-column-gap: 2rem;
+    grid-row-gap: 4rem;
     padding: 2rem;
   }
 }
