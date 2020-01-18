@@ -35,7 +35,7 @@ const LandingPage = () => (
         ))
       }
     </section>
-    <section className="Home__featured-products">
+    {/* <section className="Home__featured-products">
       featured products
     </section>
     <section className="Home__gallery">
@@ -43,7 +43,7 @@ const LandingPage = () => (
     </section>
     <footer className="Home__footer">
       footer will go here
-    </footer>
+    </footer> */}
   </div>
 );
 

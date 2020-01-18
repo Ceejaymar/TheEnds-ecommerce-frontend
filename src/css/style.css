@@ -20,7 +20,7 @@ body {
 .Home {
   display: grid;
   grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
-  grid-template-rows: 75vh  min-content 80vh 50vh 90vh 3rem; }
+  grid-template-rows: 75vh  min-content 80vh; }
   .Home__hero {
     grid-column: full-start / full-end;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://firebasestorage.googleapis.com/v0/b/theends.appspot.com/o/storeImages%2FlandingPage%2Fdaniel-odame-DFRRyOzX8nI-unsplash.jpg?alt=media&token=d106fb11-e998-423d-ba12-82440f749202");
@@ -42,13 +42,14 @@ body {
     padding: 2.5rem 2.5rem;
     border-radius: 4px; }
   .Home__icon {
-    font-size: 5rem;
+    font-size: 4rem;
     position: relative; }
   .Home__icon-circle {
     display: grid;
     justify-content: center;
-    width: 120px;
-    height: 120px;
+    align-items: center;
+    width: 100px;
+    height: 100px;
     border-radius: 50%; }
     .Home__icon-circle--1 {
       color: mediumseagreen;
@@ -97,6 +98,7 @@ body {
   .Home__store-img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     display: block;
     border-radius: 4px; }
   .Home__featured-products {
