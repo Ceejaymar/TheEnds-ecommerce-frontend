@@ -1,8 +1,9 @@
   .Nav {
     display: grid;
-    grid-template-columns: [full-start] 1fr [content-start] repeat(8, 10rem) [content-end] 1fr [full-end];
+    grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content,  10rem) [col-end]) [content-end] 1fr [full-end];
     grid-template-rows: 50px;
     align-items: center;
+    padding: 0 2rem;
 
     &__brand {
       font-size: 1.9rem;

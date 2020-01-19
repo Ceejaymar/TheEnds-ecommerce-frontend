@@ -49,7 +49,7 @@ const SignUp = () => {
   const displayForm = (
     <div>
       <hr />
-      <h2>Sign Up</h2>
+      <h2 className="Login__header">You are almost at the ends</h2>
       <form>
         <input type="email" name="email" value={email} onChange={setEmail} placeholder="email" />
         <input type="password" name="password" value={password} onChange={setPassword} placeholder="password" />
