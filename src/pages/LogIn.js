@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import firebase from '../firebase';
 import { AuthContext } from '../context/auth';
 import useInputStateHook from '../hooks/useInputStateHook';
@@ -55,6 +56,12 @@ const LogIn = (props) => {
       }
     </AuthContext.Consumer>
   );
+};
+
+LogIn.propTypes = {
+  history: PropTypes.shape({
+    goBack: PropTypes.func,
+  }).isRequired,
 };
 
 export default LogIn;

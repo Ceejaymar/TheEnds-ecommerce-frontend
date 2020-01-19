@@ -8,8 +8,9 @@ const About = () => (
     <div>
       <h3>Lorem ipsum, dolor sit amet</h3>
       <h2>Lorem ipsum dolor, sit amet consectetur adipisicing </h2>
+      {/* eslint-disable-next-line max-len */}
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore a, autem nulla rem magni ab. Ratione modi nemo minus unde, amet, deserunt illo debitis quae sit iste, dolorem nesciunt optio!</p>
-      <button>To Marketplace</button>
+      <button type="button">To Marketplace</button>
     </div>
   </div>
 );
