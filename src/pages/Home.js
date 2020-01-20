@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import Footer from '../components/Footer';
 import homeData from '../homeData';
 
 const LandingPage = () => (
