@@ -32,19 +32,23 @@ const Store = ({ match }) => {
   }, [id]);
 
   return (
-    <div className="Page">
+    <div className="Store Page">
       <Helmet>
         <title>{storeName}</title>
       </Helmet>
-      <h2>{storeName}</h2>
-      <img style={{ width: '1000px' }} src={storeHeader} alt="store header" />
-      {
-        products.length > 1 ? (
-          products.map((product) => (
-            <ProductCard productInfo={product} key={product.id} />
-          ))
-        ) : <div>No products in this store!</div>
-      }
+      <div className="Store__header-content">
+        {/* <h2 className="Store__name">{storeName}</h2> */}
+        <img className="Store__img" src={storeHeader} alt="store header" />
+      </div>
+      <div className="Store__products">
+        {
+          products.length > 1 ? (
+            products.map((product) => (
+              <ProductCard productInfo={product} key={product.id} />
+            ))
+          ) : <div>No products in this store!</div>
+        }
+      </div>
     </div>
   );
 };

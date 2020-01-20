@@ -1,0 +1,4 @@
+.Footer {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
+}
