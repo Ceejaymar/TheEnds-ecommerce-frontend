@@ -25,6 +25,10 @@ html {
 body {
   font-family: 'Open Sans', sans-serif; }
 
+.Footer {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end]; }
+
 .Home {
   display: grid;
   grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
@@ -264,6 +268,11 @@ body {
   .Nav__icon {
     font-size: 1.7rem; }
 
+.Product-card__img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover; }
+
 .Page {
   position: absolute;
   top: 50px;
@@ -286,6 +295,24 @@ body {
 .fade-exit.fade-exit-active {
   opacity: 0;
   transition: opacity 200ms linear; }
+
+.Store {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
+  grid-template-rows: 70vh min-content; }
+  .Store__header-content {
+    grid-column: full-start / full-end; }
+  .Store__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+  .Store__products {
+    grid-column: content-start / content-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 3rem;
+    padding: 3rem 2rem; }
 
 .Store-card {
   width: 100%; }
