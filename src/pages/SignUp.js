@@ -69,7 +69,6 @@ const SignUp = (props) => {
                 <Link className="Auth__link Auth__link--home" to="/">home</Link>
                 <Link className="Auth__link Auth__link--about" to="/about">about</Link>
                 <h2 className="Auth__header">Welcome to The Ends!</h2>
-                {/* <h3 className="Login__sub-header">We have a bunch of new styles for you to enjoy!</h3> */}
 
                 <form className="Auth-form">
                   <input className="Auth-form__input Auth-form__input--fname" type="text" name="fname" value={fname} onChange={setFname} placeholder="first name" />
