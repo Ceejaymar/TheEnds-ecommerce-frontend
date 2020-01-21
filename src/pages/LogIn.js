@@ -31,7 +31,7 @@ const LogIn = (props) => {
             <div className="Login">
               <div className="Login__content">
                 <figure className="Login__img">
-                  <img src="https://images.unsplash.com/photo-1573316494404-0b90c43f4f03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="Black woman is colorful attire" />
+                  <img src="https://images.unsplash.com/photo-1573316494404-0b90c43f4f03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="Black woman in colorful attire" />
                 </figure>
                 <button className="Login__go-back" type="button" onClick={props.history.goBack}>
                   <i className="icon ion-md-arrow-round-back Login__icon" />
