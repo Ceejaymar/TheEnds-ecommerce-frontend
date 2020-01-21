@@ -5,9 +5,12 @@
     align-items: center;
     padding: 0 2rem;
 
-    &__brand {
-      font-size: 1.9rem;
+    &__brand:link,
+    &__brand:visited {
+      font-size: 2rem;
       font-family: $font-secondary;
+      text-decoration: none;
+      color: black;
       grid-column: content-start / span 2;
     }
 

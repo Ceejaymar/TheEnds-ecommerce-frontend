@@ -13,7 +13,9 @@ function Navbar() {
           if (user.userUid) {
             return (
               <div className="Nav">
-                <div className="Nav__brand">The Ends</div>
+                <Link to="/">
+                  <div className="Nav__brand">The Ends</div>
+                </Link>
                 <div className="Nav__menu">
                   <Link className="Nav__link" to="/">Home</Link>
                   <Link className="Nav__link" to="/about">About</Link>
@@ -38,7 +40,7 @@ function Navbar() {
 
           return (
             <div className="Nav">
-              <div className="Nav__brand">The Ends</div>
+              <Link to="/" className="Nav__brand">The Ends</Link>
               <div className="Nav__menu">
                 <Link className="Nav__link" to="/">Home</Link>
                 <Link className="Nav__link" to="/about">About</Link>

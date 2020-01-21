@@ -238,9 +238,11 @@ body {
   grid-template-rows: 50px;
   align-items: center;
   padding: 0 2rem; }
-  .Nav__brand {
-    font-size: 1.9rem;
+  .Nav__brand:link, .Nav__brand:visited {
+    font-size: 2rem;
     font-family: "Caveat", cursive;
+    text-decoration: none;
+    color: black;
     grid-column: content-start / span 2; }
   .Nav__menu {
     grid-column: 7 / content-end;
