@@ -35,67 +35,73 @@ function Product({ match }) {
       <Helmet>
         <title>{name}</title>
       </Helmet>
-      <img style={{ width: '400px' }} src={imageUrl} alt="product" />
-      <h3>{name}</h3>
-      <h3>{category}</h3>
-      <p>{description}</p>
-      <p>{price}</p>
-      {
-        Object.keys(productInfo).length > 0 ? (
-          Object.keys(productInfo.stock).map((sz) => (
-            <label htmlFor="size" key={sz} style={{ display: hide ? 'none' : 'inline' }}>
-              {sz}
-              <input
-                name="size"
-                id="size"
-                value={sz}
-                type="radio"
-                onClick={(e) => setSize(e.target.value)}
-                disabled={!Number(productInfo.stock[sz])}
-              />
-            </label>
-          ))
-        ) : ''
-      }
-      {
-        Object.keys(productInfo).length > 0 && productInfo.stock[size] < 5 && (
-          <p>
-            Only
-            {' '}
-            {productInfo.stock[size]}
-            {' '}
-            left!
-          </p>
-        )
-      }
+      <div className="Product__content">
+        <img className="Product__img" src={imageUrl} alt="product" />
+        <div className="Product__info">
+          <h2 className="Product__name">{name}</h2>
+          {/* <h3 className="Product__category">{category}</h3> */}
+          <p className="Product__desc">{description}</p>
+          <p className="Product__price">{price}</p>
+          <div className="Product__sizes">
+            {
+              Object.keys(productInfo).length > 0 ? (
+                Object.keys(productInfo.stock).map((sz) => (
+                  <label htmlFor="size" key={sz} style={{ display: hide ? 'none' : 'inline' }}>
+                    {sz}
+                    <input
+                      name="size"
+                      id="size"
+                      value={sz}
+                      type="radio"
+                      onClick={(e) => setSize(e.target.value)}
+                      disabled={!Number(productInfo.stock[sz])}
+                    />
+                  </label>
+                ))
+              ) : ''
+            }
+          </div>
+          {
+            Object.keys(productInfo).length > 0 && productInfo.stock[size] < 5 && (
+              <p>
+                Only
+                {' '}
+                {productInfo.stock[size]}
+                {' '}
+                left!
+              </p>
+            )
+          }
 
-      <div className="Product__quantity-cont">
-        <button
-          onClick={() => setQuantity((st) => st - 1)}
-          type="button"
-          className="Product__decrease"
-          disabled={quantity === 1}
-        >
-          <i className="icon ion-md-remove" />
-        </button>
-        {quantity}
-        {/* TODO: disable increase button when quanity is stock quantity */}
-        <button
-          onClick={() => setQuantity((st) => st + 1)}
-          type="button"
-          className="Product__increase"
-        >
-          <i className="icon ion-md-add" />
-        </button>
+          <div className="Product__quantity-cont">
+            <button
+              onClick={() => setQuantity((st) => st - 1)}
+              type="button"
+              className="Product__decrease"
+              disabled={quantity === 1}
+            >
+              <i className="icon ion-md-remove" />
+            </button>
+            {quantity}
+            {/* TODO: disable increase button when quanity is stock quantity */}
+            <button
+              onClick={() => setQuantity((st) => st + 1)}
+              type="button"
+              className="Product__increase"
+            >
+              <i className="icon ion-md-add" />
+            </button>
+          </div>
+          <button
+            type="button"
+            disabled={!size}
+            onClick={() => addToCart(productInfo, quantity, size)}
+            className="Product__add-cart"
+          >
+            Add to cart
+          </button>
+        </div>
       </div>
-      <br />
-      <button
-        type="button"
-        disabled={!size}
-        onClick={() => addToCart(productInfo, quantity, size)}
-      >
-        Add to cart
-      </button>
     </div>
   );
 }

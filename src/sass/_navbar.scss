@@ -27,6 +27,11 @@
       text-align: center;
       display: flex;
       align-items: center;
+
+      &--logout {
+        font-size: .9rem;
+        color: gray;
+      }
     }
 
     &__cart {

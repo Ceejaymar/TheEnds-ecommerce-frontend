@@ -13,13 +13,11 @@ function Navbar() {
           if (user.userUid) {
             return (
               <div className="Nav">
-                <Link to="/">
-                  <div className="Nav__brand">The Ends</div>
-                </Link>
+                <Link to="/" className="Nav__brand">The Ends</Link>
                 <div className="Nav__menu">
-                  <Link className="Nav__link" to="/">Home</Link>
-                  <Link className="Nav__link" to="/about">About</Link>
-                  <Link className="Nav__link" to="/marketplace">Marketplace</Link>
+                  <Link className="Nav__link" to="/">home</Link>
+                  <Link className="Nav__link" to="/about">about</Link>
+                  <Link className="Nav__link" to="/marketplace">marketplace</Link>
                   <Link className="Nav__link" to="/createproduct">
                     <i className="icon ion-md-add-circle Nav__icon" />
                   </Link>
@@ -32,7 +30,7 @@ function Navbar() {
                   {/* <Link className="Nav__link" to="/account">
                     <i className="icon ion-md-person Nav__icon" />
                   </Link> */}
-                  <Link className="Nav__link" to="/logout">Log out</Link>
+                  <Link className="Nav__link Nav__link--logout" to="/logout">log out</Link>
                 </div>
               </div>
             );

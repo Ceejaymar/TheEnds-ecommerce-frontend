@@ -6,13 +6,11 @@ const ProductCard = ({ productInfo }) => {
   const { name, url, price, id } = productInfo;
 
   return (
-    <div className="Product-card">
-      <Link to={`/product/${id}`}>
-        <img className="Product-card__img" src={url} alt="product" />
-        <h3>{name}</h3>
-        <p>{price}</p>
-      </Link>
-    </div>
+    <Link to={`/product/${id}`} className="Product-card">
+      <img className="Product-card__img" src={url} alt="product" />
+      <h3 className="Product-card__name">{name}</h3>
+      <p className="Product-card__price">{price}</p>
+    </Link>
   );
 };
 
