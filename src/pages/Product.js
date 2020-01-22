@@ -13,7 +13,7 @@ function Product({ match }) {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState('');
   const [hide, setHide] = useState(false);
-  const { name, url: imageUrl, category, description, price } = productInfo;
+  const { name, url: imageUrl, description, price } = productInfo;
   const { params: { id } } = match;
 
   useEffect(() => {
@@ -39,7 +39,6 @@ function Product({ match }) {
         <img className="Product__img" src={imageUrl} alt="product" />
         <div className="Product__info">
           <h2 className="Product__name">{name}</h2>
-          {/* <h3 className="Product__category">{category}</h3> */}
           <p className="Product__desc">{description}</p>
           <p className="Product__price">{price}</p>
           <div className="Product__sizes">
