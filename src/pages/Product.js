@@ -50,9 +50,7 @@ function Product({ match }) {
                     key={sz}
                     style={{ display: hide ? 'none' : 'inline' }}
                     className="Product__size"
-                  >
-                    {console.log('sz', sz)}
-                    {console.log('size', size)}
+                  > */}
                     {sz}
                     <input
                       name="size"
