@@ -45,6 +45,23 @@ const homeData = {
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nesciunt ea aliquam natus delectus asperiores error animi voluptates expedita.',
     },
   ],
+  products: [
+    {
+      id: 25,
+      img: 'https://firebasestorage.googleapis.com/v0/b/theends.appspot.com/o/productImages%2Fthousandsunny%2FtheLonelyCactus.jpg?alt=media&token=468d49cc-2d09-4ff8-9110-831791fae5fc',
+      name: 'White/Stripes',
+    },
+    {
+      id: 14,
+      img: 'https://firebasestorage.googleapis.com/v0/b/theends.appspot.com/o/Star-2.png?alt=media&token=0ca8b1b2-6fc0-45bc-8b6d-8f14172b4d11',
+      name: 'White/Stripes',
+    },
+    {
+      id: 4,
+      img: 'https://firebasestorage.googleapis.com/v0/b/theends.appspot.com/o/stripe-1.jpg?alt=media&token=938c6ad8-5f05-4333-8f32-a30c63835574',
+      name: 'White/Stripes',
+    },
+  ],
 };
 
 export default homeData;
