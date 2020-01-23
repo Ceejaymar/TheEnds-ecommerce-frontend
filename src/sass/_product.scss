@@ -114,12 +114,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: #F7455D;
     border: 2px solid #F7455D;
     text-transform: uppercase;
     font-weight: 600;
     padding: 1rem;
+    border-radius: 4px;
 
     &:hover {
       background-color: rgb(255, 161, 173);
@@ -129,13 +129,12 @@
   &__quantity-cont {
     grid-column: col-start 2 / col-end 2;
     padding: 2rem 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   &__add-cart {
     grid-column: col-start 3 / col-end 4;
-    // align-self: center;
-    padding: 1rem 1.5rem;
+    padding: .5rem 1rem;
     font-size: 1.2rem;
     border-radius: 4px;
     border: none;

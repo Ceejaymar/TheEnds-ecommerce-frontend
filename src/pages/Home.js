@@ -35,9 +35,21 @@ const LandingPage = () => (
         ))
       }
     </section>
-    {/* <section className="Home__featured-products">
-      featured products
+    <section className="Home__featured-products">
+      <h2 className="Home__products-header">Featured Products</h2>
+      {
+        homeData.products.map((product) => (
+          <Link key={product.id} className="Home__featured-info" to={`/product/${product.id}`}>
+            <img className="Home__product-img" src={product.img} alt={product.name} />
+            <div className="Home__view-product">
+              <i className="icon ion-md-eye Home__product-icon" />
+              View Product
+            </div>
+          </Link>
+        ))
+      }
     </section>
+    {/*
     <section className="Home__gallery">
       gallery
     </section>
