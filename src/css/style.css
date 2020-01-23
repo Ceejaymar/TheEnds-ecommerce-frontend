@@ -260,7 +260,7 @@ body {
     justify-self: center;
     padding: 2rem 0; }
   .Home__featured-info {
-    height: 100%;
+    height: 95%;
     position: relative; }
     .Home__featured-info:hover .Home__view-product {
       opacity: 1; }
