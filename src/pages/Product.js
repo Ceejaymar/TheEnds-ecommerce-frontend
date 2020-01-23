@@ -45,16 +45,28 @@ function Product({ match }) {
             {
               Object.keys(productInfo).length > 0 ? (
                 Object.keys(productInfo.stock).map((sz) => (
-                  <label htmlFor="size" key={sz} style={{ display: hide ? 'none' : 'inline' }}>
+                  <label
+                    htmlFor="size"
+                    key={sz}
+                    style={{ display: hide ? 'none' : 'inline' }}
+                    className="Product__size"
+                  >
+                    {console.log('sz', sz)}
+                    {console.log('size', size)}
                     {sz}
                     <input
                       name="size"
                       id="size"
                       value={sz}
                       type="radio"
-                      onClick={(e) => setSize(e.target.value)}
+                      onClick={() => {
+                        // ! Size is only getting set to 'sm'
+                        setSize(sz);
+                      }}
                       disabled={!Number(productInfo.stock[sz])}
+                      className="Product__size-input"
                     />
+                    <span className={`Product__indicator ${sz === size ? 'checked' : ''}`}>{sz}</span>
                   </label>
                 ))
               ) : ''
@@ -76,7 +88,7 @@ function Product({ match }) {
             <button
               onClick={() => setQuantity((st) => st - 1)}
               type="button"
-              className="Product__decrease"
+              className="Product__quantity-icons"
               disabled={quantity === 1}
             >
               <i className="icon ion-md-remove" />
@@ -86,7 +98,7 @@ function Product({ match }) {
             <button
               onClick={() => setQuantity((st) => st + 1)}
               type="button"
-              className="Product__increase"
+              className="Product__quantity-icons"
             >
               <i className="icon ion-md-add" />
             </button>

@@ -1,5 +1,5 @@
 .Product {
-  background-color: lightsalmon;
+  // background-color: lightsalmon;
   display: grid;
   height: calc(100vh - 50px);
 
@@ -29,7 +29,7 @@
 
     display: grid;
 
-    grid-template-columns: repeat(5, [col-start] 1fr [col-end]);
+    grid-template-columns: repeat(5, [col-start] minmax(max-content, 1fr) [col-end]);
     // grid-template-rows: repeat(5, minmax(5rem, 1fr));
     grid-template-rows: max-content max-content 200px max-content max-content;
     justify-items: center;
@@ -38,7 +38,6 @@
 
   &__name {
     grid-column: col-start 2 / col-end 4;
-    // justify-self: center;
     padding: 2rem 0;
   }
 
@@ -46,34 +45,127 @@
     grid-column: col-start 3 / col-end 3;
     font-size: 2rem;
     padding: 2rem 0;
-    // justify-self: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &:after {
+      content: '';
+      width: 70%;
+      height: 2px;
+      background-color: black;
+      position: absolute;
+      bottom: 20px;
+    }
+
   }
 
   &__desc {
     grid-column: col-start 2 / col-end 4;
     grid-row: 3 / 4;
     font-size: 1.3rem;
-    // justify-self: center;
+    color: gray;
   }
 
   &__sizes {
     grid-column: col-start 2 / col-end 4;
-    // justify-self: center;
+    justify-self: stretch;
+    display: flex;
+    justify-content: space-between;
     padding: 2rem 0;
+  }
+
+  &__size {
+    // margin: 0 1rem;
+    // position: relative;
+    // height: 30px;
+    // width: 30px;
+
+    display: block;
+    position: relative;
+  // padding-left: 35px;
+  // margin-bottom: 12px;
+    cursor: pointer;
+    // font-size: 22px;
+    user-select: none;
+    color: white;
+  }
+
+  &__size-input {
+
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checked {
+    background-color: #F7455D;
+    color: white;
+  }
+
+  &__indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #F7455D;
+    border: 2px solid #F7455D;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 1rem;
+
+    &:hover {
+      background-color: rgb(255, 161, 173);
+    }
   }
 
   &__quantity-cont {
     grid-column: col-start 2 / col-end 2;
     padding: 2rem 0;
+    font-size: 2rem;
   }
 
   &__add-cart {
     grid-column: col-start 3 / col-end 4;
     // align-self: center;
     padding: 1rem 1.5rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     border-radius: 4px;
     border: none;
     font-family: inherit;
+    background-color: #F7455D;
+    color: white;
+    cursor: pointer;
+    transition: .2s;
+
+    &:disabled {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+  }
+
+  &__quantity-icons {
+    border: none;
+    background-color: white;
+    font-size: 1.7rem;
+    color: #F7455D;
+    cursor: pointer;
+    padding: 0 .7rem;
+
+    &:hover {
+      color: rgb(118, 34, 46);
+    }
+
+    &:disabled {
+      color: rgb(252, 173, 183);
+      cursor: not-allowed;
+    }
   }
 }
