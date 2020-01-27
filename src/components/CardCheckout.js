@@ -36,7 +36,7 @@ class CardCheckout extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Checkout">
         <StripeCheckout
           stripeKey={process.env.REACT_APP_STRIPE_PUBLISH_KEY}
           token={this.handleToken}
@@ -50,10 +50,9 @@ class CardCheckout extends Component {
         // panelLabel="Give Money"
         // ComponentClass="div" //surround custom button in this
         >
-          {/* Add customized button here */}
-          {/* <button>
-            Purchase
-          </button> */}
+          <button className="Checkout__btn" type="button">
+            Make purchase
+          </button>
         </StripeCheckout>
       </div>
     );

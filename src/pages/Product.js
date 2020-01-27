@@ -57,9 +57,9 @@ function Product({ match }) {
                       id="size"
                       value={sz}
                       type="radio"
-                      onClick={() => {
+                      onClick={(e) => {
                         // ! Size is only getting set to 'sm'
-                        setSize(sz);
+                        setSize(e.target.value);
                       }}
                       disabled={!Number(productInfo.stock[sz])}
                       className="Product__size-input"

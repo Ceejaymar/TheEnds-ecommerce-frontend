@@ -1,7 +1,9 @@
 @import "about";
-@import 'auth';
+@import "auth";
 @import "base";
-@import 'footer';
+@import "cardCheckout";
+@import "cartItem";
+@import "footer";
 @import "landingPage";
 @import "login";
 @import "marketplace";
@@ -9,5 +11,6 @@
 @import "product";
 @import "productCard";
 @import "routeTransition";
+@import "shoppingCart";
 @import "store";
 @import "storeCard";

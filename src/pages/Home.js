@@ -31,6 +31,11 @@ const LandingPage = () => (
         homeData.stores.map((store) => (
           <Link to={`/store/${store.id}`} className={`Home__store Home__store--${store.id}`} key={store.id}>
             <img src={store.img} alt="" className="Home__store-img" />
+            <button className="Home__shop" type="button">
+              Shop
+              {' '}
+              <span className="Home__shop-text">{store.name}</span>
+            </button>
           </Link>
         ))
       }
