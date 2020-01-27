@@ -14,13 +14,16 @@ const ShoppingCart = () => {
   }, [cart]);
 
   return (
-    <div>
-      This is the shopping cart.
-      {cart.map((product) => (
-        <CartItem key={uuid()} product={product} />
-      ))}
-      {total}
-      <CardCheckout />
+    <div className="Cart">
+      <div className="Cart__items">
+        {cart.map((product) => (
+          <CartItem key={uuid()} product={product} />
+        ))}
+      </div>
+      <div className="Cart__info">
+        {total}
+        <CardCheckout />
+      </div>
     </div>
   );
 };

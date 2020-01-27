@@ -1,0 +1,19 @@
+.Cart {
+  height: calc(100vh - 50px);
+  // background-color: firebrick;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+
+  &__items {
+    background-color: palevioletred;
+    overflow: scroll;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  &__info {
+    background-color: peru;
+  }
+
+}

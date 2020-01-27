@@ -51,15 +51,18 @@ function Product({ match }) {
                     style={{ display: hide ? 'none' : 'inline' }}
                     className="Product__size"
                   >
+                    { console.log(sz)}
                     {sz}
                     <input
                       name="size"
                       id="size"
                       value={sz}
                       type="radio"
-                      onClick={() => {
+                      onClick={(e) => {
                         // ! Size is only getting set to 'sm'
-                        setSize(sz);
+                        console.log(sz);
+                        console.log(e.target.value);
+                        setSize(e.target.value);
                       }}
                       disabled={!Number(productInfo.stock[sz])}
                       className="Product__size-input"

@@ -18,9 +18,9 @@ function Navbar() {
                   <Link className="Nav__link" to="/">home</Link>
                   <Link className="Nav__link" to="/about">about</Link>
                   <Link className="Nav__link" to="/marketplace">marketplace</Link>
-                  <Link className="Nav__link" to="/createproduct">
+                  {/* <Link className="Nav__link" to="/createproduct">
                     <i className="icon ion-md-add-circle Nav__icon" />
-                  </Link>
+                  </Link> */}
                   <Link className="Nav__link Nav__cart" to="/cart">
                     <i className="icon ion-md-basket Nav__icon" />
                     {
@@ -40,11 +40,11 @@ function Navbar() {
             <div className="Nav">
               <Link to="/" className="Nav__brand">The Ends</Link>
               <div className="Nav__menu">
-                <Link className="Nav__link" to="/">Home</Link>
-                <Link className="Nav__link" to="/about">About</Link>
-                <Link className="Nav__link" to="/marketplace">Marketplace</Link>
-                <Link className="Nav__link" to="/signup">Sign Up</Link>
-                <Link className="Nav__link" to="/login">Log In</Link>
+                <Link className="Nav__link" to="/">home</Link>
+                <Link className="Nav__link" to="/about">about</Link>
+                <Link className="Nav__link" to="/marketplace">marketplace</Link>
+                <Link className="Nav__link" to="/signup">sign Up</Link>
+                <Link className="Nav__link" to="/login">log In</Link>
               </div>
             </div>
           );
