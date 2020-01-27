@@ -55,7 +55,6 @@ function Product({ match }) {
                 value={sz}
                 type="radio"
                 onClick={(e) => {
-                  console.log(e.target.value);
                   setSize(e.target.value);
                 }}
                 disabled={!Number(productInfo.stock[sz])}
