@@ -159,6 +159,44 @@ html {
 body {
   font-family: 'Open Sans', sans-serif; }
 
+.Checkout {
+  grid-column: 1 / -1;
+  align-self: center;
+  margin: 0 auto;
+  padding: 2rem; }
+  .Checkout__btn {
+    background-color: #F7455D;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 1.4rem;
+    cursor: pointer; }
+
+.Cart-item {
+  height: auto;
+  grid-column: 2 / span 5;
+  grid-auto-rows: 200px;
+  display: grid;
+  grid-template-columns: 2fr 2fr repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  background-color: whitesmoke;
+  padding: .5rem;
+  border-radius: 4px; }
+  .Cart-item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+  .Cart-item__price {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600; }
+  .Cart-item__sub-price {
+    font-size: .8rem;
+    color: slategrey;
+    font-weight: 300; }
+
 .Footer {
   display: grid;
   grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end]; }
@@ -645,14 +683,39 @@ body {
 .Cart {
   height: calc(100vh - 50px);
   display: grid;
-  grid-template-columns: 3fr 1fr; }
+  grid-template-columns: 4fr 1fr;
+  font-size: 1.3rem; }
   .Cart__items {
-    background-color: palevioletred;
     overflow: scroll;
     display: grid;
-    grid-template-columns: repeat(7, 1fr); }
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: min-content;
+    grid-row-gap: 2rem;
+    padding: 2rem;
+    background: linear-gradient(to bottom left, #fff 0%, #fff 50%, rgba(247, 152, 69, 0.6) 50%, rgba(247, 152, 69, 0.6) 100%); }
+  .Cart__heading {
+    grid-column: 2 / -2;
+    border-bottom: 1px solid lightgrey; }
+  .Cart__empty {
+    grid-column: 2 / -2;
+    margin: 0 auto; }
+    .Cart__empty a:link,
+    .Cart__empty a:visited {
+      text-decoration: none;
+      color: #F7455D; }
   .Cart__info {
-    background-color: peru; }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, min-content);
+    grid-row-gap: 1rem;
+    border-left: 1px solid lightgrey;
+    padding: 0 1rem; }
+  .Cart__summary {
+    grid-column: 1 / -1;
+    text-align: center;
+    border-bottom: 1px solid lightgrey; }
+  .Cart__price {
+    text-align: right; }
 
 .Store {
   display: grid;
@@ -673,7 +736,8 @@ body {
     padding: 3rem 2rem; }
 
 .Store-card {
-  width: 100%; }
+  width: 100%;
+  background-color: lightgrey; }
   .Store-card__img {
     width: 100%;
     height: 100%;

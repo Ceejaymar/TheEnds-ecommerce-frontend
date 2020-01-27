@@ -43,8 +43,8 @@ function Navbar() {
                 <Link className="Nav__link" to="/">home</Link>
                 <Link className="Nav__link" to="/about">about</Link>
                 <Link className="Nav__link" to="/marketplace">marketplace</Link>
-                <Link className="Nav__link" to="/signup">sign Up</Link>
-                <Link className="Nav__link" to="/login">log In</Link>
+                <Link className="Nav__link" to="/signup">sign up</Link>
+                <Link className="Nav__link" to="/login">log in</Link>
               </div>
             </div>
           );
