@@ -11,7 +11,7 @@ const ShoppingCart = () => {
 
   useEffect(() => {
     const sum = cart.reduce((previousVal, currentVal) => (previousVal + (parseFloat(currentVal.price.replace(/\$|,/g, '')) * currentVal.quantity)), 0);
-    setTotal(sum);
+    setTotal(sum.toFixed(2));
   }, [cart]);
 
   return (

@@ -8,6 +8,8 @@ The Ends is a marketplace of stores and products that make you feel from where y
 
 This is fun project I am working on to bring together a lot of what I know and some new things together.
 
+![alt text](https://firebasestorage.googleapis.com/v0/b/portfolio-cm.appspot.com/o/TheEnds.jpg?alt=media&token=158a2289-3f03-4682-b51d-d56ea7d468e9 "The Ends`")
+
 ## [The Ends live website](http://the-ends.app.web/ "The Ends marketplace")
 
 If you would like to see The Ends backend, click :point_right: https://github.com/Ceejaymar/TheEnds-ecommerce-backend
