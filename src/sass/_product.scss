@@ -1,5 +1,4 @@
 .Product {
-  // background-color: lightsalmon;
   display: grid;
   height: calc(100vh - 50px);
 
@@ -8,7 +7,6 @@
 
   &__content {
     grid-column: content-start / content-end;
-
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(3, max-content) 20%;
@@ -26,9 +24,7 @@
   &__info {
     grid-column: 4 / -1;
     grid-row: 1 / span 4;
-
     display: grid;
-
     grid-template-columns: repeat(5, [col-start] minmax(max-content, 1fr) [col-end]);
     // grid-template-rows: repeat(5, minmax(5rem, 1fr));
     grid-template-rows: max-content max-content 200px max-content max-content;
@@ -57,7 +53,6 @@
       position: absolute;
       bottom: 20px;
     }
-
   }
 
   &__desc {
@@ -76,28 +71,22 @@
   }
 
   &__size {
-    // margin: 0 1rem;
-    // position: relative;
-    // height: 30px;
-    // width: 30px;
-
     display: block;
     position: relative;
-  // padding-left: 35px;
-  // margin-bottom: 12px;
     cursor: pointer;
-    // font-size: 22px;
     user-select: none;
     color: white;
   }
 
   &__size-input {
-
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    height: 0;
-    width: 0;
+    height: 50px;
+    width: 50px;
+    z-index: 5;
+    top: 0;
+    left: 0;
   }
 
   .checked {

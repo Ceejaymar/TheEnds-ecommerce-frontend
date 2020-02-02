@@ -19,7 +19,6 @@ import Product from './pages/Product';
 import CreateProduct from './pages/CreateProduct';
 import ShoppingCart from './pages/ShoppingCart';
 
-
 // Components
 import Navbar from './components/Navbar';
 
