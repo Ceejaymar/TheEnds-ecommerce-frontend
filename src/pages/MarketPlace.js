@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import StoreCard from '../components/StoreCard';
+import Loader from '../components/Loader';
 import url from '../config/url';
 
 const MarketPlace = () => {
@@ -33,8 +34,8 @@ const MarketPlace = () => {
             <StoreCard key={store.id} storeInfo={store} />
           ))
         ) : (
-          <div>
-            Loading marketplace...
+          <div className="Marketplace__loader">
+            <Loader />
           </div>
         )}
       </div>

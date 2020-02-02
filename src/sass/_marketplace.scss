@@ -1,5 +1,5 @@
 .Marketplace {
-  height: 1000px;
+  height: calc(100vh - 50px);
   width: 100%;
   display: grid;
   grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
@@ -12,5 +12,13 @@
     grid-column-gap: 2rem;
     grid-row-gap: 3rem;
     padding: 2rem;
+  }
+
+  &__loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
   }
 }

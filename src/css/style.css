@@ -367,6 +367,49 @@ body {
     background-color: darkslategrey;
     grid-column: full-start / full-end; }
 
+.Loader {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  margin-top: 30px;
+  font-size: rem; }
+  .Loader__circle {
+    border-radius: 50%; }
+    .Loader__circle-middle, .Loader__circle-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .Loader__circle-outer {
+      width: 100%;
+      height: 100%;
+      border-top: 5px solid #F7455D;
+      animation: rotate 1.5s infinite linear; }
+    .Loader__circle-middle {
+      width: 75%;
+      height: 75%;
+      border-top: 5px solid #45a4f7;
+      animation: rotateInnerCircles 1.3s infinite linear; }
+    .Loader__circle-inner {
+      width: 50%;
+      height: 50%;
+      border-top: 5px solid #f79845;
+      animation: rotateInnerCircles 1.1s infinite linear; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes rotateInnerCircles {
+  0% {
+    transform-origin: center center;
+    transform: translate(-50%, -50%) rotate(0); }
+  100% {
+    transform-origin: center center;
+    transform: translate(-50%, -50%) rotate(360deg); } }
+
 .Login {
   background: linear-gradient(to right, #bfe9f6 0%, #bfe9f6 60%, #f8c8d7 60%, #f8d4df 100%);
   display: grid;
@@ -464,7 +507,7 @@ body {
     font-family: inherit; }
 
 .Marketplace {
-  height: 1000px;
+  height: calc(100vh - 50px);
   width: 100%;
   display: grid;
   grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
@@ -476,6 +519,12 @@ body {
     grid-column-gap: 2rem;
     grid-row-gap: 3rem;
     padding: 2rem; }
+  .Marketplace__loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem; }
 
 .Nav {
   display: grid;
