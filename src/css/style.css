@@ -527,7 +527,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem; }
+    align-items: center;
+    font-size: 1.2rem;
+    height: calc(100vh - 114px); }
 
 .Nav {
   display: grid;
