@@ -49,7 +49,7 @@
       content: '';
       width: 70%;
       height: 2px;
-      background-color: black;
+      background-color: $c-black;
       position: absolute;
       bottom: 20px;
     }
@@ -75,7 +75,7 @@
     position: relative;
     cursor: pointer;
     user-select: none;
-    color: white;
+    color: $c-white;
   }
 
   &__size-input {
@@ -90,8 +90,8 @@
   }
 
   .checked {
-    background-color: #F7455D;
-    color: white;
+    background-color: $c-red;
+    color: $c-white;
   }
 
   &__indicator {
@@ -103,8 +103,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #F7455D;
-    border: 2px solid #F7455D;
+    color: $c-red;
+    border: 2px solid $c-red;
     text-transform: uppercase;
     font-weight: 600;
     padding: 1rem;
@@ -128,7 +128,7 @@
     border-radius: 4px;
     border: none;
     font-family: inherit;
-    background-color: #F7455D;
+    background-color: $c-red;
     color: white;
     cursor: pointer;
     transition: .2s;
@@ -141,14 +141,14 @@
 
   &__quantity-icons {
     border: none;
-    background-color: white;
+    background-color: $c-white;
     font-size: 1.7rem;
-    color: #F7455D;
+    color: $c-red;
     cursor: pointer;
     padding: 0 .7rem;
 
     &:hover {
-      color: rgb(118, 34, 46);
+      color: $c-red-dark;
     }
 
     &:disabled {

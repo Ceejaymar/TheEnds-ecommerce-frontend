@@ -44,13 +44,12 @@
     grid-column: 4 / 5;
     align-self: center;
     text-decoration: none;
-    color: #F7455D;
+    color: $c-red;
     font-size: 1.3rem;
     display: flex;
   }
 
   &__icon {
-    color: #F7455D;
     font-size: 1.4rem;
     margin-left: .4rem;
   }

@@ -1,11 +1,20 @@
 // @import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
 
 $c-white: #ffffff;
-// $c-primary: #2c99ed;
-// $c-primary-light: #58abe9;
+$c-black: #000000;
+$c-grey: #a1a1a1;
 
-$font-primary: 'Open Sans', sans-serif;
-$font-secondary: 'Caveat', cursive;
+$c-blue: #45a4f7;
+$c-blue-light: #bfe9f6;
+
+$c-red: #F7455D;
+$c-red-dark: #f62743;
+$c-red-light: #f8c8d7;
+
+$c-orange: #f79845;
+
+$f-primary: 'Open Sans', sans-serif;
+$f-secondary: 'Caveat', cursive;
 
 $screen-large: 62.50em;   // 1000px
 $screen-medium: 56.25em;  // 900px
