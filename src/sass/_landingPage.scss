@@ -1,8 +1,6 @@
 .Home {
   display: grid;
-
   grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
-
   grid-template-rows: 75vh 50vh 80vh 85vh;
 
   &__hero {
@@ -19,9 +17,8 @@
   &__heading {
     text-align: center;
     align-self: end;
-    font-family: 'Caveat', cursive;
+    font-family: $f-secondary;
     font-size: 5rem;
-    // text-decoration: underline;
   }
 
   &__sub-heading {
@@ -38,11 +35,10 @@
   }
 
   &__offer-content {
-    background-color: #f7f7f7;
     display: grid;
     grid-gap: 1.5rem;
     justify-items: center;
-    align-content: start;
+    // align-content: start;
     padding: 2.5rem 2.5rem;
     border-radius: 4px;
   }
@@ -61,18 +57,18 @@
     border-radius: 50%;
 
     &--1 {
-      color: rgb(69, 164, 247);
-      background-color: rgba(69, 164, 247, .5);
+      color: $c-blue;
+      background-color: rgba($c-blue, 0.5);
     }
 
     &--2 {
-      color: #F7455D;
-      background-color: rgba(247, 69, 93, 0.507);
+      color: $c-red;
+      background-color: rgba($c-red, 0.5);
     }
 
     &--3 {
-      color: rgb(247, 152, 69);
-      background-color: rgba(247, 152, 69, .5);
+      color: $c-orange;
+      background-color: rgba($c-orange, 0.5);
     }
   }
 
@@ -82,7 +78,7 @@
   }
 
   &__offer-desc {
-    color: #a1a1a1;
+    color: $c-grey;
     font-size: 1.3rem;
     font-weight: 300;
   }
@@ -152,7 +148,7 @@
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     align-self: center;
-    background-color: #F7455D;
+    background-color: $c-red;
     color: white;
     font-size: 1.5rem;
     border: none;
@@ -166,7 +162,6 @@
   }
 
   &__shop-text {
-    // font-family: 'Caveat', cursive;
     font-size: 1.7rem;
     font-weight: 500;
   }
@@ -215,7 +210,7 @@
     right: 0;
     left: 0;
     height: 40px;
-    background-color: #F7455D;
+    background-color: $c-red;
     color: white;
     font-weight: 600;
     font-size: 1.2rem;

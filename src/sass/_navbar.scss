@@ -8,9 +8,9 @@
     &__brand:link,
     &__brand:visited {
       font-size: 2rem;
-      font-family: $font-secondary;
+      font-family: $f-secondary;
       text-decoration: none;
-      color: black;
+      color: $c-black;
       grid-column: content-start / span 2;
     }
 
@@ -23,7 +23,7 @@
     &__link {
       font-size: 1.1rem;
       text-decoration: none;
-      color: black;
+      color: $c-black;
       text-align: center;
       display: flex;
       align-items: center;
@@ -41,7 +41,7 @@
 
     &__quantity {
       font-size: .7rem;
-      background-color: red;
+      background-color: $c-red;
       color: white;
       width: 15px;
       height: 15px;
