@@ -40,7 +40,7 @@ const LandingPage = () => (
         ))
       }
     </section>
-    <section className="Home__featured-products">
+    {/* <section className="Home__featured-products">
       <h2 className="Home__products-header">Featured Products</h2>
       {
         homeData.products.map((product) => (
@@ -53,7 +53,7 @@ const LandingPage = () => (
           </Link>
         ))
       }
-    </section>
+    </section> */}
     {/*
     <section className="Home__gallery">
       gallery
