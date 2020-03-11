@@ -1,9 +1,8 @@
 .Product-card {
   display: grid;
-  height: 400px;
-
-  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 85% 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  height: 400px;
   text-decoration: none;
 
   &:link,
@@ -12,22 +11,22 @@
   }
 
   &__img {
+    display: block;
+    grid-column: 1 / -1;
     width: 100%;
     height: 100%;
-    display: block;
     object-fit: cover;
-    grid-column: 1 / -1;
   }
 
   &__name {
+    align-self: center;
     margin-left: .5rem;
     font-weight: 400;
-    align-self: center;
   }
 
   &__price {
-    justify-self: end;
     align-self: center;
+    justify-self: end;
     margin-right: .5rem;
   }
 }

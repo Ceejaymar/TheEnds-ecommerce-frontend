@@ -32,7 +32,7 @@ const Store = ({ match }) => {
   }, [id]);
 
   return (
-    <div className="Store Page">
+    <div className="Store page">
       <Helmet>
         <title>{storeName}</title>
       </Helmet>

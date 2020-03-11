@@ -1,14 +1,14 @@
-.Page {
+.page {
   position: absolute;
   top: 50px;
-  left: 0;
   right: 0;
+  left: 0;
 }
 
 .fade-appear,
 .fade-enter {
-  opacity: 0;
   z-index: 1;
+  opacity: 0;
 }
 
 .fade-appear-active,

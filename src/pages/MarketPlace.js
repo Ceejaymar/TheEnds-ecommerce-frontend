@@ -24,7 +24,7 @@ const MarketPlace = () => {
   }, []);
 
   return (
-    <div className="Marketplace Page">
+    <div className="Marketplace page">
       <Helmet>
         <title>Marketplace</title>
       </Helmet>

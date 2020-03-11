@@ -31,7 +31,7 @@ function Product({ match }) {
   }, [id]);
 
   return (
-    <div className="Product Page">
+    <div className="Product page">
       <Helmet>
         <title>{name}</title>
       </Helmet>
