@@ -1,16 +1,16 @@
 .Cart {
-  height: calc(100vh - 50px);
   display: grid;
   grid-template-columns: 4fr 1fr;
+  height: calc(100vh - 50px);
   font-size: 1.3rem;
 
   &__items {
-    overflow: scroll;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
     grid-auto-rows: min-content;
     grid-row-gap: 2rem;
+    grid-template-columns: repeat(7, 1fr);
     padding: 2rem;
+    overflow: scroll;
     background: linear-gradient(to bottom left, $c-white 0%, $c-white 50%, rgba($c-orange, .6) 50%,rgba($c-orange, .6) 100%);
   }
 
@@ -25,18 +25,18 @@
 
     & a:link,
     & a:visited {
-      text-decoration: none;
       color: $c-red;
+      text-decoration: none;
     }
   }
 
   &__info {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, min-content);
     grid-row-gap: 1rem;
-    border-left: 1px solid lightgrey;
+    grid-template-rows: repeat(6, min-content);
+    grid-template-columns: repeat(2, 1fr);
     padding: 0 1rem;
+    border-left: 1px solid lightgrey;
   }
 
   &__summary {

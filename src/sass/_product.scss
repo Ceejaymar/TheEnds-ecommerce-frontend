@@ -1,35 +1,34 @@
 .Product {
   display: grid;
-  height: calc(100vh - 50px);
-
   grid-template-columns: [full-start] 1fr [content-start] repeat(8, minmax(min-content, 1fr)) [content-end] 1fr [full-end];
+  height: calc(100vh - 50px);
   padding: 50px 0;
 
   &__content {
-    grid-column: content-start / content-end;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-column: content-start / content-end;
     grid-template-rows: repeat(3, max-content) 20%;
+    grid-template-columns: repeat(8, 1fr);
   }
 
   &__img {
-    grid-column: 1 / span 3;
+    display: block;
     grid-row: 1 / span 3;
+    grid-column: 1 / span 3;
     width: 100%;
     height: 600px;
-    display: block;
     object-fit: cover;
   }
 
   &__info {
-    grid-column: 4 / -1;
-    grid-row: 1 / span 4;
     display: grid;
+    grid-row: 1 / span 4;
+    grid-column: 4 / -1;
+    grid-template-rows: max-content max-content 200px max-content max-content;
     grid-template-columns: repeat(5, [col-start] minmax(max-content, 1fr) [col-end]);
     // grid-template-rows: repeat(5, minmax(5rem, 1fr));
-    grid-template-rows: max-content max-content 200px max-content max-content;
-    justify-items: center;
     align-items: center;
+    justify-items: center;
   }
 
   &__name {
@@ -38,76 +37,76 @@
   }
 
   &__price {
-    grid-column: col-start 3 / col-end 3;
-    font-size: 2rem;
-    padding: 2rem 0;
     position: relative;
     display: flex;
+    grid-column: col-start 3 / col-end 3;
     justify-content: center;
+    padding: 2rem 0;
+    font-size: 2rem;
 
     &:after {
-      content: '';
+      position: absolute;
+      bottom: 20px;
       width: 70%;
       height: 2px;
       background-color: $c-black;
-      position: absolute;
-      bottom: 20px;
+      content: '';
     }
   }
 
   &__desc {
-    grid-column: col-start 2 / col-end 4;
     grid-row: 3 / 4;
-    font-size: 1.3rem;
+    grid-column: col-start 2 / col-end 4;
     color: gray;
+    font-size: 1.3rem;
   }
 
   &__sizes {
-    grid-column: col-start 2 / col-end 4;
-    justify-self: stretch;
     display: flex;
+    grid-column: col-start 2 / col-end 4;
     justify-content: space-between;
+    justify-self: stretch;
     padding: 2rem 0;
   }
 
   &__size {
-    display: block;
     position: relative;
+    display: block;
+    color: $c-white;
     cursor: pointer;
     user-select: none;
-    color: $c-white;
   }
 
   &__size-input {
     position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 50px;
-    width: 50px;
-    z-index: 5;
     top: 0;
     left: 0;
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    opacity: 0;
   }
 
   .checked {
-    background-color: $c-red;
     color: $c-white;
+    background-color: $c-red;
   }
 
   &__indicator {
     position: absolute;
     top: 0;
     left: 0;
-    height: 2rem;
-    width: 2rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: $c-red;
-    border: 2px solid $c-red;
-    text-transform: uppercase;
-    font-weight: 600;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
     padding: 1rem;
+    color: $c-red;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid $c-red;
     border-radius: 4px;
 
     &:hover {
@@ -124,12 +123,12 @@
   &__add-cart {
     grid-column: col-start 3 / col-end 4;
     padding: .5rem 1rem;
+    color: white;
     font-size: 1.2rem;
-    border-radius: 4px;
-    border: none;
     font-family: inherit;
     background-color: $c-red;
-    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
     transition: .2s;
 
@@ -140,12 +139,12 @@
   }
 
   &__quantity-icons {
-    border: none;
-    background-color: $c-white;
-    font-size: 1.7rem;
-    color: $c-red;
-    cursor: pointer;
     padding: 0 .7rem;
+    color: $c-red;
+    font-size: 1.7rem;
+    background-color: $c-white;
+    border: none;
+    cursor: pointer;
 
     &:hover {
       color: $c-red-dark;

@@ -1,14 +1,13 @@
 .Cart-item {
-  height: auto;
-  grid-column: 2 / span 5;
-  grid-auto-rows: 200px;
-
   display: grid;
+  grid-auto-rows: 200px;
+  grid-column: 2 / span 5;
   grid-template-columns: 2fr 2fr repeat(3, 1fr);
   align-items: center;
   justify-items: center;
-  background-color: whitesmoke;
+  height: auto;
   padding: .5rem;
+  background-color: whitesmoke;
   border-radius: 4px;
 
   &__img {
@@ -24,8 +23,8 @@
   }
 
   &__sub-price {
-    font-size: .8rem;
     color: slategrey;
     font-weight: 300;
+    font-size: .8rem;
   }
 }

@@ -1,8 +1,8 @@
 .Store {
   display: grid;
 
-  grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
   grid-template-rows: 70vh min-content;
+  grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
 
   &__header-content {
     grid-column: full-start / full-end;
@@ -15,11 +15,11 @@
   }
 
   &__products {
-    grid-column: content-start / content-end;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-    grid-column-gap: 2rem;
     grid-row-gap: 3rem;
+    grid-column: content-start / content-end;
+    grid-column-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
     padding: 3rem 2rem;
   }
 }

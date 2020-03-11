@@ -1,36 +1,36 @@
   .Nav {
     display: grid;
-    grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content,  10rem) [col-end]) [content-end] 1fr [full-end];
     grid-template-rows: 50px;
+    grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content,  10rem) [col-end]) [content-end] 1fr [full-end];
     align-items: center;
     padding: 0 2rem;
 
     &__brand:link,
     &__brand:visited {
+      grid-column: content-start / span 2;
+      color: $c-black;
       font-size: 2rem;
       font-family: $f-secondary;
       text-decoration: none;
-      color: $c-black;
-      grid-column: content-start / span 2;
     }
 
     &__menu {
-      grid-column: 7 / content-end;
       display: flex;
+      grid-column: 7 / content-end;
       justify-content: space-around;
     }
 
     &__link {
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: $c-black;
-      text-align: center;
       display: flex;
       align-items: center;
+      color: $c-black;
+      font-size: 1.1rem;
+      text-align: center;
+      text-decoration: none;
 
       &--logout {
-        font-size: .9rem;
         color: gray;
+        font-size: .9rem;
       }
     }
 
@@ -40,14 +40,14 @@
     }
 
     &__quantity {
-      font-size: .7rem;
-      background-color: $c-red;
-      color: white;
+      align-self: start;
       width: 15px;
       height: 15px;
-      border-radius: 10px;
+      color: white;
+      font-size: .7rem;
       text-align: center;
-      align-self: start;
+      background-color: $c-red;
+      border-radius: 10px;
     }
 
     &__icon {
