@@ -1,13 +1,13 @@
 // @import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
 
-$c-white: #ffffff;
-$c-black: #000000;
+$c-white: #fff;
+$c-black: #000;
 $c-grey: #a1a1a1;
 
 $c-blue: #45a4f7;
 $c-blue-light: #bfe9f6;
 
-$c-red: #F7455D;
+$c-red: #f7455d;
 $c-red-dark: #f62743;
 $c-red-light: #f8c8d7;
 
@@ -37,12 +37,6 @@ $screen-smallest: 25em;   // 400px
 html {
   box-sizing: border-box;
   // font-size: 62.5%; // 10 / 16 = 0.625, for REMS
-
-  @media only screen and (max-width: $screen-medium) {
-  }
-
-  @media only screen and (max-width: $screen-small) {
-  }
 }
 
 body {

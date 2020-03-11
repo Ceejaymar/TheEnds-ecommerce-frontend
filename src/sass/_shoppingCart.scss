@@ -11,7 +11,7 @@
     grid-template-columns: repeat(7, 1fr);
     padding: 2rem;
     overflow: scroll;
-    background: linear-gradient(to bottom left, $c-white 0%, $c-white 50%, rgba($c-orange, .6) 50%,rgba($c-orange, .6) 100%);
+    background: linear-gradient(to bottom left, $c-white 0%, $c-white 50%, rgba($c-orange, 0.6) 50%, rgba($c-orange, 0.6) 100%);
   }
 
   &__heading {
