@@ -3,7 +3,7 @@
   grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
   width: 100%;
   height: auto;
-  background: linear-gradient(to bottom right, $c-white 0%,#fff 50%, $c-red-light 50%, $c-red-light 100%);
+  background: linear-gradient(to bottom right, $c-white 0%, #fff 50%, $c-red-light 50%, $c-red-light 100%);
 
   &__content {
     display: grid;

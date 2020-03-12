@@ -44,7 +44,7 @@ body {
     grid-row: 4 / -1;
     grid-column: 4 / 5;
     align-self: center;
-    color: #F7455D;
+    color: #f7455d;
     font-size: 1.3rem;
     text-decoration: none; }
   .About__icon {
@@ -64,9 +64,9 @@ body {
     grid-template-rows: repeat(7, 1fr);
     grid-template-columns: repeat(8, [col-start] minmax(6rem, 1fr) [col-end]);
     justify-items: center;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0px 14px 26px -6px rgba(0, 0, 0, 0.47); }
+    box-shadow: 0 14px 26px -6px rgba(0, 0, 0, 0.47); }
   .Auth__img {
     grid-row: 1 / 9;
     grid-column: col-start 1 / col-end 3;
@@ -79,17 +79,17 @@ body {
     object-fit: cover;
     border-radius: 10px 0 0 10px; }
   .Auth__go-back {
-    color: #F7455D;
+    color: #f7455d;
     font-size: 1.3rem;
     font-family: inherit;
     background: none;
-    border: none;
+    border: 0;
     cursor: pointer; }
   .Auth__icon {
-    margin-right: .4rem; }
+    margin-right: 0.4rem; }
   .Auth__link {
     align-self: center;
-    color: #F7455D;
+    color: #f7455d;
     font-size: 1.3rem;
     text-decoration: none; }
     .Auth__link--home {
@@ -120,11 +120,11 @@ body {
   align-items: center; }
   .Auth-form__input {
     width: 100%;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     font-size: 1.2rem;
     font-family: inherit;
-    border: none;
-    border-bottom: 1px solid #000000; }
+    border: 0;
+    border-bottom: 1px solid #000; }
     .Auth-form__input--fname {
       grid-column: 1 / span 2; }
     .Auth-form__input--lname {
@@ -141,19 +141,19 @@ body {
     grid-row: 5 / -1;
     grid-column: 3 / span 1;
     align-self: center;
-    color: #F7455D;
+    color: #f7455d;
     font-size: 1.5rem;
     text-decoration: none; }
   .Auth-form__signup {
     grid-row: 5 / -1;
     grid-column: 3 / -1;
     justify-self: end;
-    padding: .5rem 1rem;
-    color: white;
+    padding: 0.5rem 1rem;
+    color: #fff;
     font-size: 1.7rem;
     font-family: inherit;
-    background-color: #F7455D;
-    border: none;
+    background-color: #f7455d;
+    border: 0;
     border-radius: 4px;
     box-shadow: -1px 18px 62px -19px #f7455d;
     cursor: pointer; }
@@ -165,10 +165,10 @@ body {
   padding: 2rem; }
   .Checkout__btn {
     padding: 1rem;
-    color: #ffffff;
+    color: #fff;
     font-size: 1.4rem;
-    background-color: #F7455D;
-    border: none;
+    background-color: #f7455d;
+    border: 0;
     border-radius: 4px;
     cursor: pointer; }
 
@@ -180,7 +180,7 @@ body {
   align-items: center;
   justify-items: center;
   height: auto;
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: whitesmoke;
   border-radius: 4px; }
   .Cart-item__img {
@@ -194,7 +194,7 @@ body {
   .Cart-item__sub-price {
     color: slategrey;
     font-weight: 300;
-    font-size: .8rem; }
+    font-size: 0.8rem; }
 
 .Footer {
   display: grid;
@@ -218,7 +218,7 @@ body {
     grid-column: full-start / full-end;
     grid-template-rows: repeat(2, 1fr);
     justify-content: center;
-    color: #ffffff;
+    color: #fff;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1570999106145-b02a20ae04a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2046&q=80");
     background-position: center;
     background-size: cover; }
@@ -240,7 +240,7 @@ body {
     display: grid;
     grid-gap: 1.5rem;
     justify-items: center;
-    padding: 2.5rem 2.5rem;
+    padding: 2.5rem;
     border-radius: 4px; }
     @media only screen and (max-width: 68.75em) {
       .Home__offer-content {
@@ -259,7 +259,7 @@ body {
       color: #45a4f7;
       background-color: rgba(69, 164, 247, 0.5); }
     .Home__icon-circle--2 {
-      color: #F7455D;
+      color: #f7455d;
       background-color: rgba(247, 69, 93, 0.5); }
     .Home__icon-circle--3 {
       color: #f79845;
@@ -355,15 +355,15 @@ body {
     grid-column: 2 / 3;
     align-self: center;
     padding: 1rem;
-    color: white;
+    color: #fff;
     font-weight: 300;
     font-size: 1.5rem;
-    background-color: #F7455D;
-    border: none;
+    background-color: #f7455d;
+    border: 0;
     border-radius: 4px;
     cursor: pointer;
     opacity: 0;
-    transition: .2s; }
+    transition: 0.2s; }
   .Home__shop-text {
     font-weight: 500;
     font-size: 1.7rem; }
@@ -398,14 +398,14 @@ body {
     align-items: center;
     justify-content: center;
     height: 40px;
-    color: white;
+    color: #fff;
     font-weight: 600;
     font-size: 1.2rem;
-    background-color: #F7455D;
+    background-color: #f7455d;
     opacity: 0;
-    transition: .2s; }
+    transition: 0.2s; }
   .Home__product-icon {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     font-size: 1.5rem; }
   .Home__gallery {
     grid-column: full-start / full-end;
@@ -431,7 +431,7 @@ body {
     .Loader__circle-outer {
       width: 100%;
       height: 100%;
-      border-top: 5px solid #F7455D;
+      border-top: 5px solid #f7455d;
       border-right: 5px solid #45a4f7;
       animation: rotate 1.5s infinite linear; }
     .Loader__circle-middle {
@@ -444,7 +444,7 @@ body {
       width: 50%;
       height: 50%;
       border-top: 5px solid #f79845;
-      border-right: 5px solid #F7455D;
+      border-right: 5px solid #f7455d;
       animation: rotateInnerCircles 1.1s infinite linear; }
 
 @keyframes rotate {
@@ -474,9 +474,9 @@ body {
     grid-template-rows: repeat(7, 1fr);
     grid-template-columns: repeat(8, [col-start] minmax(6rem, 1fr) [col-end]);
     justify-items: center;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0px 14px 26px -6px rgba(0, 0, 0, 0.47); }
+    box-shadow: 0 14px 26px -6px rgba(0, 0, 0, 0.47); }
   .Login__img {
     grid-row: 1 / 9;
     grid-column: col-start 1 / col-end 3;
@@ -489,17 +489,17 @@ body {
     object-fit: cover;
     border-radius: 10px 0 0 10px; }
   .Login__go-back {
-    color: #F7455D;
+    color: #f7455d;
     font-size: 1.3rem;
     font-family: inherit;
     background: none;
-    border: none;
+    border: 0;
     cursor: pointer; }
   .Login__icon {
-    margin-right: .4rem; }
+    margin-right: 0.4rem; }
   .Login__link {
     align-self: center;
-    color: #F7455D;
+    color: #f7455d;
     font-size: 1.3rem;
     text-decoration: none; }
     .Login__link--home {
@@ -533,28 +533,28 @@ body {
     padding: .5rem 0;
     font-size: 1.7rem;
     font-family: inherit;
-    border: none;
-    border-bottom: 1px solid #000000; }
+    border: 0;
+    border-bottom: 1px solid #000; }
   .Login-form__signup:link, .Login-form__signup:visited {
     grid-row: 3 / -1;
     grid-column: 1 / span 2;
     align-self: center;
     justify-self: end;
-    color: #F7455D;
+    color: #f7455d;
     font-size: 1.3rem;
     text-decoration: none; }
   .Login-form__login {
     grid-row: 3 / -1;
     grid-column: 3 / -1;
     justify-self: end;
-    padding: .8rem 2rem;
-    color: white;
+    padding: 0.8rem 2rem;
+    color: #fff;
     font-size: 1.8rem;
     font-family: inherit;
-    background-color: #F7455D;
-    border: none;
+    background-color: #f7455d;
+    border: 0;
     border-radius: 4px;
-    box-shadow: -1px 18px 62px -19px #F7455D;
+    box-shadow: -1px 18px 62px -19px #f7455d;
     cursor: pointer; }
 
 .Marketplace {
@@ -562,7 +562,7 @@ body {
   grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
   width: 100%;
   height: auto;
-  background: linear-gradient(to bottom right, #ffffff 0%, #fff 50%, #f8c8d7 50%, #f8c8d7 100%); }
+  background: linear-gradient(to bottom right, #fff 0%, #fff 50%, #f8c8d7 50%, #f8c8d7 100%); }
   .Marketplace__content {
     display: grid;
     grid-row-gap: 3rem;
@@ -586,7 +586,7 @@ body {
   padding: 0 2rem; }
   .Nav__brand:link, .Nav__brand:visited {
     grid-column: content-start / span 2;
-    color: #000000;
+    color: #000;
     font-size: 2rem;
     font-family: "Caveat", cursive;
     text-decoration: none; }
@@ -597,13 +597,13 @@ body {
   .Nav__link {
     display: flex;
     align-items: center;
-    color: #000000;
+    color: #000;
     font-size: 1.1rem;
     text-align: center;
     text-decoration: none; }
     .Nav__link--logout {
-      color: gray;
-      font-size: .9rem; }
+      color: #808080;
+      font-size: 0.9rem; }
   .Nav__cart {
     display: grid;
     grid-template-columns: min-content 1px; }
@@ -611,10 +611,10 @@ body {
     align-self: start;
     width: 15px;
     height: 15px;
-    color: white;
-    font-size: .7rem;
+    color: #fff;
+    font-size: 0.7rem;
     text-align: center;
-    background-color: #F7455D;
+    background-color: #f7455d;
     border-radius: 10px; }
   .Nav__icon {
     font-size: 1.7rem; }
@@ -659,12 +659,12 @@ body {
       bottom: 20px;
       width: 70%;
       height: 2px;
-      background-color: #000000;
+      background-color: #000;
       content: ''; }
   .Product__desc {
     grid-row: 3 / 4;
     grid-column: col-start 2 / col-end 4;
-    color: gray;
+    color: #808080;
     font-size: 1.3rem; }
   .Product__sizes {
     display: flex;
@@ -675,7 +675,7 @@ body {
   .Product__size {
     position: relative;
     display: block;
-    color: #ffffff;
+    color: #fff;
     cursor: pointer;
     user-select: none; }
   .Product__size-input {
@@ -688,8 +688,8 @@ body {
     cursor: pointer;
     opacity: 0; }
   .Product .checked {
-    color: #ffffff;
-    background-color: #F7455D; }
+    color: #fff;
+    background-color: #f7455d; }
   .Product__indicator {
     position: absolute;
     top: 0;
@@ -700,10 +700,10 @@ body {
     width: 2rem;
     height: 2rem;
     padding: 1rem;
-    color: #F7455D;
+    color: #f7455d;
     font-weight: 600;
     text-transform: uppercase;
-    border: 2px solid #F7455D;
+    border: 2px solid #f7455d;
     border-radius: 4px; }
     .Product__indicator:hover {
       background-color: #ffa1ad; }
@@ -713,23 +713,23 @@ body {
     font-size: 1.8rem; }
   .Product__add-cart {
     grid-column: col-start 3 / col-end 4;
-    padding: .5rem 1rem;
-    color: white;
+    padding: 0.5rem 1rem;
+    color: #fff;
     font-size: 1.2rem;
     font-family: inherit;
-    background-color: #F7455D;
+    background-color: #f7455d;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: .2s; }
+    transition: 0.2s; }
     .Product__add-cart:disabled {
       background-color: gray;
       cursor: not-allowed; }
   .Product__quantity-icons {
-    padding: 0 .7rem;
-    color: #F7455D;
+    padding: 0 0.7rem;
+    color: #f7455d;
     font-size: 1.7rem;
-    background-color: #ffffff;
+    background-color: #fff;
     border: none;
     cursor: pointer; }
     .Product__quantity-icons:hover {
@@ -745,7 +745,7 @@ body {
   height: 400px;
   text-decoration: none; }
   .Product-card:link, .Product-card:visited {
-    color: black; }
+    color: #000; }
   .Product-card__img {
     display: block;
     grid-column: 1 / -1;
@@ -754,12 +754,12 @@ body {
     object-fit: cover; }
   .Product-card__name {
     align-self: center;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     font-weight: 400; }
   .Product-card__price {
     align-self: center;
     justify-self: end;
-    margin-right: .5rem; }
+    margin-right: 0.5rem; }
 
 .page {
   position: absolute;
@@ -796,7 +796,7 @@ body {
     grid-template-columns: repeat(7, 1fr);
     padding: 2rem;
     overflow: scroll;
-    background: linear-gradient(to bottom left, #ffffff 0%, #ffffff 50%, rgba(247, 152, 69, 0.6) 50%, rgba(247, 152, 69, 0.6) 100%); }
+    background: linear-gradient(to bottom left, #fff 0%, #fff 50%, rgba(247, 152, 69, 0.6) 50%, rgba(247, 152, 69, 0.6) 100%); }
   .Cart__heading {
     grid-column: 2 / -2;
     border-bottom: 1px solid lightgrey; }
@@ -805,7 +805,7 @@ body {
     margin: 0 auto; }
     .Cart__empty a:link,
     .Cart__empty a:visited {
-      color: #F7455D;
+      color: #f7455d;
       text-decoration: none; }
   .Cart__info {
     display: grid;
@@ -848,4 +848,4 @@ body {
     object-fit: cover;
     border-radius: 4px; }
   .Store-card__name {
-    color: #000000; }
+    color: #000; }

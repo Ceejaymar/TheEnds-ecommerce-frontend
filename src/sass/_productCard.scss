@@ -7,7 +7,7 @@
 
   &:link,
   &:visited {
-    color: black;
+    color: $c-black;
   }
 
   &__img {
@@ -20,13 +20,13 @@
 
   &__name {
     align-self: center;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     font-weight: 400;
   }
 
   &__price {
     align-self: center;
     justify-self: end;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 }

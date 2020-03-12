@@ -1,56 +1,56 @@
-  .Nav {
-    display: grid;
-    grid-template-rows: 50px;
-    grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content,  10rem) [col-end]) [content-end] 1fr [full-end];
+.Nav {
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [content-end] 1fr [full-end];
+  align-items: center;
+  padding: 0 2rem;
+
+  &__brand:link,
+  &__brand:visited {
+    grid-column: content-start / span 2;
+    color: $c-black;
+    font-size: 2rem;
+    font-family: $f-secondary;
+    text-decoration: none;
+  }
+
+  &__menu {
+    display: flex;
+    grid-column: 7 / content-end;
+    justify-content: space-around;
+  }
+
+  &__link {
+    display: flex;
     align-items: center;
-    padding: 0 2rem;
+    color: $c-black;
+    font-size: 1.1rem;
+    text-align: center;
+    text-decoration: none;
 
-    &__brand:link,
-    &__brand:visited {
-      grid-column: content-start / span 2;
-      color: $c-black;
-      font-size: 2rem;
-      font-family: $f-secondary;
-      text-decoration: none;
-    }
-
-    &__menu {
-      display: flex;
-      grid-column: 7 / content-end;
-      justify-content: space-around;
-    }
-
-    &__link {
-      display: flex;
-      align-items: center;
-      color: $c-black;
-      font-size: 1.1rem;
-      text-align: center;
-      text-decoration: none;
-
-      &--logout {
-        color: gray;
-        font-size: .9rem;
-      }
-    }
-
-    &__cart {
-      display: grid;
-      grid-template-columns: min-content 1px;
-    }
-
-    &__quantity {
-      align-self: start;
-      width: 15px;
-      height: 15px;
-      color: white;
-      font-size: .7rem;
-      text-align: center;
-      background-color: $c-red;
-      border-radius: 10px;
-    }
-
-    &__icon {
-      font-size: 1.7rem;
+    &--logout {
+      color: #808080;
+      font-size: 0.9rem;
     }
   }
+
+  &__cart {
+    display: grid;
+    grid-template-columns: min-content 1px;
+  }
+
+  &__quantity {
+    align-self: start;
+    width: 15px;
+    height: 15px;
+    color: $c-white;
+    font-size: 0.7rem;
+    text-align: center;
+    background-color: $c-red;
+    border-radius: 10px;
+  }
+
+  &__icon {
+    font-size: 1.7rem;
+  }
+}
