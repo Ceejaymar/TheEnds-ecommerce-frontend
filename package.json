@@ -39,7 +39,8 @@
     "compile:sass": "node-sass src/sass/main.scss src/css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' src/css/style.comp.css -o src/css/style.prefix.css",
     "compress:css": "node-sass src/css/style.prefix.css src/css/style.css --output-style compressed",
-    "lint": "./node_modules/.bin/eslint ."
+    "lint": "./node_modules/.bin/eslint .",
+    "stylelint": "npx stylelint \"**/*.scss\""
   },
   "eslintConfig": {
     "extends": "react-app"
